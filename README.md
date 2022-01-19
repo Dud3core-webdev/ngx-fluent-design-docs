@@ -1,27 +1,19 @@
-# NgxFluentDesignDocs
+# NGXFluentDesign UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+### An open source implementation of the Microsoft Fluent Design system written in Angular.
 
-## Development server
+The aim of this project is to provide a full suite of Angular components that closely match the official Microsoft Design System
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Development
 
-## Code scaffolding
+No special configuration is required to develop this app, simply install from package.json using `yarn`, and run the usual Angular serve command `ng s --o`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The Fluent Design System can be found [here](https://aka.ms/FluentToolkits/Web/Figma) (Figma File).
 
-## Build
+#### NOTE! This package can only be deployed if you are a contributor to this repository.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Important Links:
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Microsoft Fluent Design Web Components](https://developer.microsoft.com/en-us/fluentui#/controls/web)
+- [ngx-fluent-design-docs (Live)](https://ngx-fluent-design.mfwebdev.net/home)
+- [Npm](https://www.npmjs.com/package/ngx-fluent-design)

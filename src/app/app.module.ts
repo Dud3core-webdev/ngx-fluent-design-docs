@@ -1,18 +1,35 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomePageModule } from './pages/home-page/home-page.module';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClientModule } from '@angular/common/http';
+import { InputsPageModule } from './pages/inputs-page/inputs-page.module';
+import { SharedComponentsModule } from './shared/components/shared-components.module';
+import { CallsToActionPageModule } from './pages/calls-to-action-page/calls-to-action-page.module';
+import { WINDOW_PROVIDERS } from './shared/factories/window.factory';
+import { NotificationsPageModule } from './pages/notifications-page/notifications-page.module';
+import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        HttpClientModule,
+        MarkdownModule.forRoot(),
+        BrowserModule,
+        AppRoutingModule,
+        HomePageModule,
+        InputsPageModule,
+        CallsToActionPageModule,
+        NotificationsPageModule,
+        SharedComponentsModule,
+        NgxFluentDesignNotificationModule,
+    ],
+    providers: [WINDOW_PROVIDERS],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

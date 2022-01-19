@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-scss/bootstrap-grid.scss';
+@import '~bootstrap-scss/variables';
+@import '~bootstrap-scss/mixins';
+@import '~bootstrap-scss/utilities';
+@import '~bootstrap-scss/functions';
+@import "app/styles/typography";
+
+body { margin: 0; background: #faf9f8}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #f8f8f8;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    border-radius: 25px;
+}
+
