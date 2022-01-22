@@ -10,6 +10,7 @@ import { StandardCtaPageComponent } from './pages/calls-to-action-page/pages/sta
 import { NotificationsPageComponent } from './pages/notifications-page/notifications-page.component';
 import { MessageBarPageComponent } from './pages/notifications-page/pages/message-bar/message-bar-page.component';
 import { NgModule } from '@angular/core';
+import { RadioPageComponent } from './pages/inputs-page/pages/radio/radio-page.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,10 @@ const routes: Routes = [
             {
                 path: 'form-field',
                 component: FormFieldPageComponent
+            },
+            {
+                path: 'radio',
+                component: RadioPageComponent
             },
             {
                 path: 'toggle',

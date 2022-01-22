@@ -18,7 +18,7 @@ export const sideNavLinks = (): SideNavLinks => [
             {
                 title: 'Radio',
                 routerLink: ['', 'inputs', 'radio'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Toggle',

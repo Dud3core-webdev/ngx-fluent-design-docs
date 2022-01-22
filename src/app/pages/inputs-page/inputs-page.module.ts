@@ -9,12 +9,14 @@ import { FormFieldPageComponent } from './pages/form-field/form-field-page.compo
 import { TogglePageComponent } from './pages/toggle/toggle-page.component';
 import { CheckboxPageComponent } from './pages/checkbox/checkbox-page.component';
 import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule, NgxFluentDesignInputModule } from 'ngx-fluent-design';
+import { RadioPageComponent } from './pages/radio/radio-page.component';
 
 const DECLARATIONS: Array<any> = [
     InputsPageComponent,
     FormFieldPageComponent,
     TogglePageComponent,
     CheckboxPageComponent,
+    RadioPageComponent
 ];
 
 @NgModule({

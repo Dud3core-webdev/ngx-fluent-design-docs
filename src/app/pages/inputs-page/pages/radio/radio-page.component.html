@@ -1,0 +1,37 @@
+<code-example
+        codeExampleUrl="./assets/docs/code-examples/inputs/radio/ngx-fluent-design-radio.interface.example.ts"
+        title="API"
+        [isUsageDocumentation]="false">
+</code-example>
+
+<ngx-fluent-design-card>
+    <h3>Examples</h3>
+    <div class="d-flex flex-md-row flex-column">
+        <div class="d-flex flex-column w-50 justify-content-between my-4 align-middle">
+            <h4 class="pb-3">Unchecked</h4>
+            <ngx-fluent-design-radio
+                    class="mb-3"
+                    [label]="'Rest'" [name]="'unchecked-rest'"></ngx-fluent-design-radio>
+            <ngx-fluent-design-radio
+                    class="mb-3"
+                    [label]="'Disabled'"
+                    [disabled]="true"
+                    [checked]="false"
+                    [name]="'unchecked-disabled'"></ngx-fluent-design-radio>
+        </div>
+        <div class="d-flex flex-column w-50 justify-content-between my-4 align-middle">
+            <h4 class="pb-3">Checked</h4>
+            <ngx-fluent-design-radio
+                    class="mb-3"
+                    [label]="'Rest'"
+                    [checked]="true"
+                    [name]="'checked-rest'"></ngx-fluent-design-radio>
+            <ngx-fluent-design-radio
+                    class="mb-3"
+                    [label]="'Disabled'"
+                    [disabled]="true"
+                    [checked]="true"
+                    [name]="'checked-disabled'"></ngx-fluent-design-radio>
+        </div>
+    </div>
+</ngx-fluent-design-card>
