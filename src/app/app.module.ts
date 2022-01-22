@@ -11,6 +11,8 @@ import { CallsToActionPageModule } from './pages/calls-to-action-page/calls-to-a
 import { WINDOW_PROVIDERS } from './shared/factories/window.factory';
 import { NotificationsPageModule } from './pages/notifications-page/notifications-page.module';
 import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -27,6 +29,12 @@ import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
         NotificationsPageModule,
         SharedComponentsModule,
         NgxFluentDesignNotificationModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the app is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        }),
     ],
     providers: [WINDOW_PROVIDERS],
     bootstrap: [AppComponent]
