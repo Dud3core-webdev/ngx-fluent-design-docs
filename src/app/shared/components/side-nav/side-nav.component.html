@@ -11,8 +11,7 @@
                     <section class="component-section" *ngIf="item.shouldDisplayOnLive || !environment.production">
                         <h5>{{item.title}}</h5>
                         <ng-container *ngFor="let link of item.subNavItems">
-                            <a *ngIf="link.shouldDisplayOnLive || !environment.production"
-                               class="fluent-design-link"
+                            <a ngxFluentDesignLinkButton *ngIf="link.shouldDisplayOnLive || !environment.production"
                                routerLinkActive="active"
                                [routerLink]="link.routerLink">{{link.title}}
                             </a>

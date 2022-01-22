@@ -4,7 +4,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { RouterModule } from '@angular/router';
 import { CodeExampleComponent } from './code-example/code-example.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgxFluentDesignCardModule } from 'ngx-fluent-design';
+import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule } from 'ngx-fluent-design';
 
 const DECLARATIONS: Array<any> = [
     SideNavComponent,
@@ -16,7 +16,8 @@ const DECLARATIONS: Array<any> = [
         CommonModule,
         RouterModule,
         NgxFluentDesignCardModule,
-        MarkdownModule.forChild()
+        MarkdownModule.forChild(),
+        NgxFluentDesignCtaModule
     ],
     declarations: [...DECLARATIONS],
     exports: [...DECLARATIONS]
