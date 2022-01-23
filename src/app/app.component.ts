@@ -60,6 +60,10 @@ export class AppComponent implements OnInit, OnDestroy {
         this._subscriptions.unsubscribe();
     }
 
+    public reloadWindow(): void {
+        this._appStatusService.reloadApp();
+    }
+
     public closeUpdateMessage(): void {
         this._userClosedUpdateAlert = true;
     }

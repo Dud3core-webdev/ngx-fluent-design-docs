@@ -5,6 +5,7 @@
         [canDismiss]="true"
         [displayActions]="true"
         [actionName]="'Reload'"
+        (actionClicked)="reloadWindow()"
         (closeClicked)="closeUpdateMessage()"
         messageBarType="success">
             It looks like there might be an update for this application, reload the page to get the latest updates

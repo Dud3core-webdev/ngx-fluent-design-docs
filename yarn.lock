@@ -244,6 +244,13 @@
   dependencies:
     tslib "^2.0.0"
 
+"@angular/service-worker@~11.2.9":
+  version "11.2.14"
+  resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-11.2.14.tgz#eb5b467f59ec21384546ef6e7c751ff566902670"
+  integrity sha512-QQFITcXsYaKgVuu4bHQ0SKR0P+CIHNJyqrUYhBFU4i8oG2MhS0tlJI8kTESxG9w5nM6/t00q1nlJPqoXPBseLA==
+  dependencies:
+    tslib "^2.0.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"
@@ -5653,10 +5660,10 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-ngx-fluent-design@^0.0.24:
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/ngx-fluent-design/-/ngx-fluent-design-0.0.24.tgz#6098b2f4c666779cc07fd8a0322141aac128c900"
-  integrity sha512-8uNsPsmi+i75JPfPxzAG18d5Jl80wZVIESvfY5Krfh4tu5PP4xU+HtGhjAedR9JGICIjqFe8rYX/R+/WreIAJQ==
+ngx-fluent-design@^0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/ngx-fluent-design/-/ngx-fluent-design-0.1.12.tgz#c02fbb02113a6b4cd54ace043a1101c18ca644ad"
+  integrity sha512-bYm1VsNZMlDyR6FhNTr2V2ORdVaG0/FbSJpsn7Yd7twgXt6xQnoekawqecj+cW7AjnB8RTPUTBJcFc3TdL/r9Q==
   dependencies:
     tslib "^2.0.0"
 
