@@ -56,17 +56,22 @@ export const sideNavLinks = (): SideNavLinks => [
     },
     {
         title: 'Progress',
-        shouldDisplayOnLive: false,
+        shouldDisplayOnLive: true,
         subNavItems: [
             {
                 title: 'Progress Indicator',
                 routerLink: ['', 'progress', 'progress-indicator'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
+            },
+            {
+                title: 'Indeterminate Progress Indicator',
+                routerLink: ['', 'progress', 'progress-indicator-indeterminate'],
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Spinner',
                 routerLink: ['', 'progress', 'spinner'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             }
         ]
     }

@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-progress-indicator-page',
-  templateUrl: './progress-indicator-page.component.html',
-  styleUrls: ['./progress-indicator-page.component.scss']
+    selector: 'app-progress-indicator-page',
+    templateUrl: './progress-indicator-page.component.html'
 })
-export class ProgressIndicatorPageComponent implements OnInit {
+export class ProgressIndicatorPageComponent implements AfterViewInit {
+    public progressIndicatorCurrentValue: number = 0;
 
-  constructor() { }
+    ngAfterViewInit(): void {
+        this.exampleProgressLoad();
+    }
 
-  ngOnInit(): void {
-  }
+    public exampleProgressLoad(percentage = 0): void {
+        this.progressIndicatorCurrentValue = percentage;
 
+        if (percentage >= 100) {
+            return;
+        }
+        requestAnimationFrame(() => this.exampleProgressLoad(this.progressIndicatorCurrentValue + 0.1));
+    }
+
+    public resetProgress(): void {
+        this.progressIndicatorCurrentValue = 0;
+        this.exampleProgressLoad();
+    }
 }

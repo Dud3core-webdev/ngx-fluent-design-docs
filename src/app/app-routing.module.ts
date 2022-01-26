@@ -14,6 +14,7 @@ import { RadioPageComponent } from './pages/inputs-page/pages/radio/radio-page.c
 import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
 import { ProgressIndicatorPageComponent } from './pages/progress-page/pages/progress-indicator-page/progress-indicator-page.component';
 import { SpinnerPageComponent } from './pages/progress-page/pages/spinner-page/spinner-page.component';
+import { ProgressIndicatorIndeterminatePageComponent } from './pages/progress-page/pages/progress-indicator-indeterminate-page/progress-indicator-indeterminate-page.component';
 
 const routes: Routes = [
     {
@@ -78,6 +79,10 @@ const routes: Routes = [
             {
                 path: 'progress-indicator',
                 component: ProgressIndicatorPageComponent
+            },
+            {
+                path: 'progress-indicator-indeterminate',
+                component: ProgressIndicatorIndeterminatePageComponent
             },
             {
                 path: 'spinner',
