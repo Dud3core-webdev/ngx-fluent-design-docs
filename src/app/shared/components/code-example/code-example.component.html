@@ -1,6 +1,6 @@
 <ngx-fluent-design-card>
     <section class="usage">
-        <h3 class="mb-4">{{title}}</h3>
+        <h3 class="pane-header">{{title}}</h3>
 
         <section class="output my-4">
             <div class="code-example-output">
@@ -9,7 +9,7 @@
         </section>
 
         <div class="code-example my-2">
-            <h5 class="mb-3" *ngIf="isUsageDocumentation">Usage:</h5>
+            <h5 class="header" *ngIf="isUsageDocumentation">Usage:</h5>
             <markdown lineNumbers [src]="codeExampleUrl"></markdown>
         </div>
     </section>

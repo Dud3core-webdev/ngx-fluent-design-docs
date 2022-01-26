@@ -4,12 +4,12 @@
             <a class="fluent-design-link mt-3" routerLinkActive="active" [routerLink]="['', 'home']">Home</a>
         </section>
         <div class="components my-4">
-            <h4 class="mb-4">Components</h4>
+            <h4 class="pane-header">Components</h4>
             <hr>
             <div class="components-links d-flex flex-column">
                 <section *ngFor="let item of sideNavLinks">
                     <section class="component-section" *ngIf="item.shouldDisplayOnLive || !environment.production">
-                        <h5>{{item.title}}</h5>
+                        <h5 class="subject-title">{{item.title}}</h5>
                         <ng-container *ngFor="let link of item.subNavItems">
                             <a ngxFluentDesignLinkButton *ngIf="link.shouldDisplayOnLive || !environment.production"
                                routerLinkActive="active"
