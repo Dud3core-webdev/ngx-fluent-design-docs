@@ -11,6 +11,9 @@ import { NotificationsPageComponent } from './pages/notifications-page/notificat
 import { MessageBarPageComponent } from './pages/notifications-page/pages/message-bar/message-bar-page.component';
 import { NgModule } from '@angular/core';
 import { RadioPageComponent } from './pages/inputs-page/pages/radio/radio-page.component';
+import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
+import { ProgressIndicatorPageComponent } from './pages/progress-page/pages/progress-indicator-page/progress-indicator-page.component';
+import { SpinnerPageComponent } from './pages/progress-page/pages/spinner-page/spinner-page.component';
 
 const routes: Routes = [
     {
@@ -65,6 +68,20 @@ const routes: Routes = [
             {
                 path: 'message-bar',
                 component: MessageBarPageComponent
+            }
+        ]
+    },
+    {
+        path: 'progress',
+        component: ProgressPageComponent,
+        children: [
+            {
+                path: 'progress-indicator',
+                component: ProgressIndicatorPageComponent
+            },
+            {
+                path: 'spinner',
+                component: SpinnerPageComponent
             }
         ]
     }

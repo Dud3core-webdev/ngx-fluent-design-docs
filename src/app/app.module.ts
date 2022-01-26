@@ -13,6 +13,7 @@ import { NotificationsPageModule } from './pages/notifications-page/notification
 import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProgressPageModule } from './pages/progress-page/progress-page.module';
 
 @NgModule({
     declarations: [
@@ -28,13 +29,14 @@ import { environment } from '../environments/environment';
         CallsToActionPageModule,
         NotificationsPageModule,
         SharedComponentsModule,
+        ProgressPageModule,
         NgxFluentDesignNotificationModule,
         ServiceWorkerModule.register('ngsw-worker.js', {
-          enabled: environment.production,
-          // Register the ServiceWorker as soon as the app is stable
-          // or after 30 seconds (whichever comes first).
-          registrationStrategy: 'registerWhenStable:30000'
-        }),
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the app is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     providers: [WINDOW_PROVIDERS],
     bootstrap: [AppComponent]
