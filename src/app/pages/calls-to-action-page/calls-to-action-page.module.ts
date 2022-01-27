@@ -3,7 +3,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { CallsToActionPageComponent } from './calls-to-action-page.component';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 import { CompoundCtaPageComponent } from './pages/compound-cta/compound-cta.page.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { StandardCtaPageComponent } from './pages/standard-cta/standard-cta-page.component';
 import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule, NgxFluentDesignInputModule } from 'ngx-fluent-design';
 
@@ -13,9 +13,20 @@ const DECLARATIONS: Array<any> = [
     StandardCtaPageComponent
 ];
 
+const ROUTES: Routes = [
+    {
+        path: 'compound',
+        component: CompoundCtaPageComponent
+    },
+    {
+        path: 'standard',
+        component: StandardCtaPageComponent
+    }
+];
+
 @NgModule({
     imports: [
-        RouterModule,
+        RouterModule.forChild(ROUTES),
         MarkdownModule.forChild(),
         NgxFluentDesignCardModule,
         NgxFluentDesignCtaModule,

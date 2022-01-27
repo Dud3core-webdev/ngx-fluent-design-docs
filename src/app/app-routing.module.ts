@@ -1,22 +1,11 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { InputsPageComponent } from './pages/inputs-page/inputs-page.component';
-import { CheckboxPageComponent } from './pages/inputs-page/pages/checkbox/checkbox-page.component';
-import { FormFieldPageComponent } from './pages/inputs-page/pages/form-field/form-field-page.component';
-import { TogglePageComponent } from './pages/inputs-page/pages/toggle/toggle-page.component';
 import { CallsToActionPageComponent } from './pages/calls-to-action-page/calls-to-action-page.component';
-import { CompoundCtaPageComponent } from './pages/calls-to-action-page/pages/compound-cta/compound-cta.page.component';
-import { StandardCtaPageComponent } from './pages/calls-to-action-page/pages/standard-cta/standard-cta-page.component';
 import { NotificationsPageComponent } from './pages/notifications-page/notifications-page.component';
-import { MessageBarPageComponent } from './pages/notifications-page/pages/message-bar/message-bar-page.component';
-import { NgModule } from '@angular/core';
-import { RadioPageComponent } from './pages/inputs-page/pages/radio/radio-page.component';
 import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
-import { ProgressIndicatorPageComponent } from './pages/progress-page/pages/progress-indicator-page/progress-indicator-page.component';
-import { SpinnerPageComponent } from './pages/progress-page/pages/spinner-page/spinner-page.component';
-import { ProgressIndicatorIndeterminatePageComponent } from './pages/progress-page/pages/progress-indicator-indeterminate-page/progress-indicator-indeterminate-page.component';
-import { ScssUtilitiesPageComponent } from './scss-utilities/scss-utilities-page.component';
-import { TypographyPageComponent } from './scss-utilities/typography/typography-page.component';
+import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilities-page.component';
 
 const routes: Routes = [
     {
@@ -31,76 +20,27 @@ const routes: Routes = [
     {
         path: 'inputs',
         component: InputsPageComponent,
-        children: [
-            {
-                path: 'checkbox',
-                component: CheckboxPageComponent
-            },
-            {
-                path: 'form-field',
-                component: FormFieldPageComponent
-            },
-            {
-                path: 'radio',
-                component: RadioPageComponent
-            },
-            {
-                path: 'toggle',
-                component: TogglePageComponent
-            }
-        ]
+        loadChildren: () => import('./pages/inputs-page/inputs-page.module').then((module) => module.InputsPageModule)
     },
     {
         path: 'calls-to-action',
         component: CallsToActionPageComponent,
-        children: [
-            {
-                path: 'compound',
-                component: CompoundCtaPageComponent
-            },
-            {
-                path: 'standard',
-                component: StandardCtaPageComponent
-            }
-        ]
+        loadChildren: () => import('./pages/calls-to-action-page/calls-to-action-page.module').then((module) => module.CallsToActionPageModule)
     },
     {
         path: 'notifications',
         component: NotificationsPageComponent,
-        children: [
-            {
-                path: 'message-bar',
-                component: MessageBarPageComponent
-            }
-        ]
+        loadChildren: () => import('./pages/notifications-page/notifications-page.module').then((module) => module.NotificationsPageModule)
     },
     {
         path: 'progress',
         component: ProgressPageComponent,
-        children: [
-            {
-                path: 'progress-indicator',
-                component: ProgressIndicatorPageComponent
-            },
-            {
-                path: 'progress-indicator-indeterminate',
-                component: ProgressIndicatorIndeterminatePageComponent
-            },
-            {
-                path: 'spinner',
-                component: SpinnerPageComponent
-            }
-        ]
+        loadChildren: () => import('./pages/progress-page/progress-page.module').then((module) => module.ProgressPageModule)
     },
     {
         path: 'scss-utilities',
         component: ScssUtilitiesPageComponent,
-        children: [
-            {
-                path: 'typography',
-                component: TypographyPageComponent
-            }
-        ]
+        loadChildren: () => import('./pages/scss-utilities/scss-utilities.page.module').then((module) => module.ScssUtilitiesPageModule)
     }
 ];
 

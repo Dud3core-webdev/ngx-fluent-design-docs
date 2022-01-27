@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { NotificationsPageComponent } from './notifications-page.component';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MessageBarPageComponent } from './pages/message-bar/message-bar-page.component';
 import { NgxFluentDesignCardModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+
+const ROUTES: Routes = [
+    {
+        path: 'message-bar',
+        component: MessageBarPageComponent
+    }
+];
 
 const DECLARATIONS = [
     NotificationsPageComponent,
@@ -15,7 +22,7 @@ const DECLARATIONS = [
         NgxFluentDesignNotificationModule,
         NgxFluentDesignCardModule,
         SharedComponentsModule,
-        RouterModule
+        RouterModule.forChild(ROUTES)
     ],
     declarations: [DECLARATIONS]
 })

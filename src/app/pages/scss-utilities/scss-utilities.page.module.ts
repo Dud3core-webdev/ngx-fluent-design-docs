@@ -3,9 +3,16 @@ import { ScssUtilitiesPageComponent } from './scss-utilities-page.component';
 import { CommonModule } from '@angular/common';
 import { NgxFluentDesignCardModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { TypographyPageComponent } from './typography/typography-page.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
-import { SharedComponentsModule } from '../shared/components/shared-components.module';
+import { SharedComponentsModule } from '../../shared/components/shared-components.module';
+
+const ROUTES: Routes = [
+    {
+        path: 'typography',
+        component: TypographyPageComponent
+    }
+];
 
 const DECLARATIONS: Array<any> = [
     ScssUtilitiesPageComponent,
@@ -16,7 +23,7 @@ const DECLARATIONS: Array<any> = [
     imports: [
         CommonModule,
         NgxFluentDesignCardModule,
-        RouterModule,
+        RouterModule.forChild(ROUTES),
         MarkdownModule.forChild(),
         SharedComponentsModule,
         NgxFluentDesignNotificationModule

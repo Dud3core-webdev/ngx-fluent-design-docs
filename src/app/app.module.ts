@@ -14,7 +14,7 @@ import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProgressPageModule } from './pages/progress-page/progress-page.module';
-import { ScssUtilitiesPageModule } from './scss-utilities/scss-utilities.page.module';
+import { ScssUtilitiesPageModule } from './pages/scss-utilities/scss-utilities.page.module';
 
 @NgModule({
     declarations: [
