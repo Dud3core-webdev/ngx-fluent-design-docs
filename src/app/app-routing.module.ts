@@ -15,6 +15,8 @@ import { ProgressPageComponent } from './pages/progress-page/progress-page.compo
 import { ProgressIndicatorPageComponent } from './pages/progress-page/pages/progress-indicator-page/progress-indicator-page.component';
 import { SpinnerPageComponent } from './pages/progress-page/pages/spinner-page/spinner-page.component';
 import { ProgressIndicatorIndeterminatePageComponent } from './pages/progress-page/pages/progress-indicator-indeterminate-page/progress-indicator-indeterminate-page.component';
+import { ScssUtilitiesPageComponent } from './scss-utilities/scss-utilities-page.component';
+import { TypographyPageComponent } from './scss-utilities/typography/typography-page.component';
 
 const routes: Routes = [
     {
@@ -87,6 +89,16 @@ const routes: Routes = [
             {
                 path: 'spinner',
                 component: SpinnerPageComponent
+            }
+        ]
+    },
+    {
+        path: 'scss-utilities',
+        component: ScssUtilitiesPageComponent,
+        children: [
+            {
+                path: 'typography',
+                component: TypographyPageComponent
             }
         ]
     }

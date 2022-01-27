@@ -74,5 +74,16 @@ export const sideNavLinks = (): SideNavLinks => [
                 shouldDisplayOnLive: true
             }
         ]
+    },
+    {
+        title: 'Scss Utilities',
+        shouldDisplayOnLive: true,
+        subNavItems: [
+            {
+                title: 'Typography',
+                routerLink: ['scss-utilities', 'typography'],
+                shouldDisplayOnLive: true
+            }
+        ]
     }
 ];

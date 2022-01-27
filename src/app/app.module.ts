@@ -14,6 +14,7 @@ import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProgressPageModule } from './pages/progress-page/progress-page.module';
+import { ScssUtilitiesPageModule } from './scss-utilities/scss-utilities.page.module';
 
 @NgModule({
     declarations: [
@@ -30,6 +31,7 @@ import { ProgressPageModule } from './pages/progress-page/progress-page.module';
         NotificationsPageModule,
         SharedComponentsModule,
         ProgressPageModule,
+        ScssUtilitiesPageModule,
         NgxFluentDesignNotificationModule,
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,
