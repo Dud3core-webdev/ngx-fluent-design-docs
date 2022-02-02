@@ -1,11 +1,19 @@
+.mobile-nav-menu-button {
+    position: absolute;
+}
+
 .sticky-navigation {
     top: 0;
     background: white;
-    width: 328px;
+    width: 75%;
     min-height: 100vh;
     height: 100%;
+    z-index: 2;
+    position: fixed;
 
     .components {
+
+        overflow-y: scroll;
         .components-links {
             .component-section {
                 display: flex;

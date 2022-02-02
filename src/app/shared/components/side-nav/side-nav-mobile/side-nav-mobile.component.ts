@@ -9,4 +9,14 @@ import { ApplicationNavigationLinks } from '../app-nav-links.interface';
 export class SideNavMobileComponent {
     @Input() public readonly sideNavLinks: ApplicationNavigationLinks = [];
     @Input() public readonly isProdEnvironment: boolean = false;
+
+    private _isNavMenuOpen: boolean = false;
+
+    public get isNavMenuOpen(): boolean {
+        return this._isNavMenuOpen;
+    }
+
+    public setIsNavMenuOpen(isNavMenuOpen: boolean) {
+        this._isNavMenuOpen = isNavMenuOpen;
+    }
 }

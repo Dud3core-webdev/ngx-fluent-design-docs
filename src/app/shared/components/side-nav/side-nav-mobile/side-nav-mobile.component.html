@@ -1,4 +1,8 @@
-<div class="sticky-navigation" *ngIf="sideNavLinks">
+<div *ngIf="!isNavMenuOpen" (click)="setIsNavMenuOpen(true)" class="mobile-nav-menu-button">
+    <h1>Click me :D</h1>
+</div>
+
+<div class="sticky-navigation" *ngIf="sideNavLinks && isNavMenuOpen">
     <div class="px-4 pt-5 h-100">
         <section class="mt-2">
             <a class="fluent-design-link mt-3" routerLinkActive="active" [routerLink]="['', 'home']">Home</a>
