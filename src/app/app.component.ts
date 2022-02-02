@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { sideNavLinks } from './shared/components/side-nav/side-nav-links.class';
-import { SideNavLinks } from './shared/components/side-nav/side-nav-links.interface';
+import { applicationNavigationLinks } from './shared/components/side-nav/app-nav-links.class';
+import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
 import { AppStatusService } from './shared/services/app-status.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private _userClosedOfflineAlert: boolean = false;
 
     private readonly _subscriptions: Subscription = new Subscription();
-    private readonly _navItems: SideNavLinks = sideNavLinks();
+    private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _appStatusService: AppStatusService;
 
     public get shouldDisplayUpdateAlert(): boolean {
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
         return !this._appIsOnline && !this._userClosedOfflineAlert;
     }
 
-    public get navItems(): SideNavLinks {
+    public get navItems(): ApplicationNavigationLinks {
         return this._navItems;
     }
 

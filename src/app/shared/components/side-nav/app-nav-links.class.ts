@@ -1,6 +1,6 @@
-import { SideNavLinks } from './side-nav-links.interface';
+import { ApplicationNavigationLinks } from './app-nav-links.interface';
 
-export const sideNavLinks = (): SideNavLinks => [
+export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
     {
         title: 'Inputs',
         shouldDisplayOnLive: true,

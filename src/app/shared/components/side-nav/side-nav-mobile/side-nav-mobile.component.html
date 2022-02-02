@@ -1,0 +1,24 @@
+<div class="sticky-navigation" *ngIf="sideNavLinks">
+    <div class="px-4 pt-5 h-100">
+        <section class="mt-2">
+            <a class="fluent-design-link mt-3" routerLinkActive="active" [routerLink]="['', 'home']">Home</a>
+        </section>
+        <div class="components my-4">
+            <h4 class="pane-header">Components</h4>
+            <hr>
+            <div class="components-links d-flex flex-column">
+                <section *ngFor="let item of sideNavLinks">
+                    <section class="component-section" *ngIf="item.shouldDisplayOnLive || !isProdEnvironment">
+                        <h5 class="subject-title">{{item.title}}</h5>
+                        <ng-container *ngFor="let link of item.subNavItems">
+                            <a ngxFluentDesignLinkButton *ngIf="link.shouldDisplayOnLive || !isProdEnvironment"
+                               routerLinkActive="active"
+                               [routerLink]="link.routerLink">{{link.title}}
+                            </a>
+                        </ng-container>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.sticky-navigation {
+    top: 0;
+    background: white;
+    width: 328px;
+    min-height: 100vh;
+    height: 100%;
+
+    .components {
+        .components-links {
+            .component-section {
+                display: flex;
+                flex-direction: column;
+                h5 {
+                    margin: 12px 0;
+                    font-weight: lighter;
+                }
+                a {
+                    margin: 5px 0;
+                }
+            }
+        };
+    }
+}
