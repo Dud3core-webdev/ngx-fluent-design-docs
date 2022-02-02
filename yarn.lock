@@ -5660,10 +5660,10 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-ngx-fluent-design@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/ngx-fluent-design/-/ngx-fluent-design-0.2.2.tgz#fc8a698115b29cc9dcc887f47deab9e8b252e6ae"
-  integrity sha512-VZLKtgqRKSvQNd/anj6OMWfUITVKwdNoHlOzuRTOmOZ8FV52YGsJEq6x5vC1XrfLs4nyy6DbEc5vVoHK1kEGgQ==
+ngx-fluent-design@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/ngx-fluent-design/-/ngx-fluent-design-0.2.3.tgz#5093075d71c4defea0a8c813fb8c7f04277b8441"
+  integrity sha512-NU0UTEV17EXEhQQZLY+3loUCpl+Pif1XGCzY8ukr8adNUOsgGMqBGZXz8HTdH7S1P5mBuf1cc1AwC3wf+s/row==
   dependencies:
     tslib "^2.0.0"
 
