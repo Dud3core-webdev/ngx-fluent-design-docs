@@ -1,5 +1,9 @@
 <div *ngIf="!isNavMenuOpen" (click)="setIsNavMenuOpen(true)" class="mobile-nav-menu-button">
-    <h1>Click me :D</h1>
+    <label id="nav-icon1">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
 </div>
 
 <div class="sticky-navigation" *ngIf="sideNavLinks && isNavMenuOpen">
@@ -8,7 +12,10 @@
             <a class="fluent-design-link mt-3" routerLinkActive="active" [routerLink]="['', 'home']">Home</a>
         </section>
         <div class="components my-4">
-            <h4 class="pane-header">Components</h4>
+            <div class="d-flex w-100 justify-content-between">
+                <h4 class="pane-header">Components</h4>
+                <i (click)="setIsNavMenuOpen(false)" class="gg-close"></i>
+            </div>
             <hr>
             <div class="components-links d-flex flex-column">
                 <section *ngFor="let item of sideNavLinks">
