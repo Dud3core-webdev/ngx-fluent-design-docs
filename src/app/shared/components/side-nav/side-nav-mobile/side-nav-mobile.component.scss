@@ -21,9 +21,9 @@
     height: 100%;
     z-index: 2;
     position: fixed;
-    overflow-y: scroll;
 
     .components {
+        overflow-y: scroll;
         .gg-close {
             box-sizing: border-box;
             position: relative;
@@ -52,7 +52,6 @@
             transform: rotate(-45deg)
         }
 
-        overflow-y: scroll;
         .components-links {
             .component-section {
                 display: flex;
