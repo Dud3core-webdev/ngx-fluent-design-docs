@@ -40,6 +40,11 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 title: 'Compound CTA',
                 routerLink: ['', 'calls-to-action', 'compound'],
                 shouldDisplayOnLive: true
+            },
+            {
+                title: 'Link Button',
+                routerLink: ['', 'calls-to-action', 'link'],
+                shouldDisplayOnLive: true
             }
         ]
     },
