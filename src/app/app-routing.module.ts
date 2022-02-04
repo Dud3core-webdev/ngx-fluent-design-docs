@@ -6,6 +6,7 @@ import { CallsToActionPageComponent } from './pages/calls-to-action-page/calls-t
 import { NotificationsPageComponent } from './pages/notifications-page/notifications-page.component';
 import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
 import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilities-page.component';
+import { CommonPageComponent } from './pages/common/common-page.component';
 
 const routes: Routes = [
     {
@@ -41,6 +42,11 @@ const routes: Routes = [
         path: 'scss-utilities',
         component: ScssUtilitiesPageComponent,
         loadChildren: () => import('./pages/scss-utilities/scss-utilities.page.module').then((module) => module.ScssUtilitiesPageModule)
+    },
+    {
+        path: 'common',
+        component: CommonPageComponent,
+        loadChildren: () => import('./pages/common/common-page.module').then((module) => module.CommonPageModule)
     }
 ];
 

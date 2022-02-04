@@ -100,5 +100,16 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 shouldDisplayOnLive: true
             }
         ]
+    },
+    {
+        title: 'Common',
+        shouldDisplayOnLive: false,
+        subNavItems: [
+            {
+                title: 'Card',
+                shouldDisplayOnLive: false,
+                routerLink: ['', 'common', 'card']
+            }
+        ]
     }
 ];

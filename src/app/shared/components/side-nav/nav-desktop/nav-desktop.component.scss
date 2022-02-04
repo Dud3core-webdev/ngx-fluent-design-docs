@@ -2,19 +2,17 @@
     width: 328px;
     padding: 0;
     background-color: white;
-    min-height: 100vh;
-    height: 100%;
-    overflow-y: hidden;
+    height: 100vh;
 
     .components {
         top: 0;
         background-color: white;
         width: 328px;
         position: fixed;
-        height: inherit;
+        height: 100%;
+        overflow-y: scroll;
 
         .components-links {
-            overflow-y: scroll;
             .component-section {
                 display: flex;
                 flex-direction: column;
