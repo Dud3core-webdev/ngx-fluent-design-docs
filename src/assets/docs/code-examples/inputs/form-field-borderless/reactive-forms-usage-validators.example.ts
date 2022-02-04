@@ -4,9 +4,9 @@ import { FormControl, Validators } from '@angular/forms';
 @Component({
     template: `
         <form>
-            <ngx-fluent-design-form-field-underlined [label]="'Standard Input'">
+            <ngx-fluent-design-form-field-borderless [label]="'Standard Input'">
                 <input ngxFluentDesignInput [formControl]="standardInputValidator">
-            </ngx-fluent-design-form-field-underlined>
+            </ngx-fluent-design-form-field-borderless>
         </form>
     `,
 })

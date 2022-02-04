@@ -8,7 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormFieldPageComponent } from './pages/form-field/form-field-page.component';
 import { TogglePageComponent } from './pages/toggle/toggle-page.component';
 import { CheckboxPageComponent } from './pages/checkbox/checkbox-page.component';
-import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule, NgxFluentDesignInputModule } from 'ngx-fluent-design';
+import {
+    NgxFluentDesignCardModule,
+    NgxFluentDesignCtaModule,
+    NgxFluentDesignInputModule,
+    NgxFluentDesignNotificationModule
+} from 'ngx-fluent-design';
 import { RadioPageComponent } from './pages/radio/radio-page.component';
 import { FormFieldUnderlinedPageComponent } from './pages/form-field-underlined/form-field-underlined-page.component';
 import { FormFieldBorderlessPageComponent } from './pages/form-field-borderless/form-field-borderless-page.component';
@@ -59,7 +64,8 @@ const DECLARATIONS: Array<any> = [
         ReactiveFormsModule,
         CommonModule,
         SharedComponentsModule,
-        RouterModule.forChild(ROUTES)
+        RouterModule.forChild(ROUTES),
+        NgxFluentDesignNotificationModule
     ],
     declarations: [...DECLARATIONS],
 })
