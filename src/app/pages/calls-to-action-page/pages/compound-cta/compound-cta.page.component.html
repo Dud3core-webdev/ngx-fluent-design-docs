@@ -7,20 +7,24 @@
 <code-example
     codeExampleUrl="./assets/docs/code-examples/cta/standard-cta/compound-cta-usage.example.ts"
     title="Compound Button">
-    <div class="d-flex w-100 my-4 justify-content-between">
-        <ngx-fluent-design-compound-button
-            type="primary"
-            [secondaryText]="'Secondary text'"
-            [disabled]="compoundButtonsDisabled">
-            This is a Primary Button
-        </ngx-fluent-design-compound-button>
+    <div class="d-flex w-100 my-4 justify-content-between flex-column flex-md-row">
+        <section class="mb-3">
+            <ngx-fluent-design-compound-button
+                type="primary"
+                [secondaryText]="'Secondary text'"
+                [disabled]="compoundButtonsDisabled">
+                This is a Primary Button
+            </ngx-fluent-design-compound-button>
+        </section>
 
-        <ngx-fluent-design-compound-button
-            type="standard"
-            [secondaryText]="'Secondary text'"
-            [disabled]="compoundButtonsDisabled">
-            This is a standard Button
-        </ngx-fluent-design-compound-button>
+        <section class="mb-3">
+            <ngx-fluent-design-compound-button
+                type="standard"
+                [secondaryText]="'Secondary text'"
+                [disabled]="compoundButtonsDisabled">
+                This is a standard Button
+            </ngx-fluent-design-compound-button>
+        </section>
     </div>
 
     <ngx-fluent-design-toggle
