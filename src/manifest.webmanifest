@@ -1,7 +1,7 @@
 {
   "name": "ngx-fluent-design-docs",
   "short_name": "ngx-fluent-design-docs",
-  "theme_color": "#1976d2",
+  "theme_color": "#0078D4",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
