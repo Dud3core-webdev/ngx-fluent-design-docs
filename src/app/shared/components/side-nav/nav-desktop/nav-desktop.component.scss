@@ -1,12 +1,20 @@
 .sticky-navigation {
-    top: 0;
-    background: white;
     width: 328px;
+    padding: 0;
+    background-color: white;
     min-height: 100vh;
     height: 100%;
+    overflow-y: hidden;
 
     .components {
+        top: 0;
+        background-color: white;
+        width: 328px;
+        position: fixed;
+        height: inherit;
+
         .components-links {
+            overflow-y: scroll;
             .component-section {
                 display: flex;
                 flex-direction: column;

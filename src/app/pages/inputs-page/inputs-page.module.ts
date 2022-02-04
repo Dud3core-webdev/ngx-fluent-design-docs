@@ -10,6 +10,8 @@ import { TogglePageComponent } from './pages/toggle/toggle-page.component';
 import { CheckboxPageComponent } from './pages/checkbox/checkbox-page.component';
 import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule, NgxFluentDesignInputModule } from 'ngx-fluent-design';
 import { RadioPageComponent } from './pages/radio/radio-page.component';
+import { FormFieldUnderlinedPageComponent } from './pages/form-field-underlined/form-field-underlined-page.component';
+import { FormFieldBorderlessPageComponent } from './pages/form-field-borderless/form-field-borderless-page.component';
 
 const ROUTES: Routes = [
     {
@@ -19,6 +21,14 @@ const ROUTES: Routes = [
     {
         path: 'form-field',
         component: FormFieldPageComponent
+    },
+    {
+        path: 'form-field-underlined',
+        component: FormFieldUnderlinedPageComponent
+    },
+    {
+        path: 'form-field-borderless',
+        component: FormFieldBorderlessPageComponent
     },
     {
         path: 'radio',
@@ -35,7 +45,9 @@ const DECLARATIONS: Array<any> = [
     FormFieldPageComponent,
     TogglePageComponent,
     CheckboxPageComponent,
-    RadioPageComponent
+    RadioPageComponent,
+    FormFieldUnderlinedPageComponent,
+    FormFieldBorderlessPageComponent
 ];
 
 @NgModule({
