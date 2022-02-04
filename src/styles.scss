@@ -13,15 +13,15 @@ body { margin: 0; background: #faf9f8}
     cursor: pointer;
 }
 
-html::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 8px;
 }
 
-html::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background-color: #f8f8f8;
 }
 
-html::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: #bdbdbd;
     border-radius: 25px;
 }
