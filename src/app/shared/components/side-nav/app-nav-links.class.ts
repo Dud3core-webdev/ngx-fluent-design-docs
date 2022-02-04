@@ -18,12 +18,12 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             {
                 title: 'Form Field Underlined',
                 routerLink: ['', 'inputs', 'form-field-underlined'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Form Field Borderless',
                 routerLink: ['', 'inputs', 'form-field-borderless'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Radio',

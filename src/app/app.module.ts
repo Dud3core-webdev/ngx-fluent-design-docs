@@ -15,6 +15,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProgressPageModule } from './pages/progress-page/progress-page.module';
 import { ScssUtilitiesPageModule } from './pages/scss-utilities/scss-utilities.page.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { ScssUtilitiesPageModule } from './pages/scss-utilities/scss-utilities.p
         HttpClientModule,
         MarkdownModule.forRoot(),
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HomePageModule,
         InputsPageModule,

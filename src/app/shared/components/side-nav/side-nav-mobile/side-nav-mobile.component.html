@@ -6,7 +6,7 @@
     </label>
 </div>
 
-<ngx-fluent-design-sheet *ngIf="sideNavLinks && isNavMenuOpen">
+<ngx-fluent-design-sheet [hidden]="!isNavMenuOpen">
     <div class="sticky-navigation">
         <div class="px-4 pt-5 h-100">
             <section class="mt-2">
