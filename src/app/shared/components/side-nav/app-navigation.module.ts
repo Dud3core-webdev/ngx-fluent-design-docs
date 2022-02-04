@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgxFluentDesignCtaModule } from 'ngx-fluent-design';
+import { NgxFluentDesignCommonComponentsModule, NgxFluentDesignCtaModule } from 'ngx-fluent-design';
 import { AppNavigationComponent } from './app-navigation.component';
 import { NavDesktopComponent } from './nav-desktop/nav-desktop.component';
 import { CommonModule } from '@angular/common';
@@ -16,7 +16,8 @@ const DECLARATIONS: Array<any> = [
     imports: [
         CommonModule,
         RouterModule,
-        NgxFluentDesignCtaModule
+        NgxFluentDesignCtaModule,
+        NgxFluentDesignCommonComponentsModule
     ],
     declarations: [...DECLARATIONS],
     exports: [...DECLARATIONS]
