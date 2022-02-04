@@ -91,7 +91,7 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
         ]
     },
     {
-        title: 'Scss Utilities',
+        title: 'SCSS Utilities',
         shouldDisplayOnLive: true,
         subNavItems: [
             {
