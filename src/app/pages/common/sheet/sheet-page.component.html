@@ -1,0 +1,26 @@
+<h2 class="page-title">Sheet</h2>
+
+<code-example
+    codeExampleUrl="./assets/docs/code-examples/common/sheet/sheet-usage.example.ts"
+    title="Usage"
+    [isUsageDocumentation]="false">
+</code-example>
+
+<ngx-fluent-design-card>
+    <section class="usage">
+        <h3 class="pane-header">Example</h3>
+
+        <ngx-fluent-design-button (clicked)="toggleDialog(true)" type="primary">Click to trigger a Dialog Component</ngx-fluent-design-button>
+    </section>
+</ngx-fluent-design-card>
+
+<ngx-fluent-design-sheet [hidden]="!isToggled">
+    <section class="w-100 h-100 d-flex align-items-center justify-content-center">
+        <ngx-fluent-design-dialog header="Tadaaaaaa"
+                                  primaryActionName="Close"
+                                  [displaySecondaryAction]="false"
+                                  (primaryActionClicked)="toggleDialog(false)">
+            <p>Nice! This is a Dialog component on top of a sheet</p>
+        </ngx-fluent-design-dialog>
+    </section>
+</ngx-fluent-design-sheet>

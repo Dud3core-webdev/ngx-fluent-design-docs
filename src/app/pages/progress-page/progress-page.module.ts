@@ -3,7 +3,11 @@ import { MarkdownModule } from 'ngx-markdown';
 import { CommonModule } from '@angular/common';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 import { RouterModule, Routes } from '@angular/router';
-import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule, NgxFluentDesignProgressModule } from 'ngx-fluent-design';
+import {
+    NgxFluentDesignCommonComponentsModule,
+    NgxFluentDesignCtaModule,
+    NgxFluentDesignProgressModule
+} from 'ngx-fluent-design';
 import { ProgressPageComponent } from './progress-page.component';
 import { ProgressIndicatorPageComponent } from './pages/progress-indicator-page/progress-indicator-page.component';
 import { SpinnerPageComponent } from './pages/spinner-page/spinner-page.component';
@@ -34,7 +38,7 @@ const DECLARATIONS: Array<any> = [
 @NgModule({
     imports: [
         MarkdownModule.forChild(),
-        NgxFluentDesignCardModule,
+        NgxFluentDesignCommonComponentsModule,
         NgxFluentDesignProgressModule,
         CommonModule,
         SharedComponentsModule,

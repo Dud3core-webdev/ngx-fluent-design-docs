@@ -103,12 +103,17 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
     },
     {
         title: 'Common',
-        shouldDisplayOnLive: false,
+        shouldDisplayOnLive: true,
         subNavItems: [
             {
                 title: 'Card',
-                shouldDisplayOnLive: false,
+                shouldDisplayOnLive: true,
                 routerLink: ['', 'common', 'card']
+            },
+            {
+                title: 'Sheet',
+                shouldDisplayOnLive: true,
+                routerLink: ['', 'common', 'sheet']
             }
         ]
     }

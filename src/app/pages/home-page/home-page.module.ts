@@ -3,12 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgxFluentDesignCardModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import { NgxFluentDesignCommonComponentsModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 
 @NgModule({
     imports: [
         FormsModule,
-        NgxFluentDesignCardModule,
+        NgxFluentDesignCommonComponentsModule,
         NgxFluentDesignNotificationModule,
         CommonModule,
         MarkdownModule.forChild()

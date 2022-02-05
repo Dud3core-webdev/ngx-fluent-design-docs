@@ -9,7 +9,7 @@ import { FormFieldPageComponent } from './pages/form-field/form-field-page.compo
 import { TogglePageComponent } from './pages/toggle/toggle-page.component';
 import { CheckboxPageComponent } from './pages/checkbox/checkbox-page.component';
 import {
-    NgxFluentDesignCardModule,
+    NgxFluentDesignCommonComponentsModule,
     NgxFluentDesignCtaModule,
     NgxFluentDesignInputModule,
     NgxFluentDesignNotificationModule
@@ -58,7 +58,7 @@ const DECLARATIONS: Array<any> = [
 @NgModule({
     imports: [
         MarkdownModule.forChild(),
-        NgxFluentDesignCardModule,
+        NgxFluentDesignCommonComponentsModule,
         NgxFluentDesignInputModule,
         NgxFluentDesignCtaModule,
         ReactiveFormsModule,
