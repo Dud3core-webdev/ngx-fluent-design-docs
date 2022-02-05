@@ -113,7 +113,7 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             {
                 title: 'Custom Icons',
                 routerLink: ['', 'icons', 'custom'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             }
         ]
     },
