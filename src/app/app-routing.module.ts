@@ -7,6 +7,7 @@ import { NotificationsPageComponent } from './pages/notifications-page/notificat
 import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
 import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilities-page.component';
 import { CommonPageComponent } from './pages/common/common-page.component';
+import { AlertsPageComponent } from './pages/alerts/alerts-page.component';
 
 const routes: Routes = [
     {
@@ -32,6 +33,11 @@ const routes: Routes = [
         path: 'notifications',
         component: NotificationsPageComponent,
         loadChildren: () => import('./pages/notifications-page/notifications-page.module').then((module) => module.NotificationsPageModule)
+    },
+    {
+        path: 'alerts',
+        component: AlertsPageComponent,
+        loadChildren: () => import('./pages/alerts/alerts-page.module').then((module) => module.AlertsPageModule)
     },
     {
         path: 'progress',

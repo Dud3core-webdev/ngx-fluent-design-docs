@@ -59,7 +59,18 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
         ]
     },
     {
-        title: 'Alerts And Notifications',
+        title: 'Alerts',
+        shouldDisplayOnLive: true,
+        subNavItems: [
+            {
+                title: 'Dialog',
+                routerLink: ['', 'alerts', 'dialog'],
+                shouldDisplayOnLive: true
+            }
+        ]
+    },
+    {
+        title: 'Notifications',
         shouldDisplayOnLive: true,
         subNavItems: [
             {
