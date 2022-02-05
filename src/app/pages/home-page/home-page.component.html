@@ -37,12 +37,30 @@
 
     <ngx-fluent-design-card>
         <div class="welcome">
-            <h2 class="pane-header bold">Setting the project up for usage</h2>
-            <p>You can either import the default stylesheet into your project: </p>
-            <code>@import "~ngx-fluent-design/src/lib/styles";</code>
-            <p>and this will set all components to the default color pallet. Alternatively, you can
-                create your own pallet by setting the following css variables:</p>
+            <h2 class="pane-header bold">Setup</h2>
 
+            <section>
+                <h3 class="subject-title bold">Import BrowserAnimationsModule</h3>
+                <p>Make sure you have imported the <code>BrowserAnimationsModule</code> in your app module</p>
+                <markdown lineNumbers src="./assets/docs/code-examples/setup/browser-animations-module-import.example.ts"></markdown>
+            </section>
+
+            <section>
+                <h3 class="subject-title bold">Import default Styles</h3>
+                <p>In your applications styles.scss:</p>
+                <markdown >```@import "~ngx-fluent-design/src/lib/styles";```</markdown>
+            </section>
+            <p>You can either import the default stylesheet into your project: </p>
+            <p>and this will set all components to the default color pallet. Alternatively, you can create your own pallet by setting the following css variables:</p>
+            <section class="my-3">
+                <ngx-fluent-design-message-bar messageBarType="info">
+                    You can build your own theme by heading to
+                    <a target="_blank"
+                       rel="noreferrer"
+                       href="https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/index.html"
+                       class="fluent-design-link metadata">Microsoft's Fluent Design Theme Builder</a>
+                </ngx-fluent-design-message-bar>
+            </section>
             <markdown lineNumbers src="./assets/docs/code-examples/setup/root-styles.example.scss"></markdown>
         </div>
     </ngx-fluent-design-card>
