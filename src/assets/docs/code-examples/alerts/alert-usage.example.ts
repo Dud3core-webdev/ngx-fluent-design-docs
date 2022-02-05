@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     template: `
         <!-- Launch it inside a sheet for the best usage -->
         <ngx-fluent-design-sheet [hidden]="!isToggled">
-            <section class="w-100 h-100 d-flex align-items-center justify-content-center">
+            <section class="w-100 h-100 d-flex align-items-center justify-content-center">  <!-- <- We use Bootstrap alongside this library to build docs-->
                 <ngx-fluent-design-dialog header="Tadaaaaaa"
                                           primaryActionName="Close"
                                           [displaySecondaryAction]="false"
