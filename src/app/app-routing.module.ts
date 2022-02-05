@@ -8,6 +8,7 @@ import { ProgressPageComponent } from './pages/progress-page/progress-page.compo
 import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilities-page.component';
 import { CommonPageComponent } from './pages/common/common-page.component';
 import { AlertsPageComponent } from './pages/alerts/alerts-page.component';
+import { IconsPageComponent } from './pages/icons/icons-page.component';
 
 const routes: Routes = [
     {
@@ -53,6 +54,11 @@ const routes: Routes = [
         path: 'common',
         component: CommonPageComponent,
         loadChildren: () => import('./pages/common/common-page.module').then((module) => module.CommonPageModule)
+    },
+    {
+        path: 'icons',
+        component: IconsPageComponent,
+        loadChildren: () => import('./pages/icons/icons-page.module').then((module) => module.IconsPageModule)
     }
 ];
 

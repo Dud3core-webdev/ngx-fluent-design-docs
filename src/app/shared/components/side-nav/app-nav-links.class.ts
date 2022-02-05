@@ -102,6 +102,22 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
         ]
     },
     {
+        title: 'Iconography',
+        shouldDisplayOnLive: true,
+        subNavItems: [
+            {
+                title: 'Usage',
+                routerLink: ['', 'icons', 'usage'],
+                shouldDisplayOnLive: true
+            },
+            {
+                title: 'Custom Icons',
+                routerLink: [],
+                shouldDisplayOnLive: false
+            }
+        ]
+    },
+    {
         title: 'SCSS Utilities',
         shouldDisplayOnLive: true,
         subNavItems: [
