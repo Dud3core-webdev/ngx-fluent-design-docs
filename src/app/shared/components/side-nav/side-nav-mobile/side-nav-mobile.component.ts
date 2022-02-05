@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApplicationNavigationLinks } from '../app-nav-links.interface';
 import { Event, NavigationEnd, Router } from '@angular/router';
+import { INgxFluentDesignIcon, NgxFluentDesignIconClearClose } from 'ngx-fluent-design';
 
 @Component({
     selector: 'side-nav-mobile',
@@ -10,6 +11,7 @@ import { Event, NavigationEnd, Router } from '@angular/router';
 export class SideNavMobileComponent implements OnInit {
     @Input() public readonly sideNavLinks: ApplicationNavigationLinks = [];
     @Input() public readonly isProdEnvironment: boolean = false;
+    public readonly closeIcon: INgxFluentDesignIcon = NgxFluentDesignIconClearClose;
 
     private readonly _router: Router;
     private _isNavMenuOpen: boolean = false;
