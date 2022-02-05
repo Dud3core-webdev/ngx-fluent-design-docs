@@ -23,7 +23,13 @@
     position: fixed;
     overflow-y: scroll;
 
+    .fluent-design-logo {
+        max-width: 120px;
+        margin: 24px 0 0 0;
+    }
+
     .components {
+
         .gg-close {
             box-sizing: border-box;
             position: relative;
