@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { INgxFluentDesignIcon } from 'ngx-fluent-design';
-import { NgxFluentDesignIconInfoWarn } from 'ngx-fluent-design/lib/icons/shared/constants/ngx-fluent-design-icons-list';
+import { INgxFluentDesignIcon, NgxFluentDesignIconInfoWarn } from 'ngx-fluent-design';
 
 @Component({
-    template: `
-        <form>
-            <ngx-fluent-design-icon [icon]="warningIcon"></ngx-fluent-design-icon>
-        </form>
-    `,
+    template: `<ngx-fluent-design-icon [icon]="warningIcon"></ngx-fluent-design-icon>`,
 })
 export class IconUsageExample {
     public warningIcon: INgxFluentDesignIcon = NgxFluentDesignIconInfoWarn;
