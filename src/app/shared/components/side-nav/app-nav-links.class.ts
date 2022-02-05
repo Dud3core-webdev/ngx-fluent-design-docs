@@ -112,7 +112,7 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             },
             {
                 title: 'Custom Icons',
-                routerLink: [],
+                routerLink: ['', 'icons', 'custom'],
                 shouldDisplayOnLive: false
             }
         ]
