@@ -9,12 +9,15 @@
 <code-example
     codeExampleUrl="./assets/docs/code-examples/cta/standard-cta/standard-cta-usage.example.ts"
     title="Standard Button">
-    <div class="d-flex w-100 my-4 justify-content-between">
-        <ngx-fluent-design-button
-            type="primary"
-            [disabled]="standardButtonsDisabled">
-            This is a Primary Button
-        </ngx-fluent-design-button>
+    <div class="d-flex w-100 my-4 justify-content-between flex-column flex-md-row">
+
+        <section class="my-3">
+            <ngx-fluent-design-button
+                type="primary"
+                [disabled]="standardButtonsDisabled">
+                This is a Primary Button
+            </ngx-fluent-design-button>
+        </section>
 
         <ngx-fluent-design-button
             type="standard"
