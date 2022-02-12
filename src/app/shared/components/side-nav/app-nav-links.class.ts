@@ -28,7 +28,7 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             {
                 title: 'Text Area Underlined',
                 routerLink: ['', 'inputs', 'text-area-underlined'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Form Field Borderless',

@@ -6,11 +6,11 @@
 </code-example>
 
 <code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/reactive-forms-text-area-usage.example.ts"
+    codeExampleUrl="./assets/docs/code-examples/inputs/text-area-underlined/text-area-underlined-usage.example.ts"
     title="TextArea Basic Usage (Reactive Forms)">
     <h3 class="mb-4">Output</h3>
     <ngx-fluent-design-textarea-underlined [disabled]="disableTextAreaInput" [label]="'Standard Text Area'">
-        <textarea ngxFluentDesignInput placeholder="this is a standard text area" rows="5"
+        <textarea placeholder="this is a standard text area" rows="5"
                   [formControl]="textAreaInput"></textarea>
     </ngx-fluent-design-textarea-underlined>
 
@@ -23,12 +23,12 @@
 </code-example>
 
 <code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/reactive-forms-usage-validators.example.ts"
+    codeExampleUrl="./assets/docs/code-examples/inputs/text-area-underlined/text-area-underlined-usage-validator.example.ts"
     title="Usage with Validators">
     <h3 class="mb-4">Output</h3>
     <ngx-fluent-design-textarea-underlined [disabled]="disableStandardInputWithValidator" [label]="'standard Input'">
         <textarea ngxFluentDesignInput
-                  rows="12"
+                  rows="5"
                   placeholder="this is a standard text area with a validator"
                   [formControl]="standardInputValidator">
         </textarea>
