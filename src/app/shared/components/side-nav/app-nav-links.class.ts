@@ -70,6 +70,11 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 title: 'Link Button',
                 routerLink: ['', 'calls-to-action', 'link'],
                 shouldDisplayOnLive: true
+            },
+            {
+                title: 'Action Button',
+                routerLink: ['', 'calls-to-action', 'action'],
+                shouldDisplayOnLive: true
             }
         ]
     },

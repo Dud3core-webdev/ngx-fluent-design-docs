@@ -7,12 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { StandardCtaPageComponent } from './pages/standard-cta/standard-cta-page.component';
 import { NgxFluentDesignCardModule, NgxFluentDesignCtaModule, NgxFluentDesignInputModule } from 'ngx-fluent-design';
 import { LinkButtonPageComponent } from './pages/link-button/link-button-page.component';
+import { ActionButtonPageComponent } from './pages/action-button/action-button-page.component';
 
 const DECLARATIONS: Array<any> = [
     CallsToActionPageComponent,
     CompoundCtaPageComponent,
     StandardCtaPageComponent,
-    LinkButtonPageComponent
+    LinkButtonPageComponent,
+    ActionButtonPageComponent
 ];
 
 const ROUTES: Routes = [
@@ -27,6 +29,10 @@ const ROUTES: Routes = [
     {
         path: 'link',
         component: LinkButtonPageComponent
+    },
+    {
+        path: 'action',
+        component: ActionButtonPageComponent
     }
 ];
 
