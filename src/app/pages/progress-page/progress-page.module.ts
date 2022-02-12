@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 import { RouterModule, Routes } from '@angular/router';
 import {
-    NgxFluentDesignCommonComponentsModule,
+    NgxFluentDesignSurfaceModule,
     NgxFluentDesignCtaModule,
     NgxFluentDesignProgressModule
 } from 'ngx-fluent-design';
@@ -38,7 +38,7 @@ const DECLARATIONS: Array<any> = [
 @NgModule({
     imports: [
         MarkdownModule.forChild(),
-        NgxFluentDesignCommonComponentsModule,
+        NgxFluentDesignSurfaceModule,
         NgxFluentDesignProgressModule,
         CommonModule,
         SharedComponentsModule,

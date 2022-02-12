@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IconsPageComponent } from './icons-page.component';
 import { CommonModule } from '@angular/common';
-import { NgxFluentDesignCommonComponentsModule, NgxFluentDesignIconModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import { NgxFluentDesignSurfaceModule, NgxFluentDesignIconModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { IconUsagePageComponent } from './pages/icon-usage/icon-usage-page.component';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 import { IconCreationPageComponent } from './pages/icon-creation/icon-creation-page.component';
@@ -28,7 +28,7 @@ const DECLARATIONS: Array<any> = [
     imports: [
         RouterModule.forChild(ROUTES),
         CommonModule,
-        NgxFluentDesignCommonComponentsModule,
+        NgxFluentDesignSurfaceModule,
         NgxFluentDesignIconModule,
         SharedComponentsModule,
         NgxFluentDesignNotificationModule

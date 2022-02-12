@@ -9,14 +9,16 @@ import { FormFieldPageComponent } from './pages/form-field/form-field-page.compo
 import { TogglePageComponent } from './pages/toggle/toggle-page.component';
 import { CheckboxPageComponent } from './pages/checkbox/checkbox-page.component';
 import {
-    NgxFluentDesignCommonComponentsModule,
     NgxFluentDesignCtaModule,
     NgxFluentDesignInputModule,
-    NgxFluentDesignNotificationModule
+    NgxFluentDesignNotificationModule, NgxFluentDesignSurfaceModule
 } from 'ngx-fluent-design';
 import { RadioPageComponent } from './pages/radio/radio-page.component';
 import { FormFieldUnderlinedPageComponent } from './pages/form-field-underlined/form-field-underlined-page.component';
 import { FormFieldBorderlessPageComponent } from './pages/form-field-borderless/form-field-borderless-page.component';
+import { TextAreaPageComponent } from './pages/textarea/text-area-page.component';
+import { TextAreaUnderlinedPageComponent } from './pages/textarea-underlined/text-area-underlined-page.component';
+import { TextAreaBorderlessPageComponent } from './pages/textarea-borderless/text-area-borderless-page.component';
 
 const ROUTES: Routes = [
     {
@@ -28,12 +30,24 @@ const ROUTES: Routes = [
         component: FormFieldPageComponent
     },
     {
+        path: 'text-area',
+        component: TextAreaPageComponent
+    },
+    {
         path: 'form-field-underlined',
         component: FormFieldUnderlinedPageComponent
     },
     {
+        path: 'text-area-underlined',
+        component: TextAreaUnderlinedPageComponent
+    },
+    {
         path: 'form-field-borderless',
         component: FormFieldBorderlessPageComponent
+    },
+    {
+        path: 'text-area-borderless',
+        component: TextAreaBorderlessPageComponent
     },
     {
         path: 'radio',
@@ -47,19 +61,22 @@ const ROUTES: Routes = [
 
 const DECLARATIONS: Array<any> = [
     InputsPageComponent,
-    FormFieldPageComponent,
     TogglePageComponent,
     CheckboxPageComponent,
     RadioPageComponent,
+    FormFieldPageComponent,
     FormFieldUnderlinedPageComponent,
-    FormFieldBorderlessPageComponent
+    FormFieldBorderlessPageComponent,
+    TextAreaPageComponent,
+    TextAreaUnderlinedPageComponent,
+    TextAreaBorderlessPageComponent
 ];
 
 @NgModule({
     imports: [
         MarkdownModule.forChild(),
-        NgxFluentDesignCommonComponentsModule,
         NgxFluentDesignInputModule,
+        NgxFluentDesignSurfaceModule,
         NgxFluentDesignCtaModule,
         ReactiveFormsModule,
         CommonModule,

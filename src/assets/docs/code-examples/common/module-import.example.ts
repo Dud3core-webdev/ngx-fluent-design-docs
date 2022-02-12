@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { NgxFluentDesignCommonComponentsModule } from 'ngx-fluent-design';
+import { NgxFluentDesignSurfaceModule } from 'ngx-fluent-design';
 
 @NgModule({
-    imports: [NgxFluentDesignCommonComponentsModule]
+    imports: [NgxFluentDesignSurfaceModule]
 })
 export class ModuleImportExample {}

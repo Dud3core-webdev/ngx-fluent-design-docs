@@ -16,14 +16,29 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 shouldDisplayOnLive: true
             },
             {
+                title: 'Text Area',
+                routerLink: ['', 'inputs', 'text-ara'],
+                shouldDisplayOnLive: false
+            },
+            {
                 title: 'Form Field Underlined',
                 routerLink: ['', 'inputs', 'form-field-underlined'],
                 shouldDisplayOnLive: true
             },
             {
+                title: 'Text Area Underlined',
+                routerLink: ['', 'inputs', 'text-area-underlined'],
+                shouldDisplayOnLive: false
+            },
+            {
                 title: 'Form Field Borderless',
                 routerLink: ['', 'inputs', 'form-field-borderless'],
                 shouldDisplayOnLive: true
+            },
+            {
+                title: 'Text Area Borderless',
+                routerLink: ['', 'inputs', 'text-area-borderless'],
+                shouldDisplayOnLive: false
             },
             {
                 title: 'Radio',
@@ -129,18 +144,18 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
         ]
     },
     {
-        title: 'Common',
+        title: 'Surfaces',
         shouldDisplayOnLive: true,
         subNavItems: [
             {
                 title: 'Card',
                 shouldDisplayOnLive: true,
-                routerLink: ['', 'common', 'card']
+                routerLink: ['', 'surfaces', 'card']
             },
             {
                 title: 'Sheet',
                 shouldDisplayOnLive: true,
-                routerLink: ['', 'common', 'sheet']
+                routerLink: ['', 'surfaces', 'sheet']
             }
         ]
     }

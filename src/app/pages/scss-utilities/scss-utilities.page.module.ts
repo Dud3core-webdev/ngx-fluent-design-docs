@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ScssUtilitiesPageComponent } from './scss-utilities-page.component';
 import { CommonModule } from '@angular/common';
-import { NgxFluentDesignCommonComponentsModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import { NgxFluentDesignSurfaceModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { TypographyPageComponent } from './typography/typography-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
@@ -22,7 +22,7 @@ const DECLARATIONS: Array<any> = [
 @NgModule({
     imports: [
         CommonModule,
-        NgxFluentDesignCommonComponentsModule,
+        NgxFluentDesignSurfaceModule,
         RouterModule.forChild(ROUTES),
         MarkdownModule.forChild(),
         SharedComponentsModule,

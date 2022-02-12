@@ -23,6 +23,24 @@
         (changeEvent)="disableStandardInput = !disableStandardInput">
     </ngx-fluent-design-toggle>
 </code-example>
+
+<code-example
+    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/reactive-forms-text-area-usage.example.ts"
+    title="TextArea Basic Usage (Reactive Forms)">
+    <h3 class="mb-4">Output</h3>
+    <ngx-fluent-design-form-field [disabled]="disableTextAreaInput" [label]="'Standard Text Area'">
+        <textarea ngxFluentDesignInput placeholder="this is a standard text area" rows="5"
+                  [formControl]="textAreaInput"></textarea>
+    </ngx-fluent-design-form-field>
+
+    <ngx-fluent-design-toggle
+        [label]="'Toggle disabled'"
+        [toggled]="disableTextAreaInput"
+        [inlineLabel]="true"
+        (changeEvent)="disableTextAreaInput = !disableTextAreaInput">
+    </ngx-fluent-design-toggle>
+</code-example>
+
 <code-example
     codeExampleUrl="./assets/docs/code-examples/inputs/reactive/reactive-forms-usage-validators.example.ts"
     title="Usage with Validators">
