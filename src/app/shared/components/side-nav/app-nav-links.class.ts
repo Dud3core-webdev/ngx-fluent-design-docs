@@ -17,8 +17,8 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             },
             {
                 title: 'Text Area',
-                routerLink: ['', 'inputs', 'text-ara'],
-                shouldDisplayOnLive: false
+                routerLink: ['', 'inputs', 'text-area'],
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Form Field Underlined',
