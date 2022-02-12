@@ -38,7 +38,7 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             {
                 title: 'Text Area Borderless',
                 routerLink: ['', 'inputs', 'text-area-borderless'],
-                shouldDisplayOnLive: false
+                shouldDisplayOnLive: true
             },
             {
                 title: 'Radio',
