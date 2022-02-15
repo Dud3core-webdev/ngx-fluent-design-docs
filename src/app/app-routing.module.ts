@@ -9,6 +9,8 @@ import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilitie
 import { SurfacesPageComponent } from './pages/surfaces/surfaces-page.component';
 import { AlertsPageComponent } from './pages/alerts/alerts-page.component';
 import { IconsPageComponent } from './pages/icons/icons-page.component';
+import { CanActivateDocsPagesGuard } from './shared/guards/can-activate-docs-pages.guard';
+import { ErrorsPageComponent } from './pages/errors/errors-page.component';
 
 const routes: Routes = [
     {
@@ -18,47 +20,61 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomePageComponent
+        component: HomePageComponent,
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'inputs',
         component: InputsPageComponent,
-        loadChildren: () => import('./pages/inputs-page/inputs-page.module').then((module) => module.InputsPageModule)
+        loadChildren: () => import('./pages/inputs-page/inputs-page.module').then((module) => module.InputsPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'calls-to-action',
         component: CallsToActionPageComponent,
-        loadChildren: () => import('./pages/calls-to-action-page/calls-to-action-page.module').then((module) => module.CallsToActionPageModule)
+        loadChildren: () => import('./pages/calls-to-action-page/calls-to-action-page.module').then((module) => module.CallsToActionPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'notifications',
         component: NotificationsPageComponent,
-        loadChildren: () => import('./pages/notifications-page/notifications-page.module').then((module) => module.NotificationsPageModule)
+        loadChildren: () => import('./pages/notifications-page/notifications-page.module').then((module) => module.NotificationsPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'alerts',
         component: AlertsPageComponent,
-        loadChildren: () => import('./pages/alerts/alerts-page.module').then((module) => module.AlertsPageModule)
+        loadChildren: () => import('./pages/alerts/alerts-page.module').then((module) => module.AlertsPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'progress',
         component: ProgressPageComponent,
-        loadChildren: () => import('./pages/progress-page/progress-page.module').then((module) => module.ProgressPageModule)
+        loadChildren: () => import('./pages/progress-page/progress-page.module').then((module) => module.ProgressPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'scss-utilities',
         component: ScssUtilitiesPageComponent,
-        loadChildren: () => import('./pages/scss-utilities/scss-utilities.page.module').then((module) => module.ScssUtilitiesPageModule)
+        loadChildren: () => import('./pages/scss-utilities/scss-utilities.page.module').then((module) => module.ScssUtilitiesPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'surfaces',
         component: SurfacesPageComponent,
-        loadChildren: () => import('./pages/surfaces/surfaces-page.module').then((module) => module.SurfacesPageModule)
+        loadChildren: () => import('./pages/surfaces/surfaces-page.module').then((module) => module.SurfacesPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'icons',
         component: IconsPageComponent,
-        loadChildren: () => import('./pages/icons/icons-page.module').then((module) => module.IconsPageModule)
+        loadChildren: () => import('./pages/icons/icons-page.module').then((module) => module.IconsPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
+    },
+    {
+        path: 'errors',
+        component: ErrorsPageComponent,
+        loadChildren: () => import('./pages/errors/errors-page.module').then((module) => module.ErrorsPageModule)
     }
 ];
 

@@ -23,7 +23,7 @@
 
 
 <div class="w-100 h-100 d-flex">
-    <app-navigation [navigationLinks]="navItems"></app-navigation>
+    <app-navigation *ngIf="shouldDisplayNavMenu" [navigationLinks]="navItems"></app-navigation>
     <div class="application-outlet">
         <router-outlet></router-outlet>
     </div>

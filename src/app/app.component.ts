@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { applicationNavigationLinks } from './shared/components/side-nav/app-nav-links.class';
 import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
 import { AppStatusService } from './shared/services/app-status.service';
+import { Event, NavigationEnd, Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -15,10 +16,12 @@ export class AppComponent implements OnInit, OnDestroy {
     private _appHasUpdates: boolean = false;
     private _userClosedUpdateAlert: boolean = false;
     private _userClosedOfflineAlert: boolean = false;
+    private _shouldShowNavMenu: boolean = true;
 
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _appStatusService: AppStatusService;
+    private readonly _router: Router;
 
     public get shouldDisplayUpdateAlert(): boolean {
         return this._appHasUpdates && !this._userClosedUpdateAlert;
@@ -32,8 +35,13 @@ export class AppComponent implements OnInit, OnDestroy {
         return this._navItems;
     }
 
-    constructor(appStatusService: AppStatusService) {
+    public get shouldDisplayNavMenu(): boolean {
+        return this._shouldShowNavMenu;
+    }
+
+    constructor(appStatusService: AppStatusService, router: Router) {
         this._appStatusService = appStatusService;
+        this._router = router;
     }
 
     public ngOnInit(): void {
@@ -51,6 +59,15 @@ export class AppComponent implements OnInit, OnDestroy {
                 .subscribe({
                     next: (value): void => {
                         this._appHasUpdates = value;
+                    }
+                })
+        );
+
+        this._subscriptions.add(
+            this._router.events
+                .subscribe((event: Event) => {
+                    if (event instanceof NavigationEnd) {
+                        this._shouldShowNavMenu = !event.url.includes('errors');
                     }
                 })
         );
