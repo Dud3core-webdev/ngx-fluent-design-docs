@@ -35,7 +35,7 @@ export class SideNavMobileComponent implements OnInit, OnDestroy {
 
     public readonly closeIcon: INgxFluentDesignIcon = NgxFluentDesignIconClearClose;
     public readonly customOpenIcon: INgxFluentDesignIcon = {
-        height: 10,
+        height: 12,
         width: 25,
         fill: '#FFFFFF',
         name: 'side-nav-open-icon',
