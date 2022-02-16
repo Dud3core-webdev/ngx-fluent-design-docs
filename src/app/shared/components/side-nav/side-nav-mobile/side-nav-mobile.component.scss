@@ -22,15 +22,6 @@
     &.open {
         margin: 20px 19px 10px 5px;
     }
-
-    #nav-icon1 span {
-        display: block;
-        margin: 4px;
-        height: 4px;
-        width: 25px;
-        background: #FFFFFF;
-        border-radius: 9px;
-    }
 }
 
 .overlay {
@@ -58,6 +49,7 @@
         width: 75%;
 
         .sticky-navigation {
+            padding: 24px 12px;
             top: 0;
             background: white;
             width: 75%;
@@ -74,8 +66,6 @@
 
             .components {
                 .components-links {
-                    padding: 24px 0;
-
                     .component-section {
                         display: flex;
                         flex-direction: column;
