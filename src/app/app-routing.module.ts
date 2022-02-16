@@ -10,7 +10,8 @@ import { SurfacesPageComponent } from './pages/surfaces/surfaces-page.component'
 import { AlertsPageComponent } from './pages/alerts/alerts-page.component';
 import { IconsPageComponent } from './pages/icons/icons-page.component';
 import { CanActivateDocsPagesGuard } from './shared/guards/can-activate-docs-pages.guard';
-import { ErrorsPageComponent } from './pages/errors/errors-page.component';
+import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
+import { PageNotFoundPageComponent } from './pages/errors-page/page-not-found-page/page-not-found-page.component';
 
 const routes: Routes = [
     {
@@ -74,7 +75,11 @@ const routes: Routes = [
     {
         path: 'errors',
         component: ErrorsPageComponent,
-        loadChildren: () => import('./pages/errors/errors-page.module').then((module) => module.ErrorsPageModule)
+        loadChildren: () => import('./pages/errors-page/errors-page.module').then((module) => module.ErrorsPageModule)
+    },
+    {
+        path: '**',
+        redirectTo: '/errors/not-found'
     }
 ];
 

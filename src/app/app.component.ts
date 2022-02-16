@@ -4,7 +4,6 @@ import { applicationNavigationLinks } from './shared/components/side-nav/app-nav
 import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
 import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
-import { MobileSideNavHandler } from './shared/components/side-nav/side-nav-mobile/mobile-side-nav-handler.class';
 
 @Component({
     selector: 'app-root',
@@ -22,6 +21,9 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _appStatusService: AppStatusService;
     private readonly _router: Router;
+    private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
+        '/errors/down-for-maintenance'
+    ];
 
     public get shouldDisplayUpdateAlert(): boolean {
         return this._appHasUpdates && !this._userClosedUpdateAlert;
@@ -67,7 +69,7 @@ export class AppComponent implements OnInit, OnDestroy {
             this._router.events
                 .subscribe((event: Event) => {
                     if (event instanceof NavigationEnd) {
-                        this._shouldShowNavMenu = !event.url.includes('errors');
+                        this._shouldShowNavMenu = !this._errorRoutesWhereNavShouldNotBeDisplayed.includes(event.urlAfterRedirects);
                     }
                 })
         );
