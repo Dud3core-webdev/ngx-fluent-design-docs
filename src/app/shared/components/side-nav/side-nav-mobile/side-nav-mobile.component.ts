@@ -32,6 +32,7 @@ import { map, tap } from 'rxjs/operators';
 export class SideNavMobileComponent implements OnInit {
     @Input() public sideNavLinks: ApplicationNavigationLinks = [];
     @Input() public isProdEnvironment: boolean = false;
+    @Input() public currentPackageVersion: string = '';
 
     public readonly closeIcon: INgxFluentDesignIcon = NgxFluentDesignIconClearClose;
     public readonly mobileSidenavHandler: MobileSideNavHandler = new MobileSideNavHandler(false);

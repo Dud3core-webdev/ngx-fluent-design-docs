@@ -9,4 +9,5 @@ import { ApplicationNavigationLinks } from '../app-nav-links.interface';
 export class NavDesktopComponent {
     @Input() public readonly sideNavLinks: ApplicationNavigationLinks = [];
     @Input() public readonly isProdEnvironment: boolean = false;
+    @Input() public readonly currentPackageVersion: string = '';
 }
