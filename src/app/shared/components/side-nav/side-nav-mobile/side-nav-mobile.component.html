@@ -1,4 +1,8 @@
-<div (click)="handleCloseClickEvent()" class="mobile-nav-menu-button"  [ngStyle]="{ background: mobileSidenavHandler.isOpen ? 'inherit' : '#0078D4' }">
+<div class="mobile-nav-menu-button"
+     (click)="handleCloseClickEvent()"
+     [ngClass]="{ 'open' : mobileSidenavHandler.isOpen }"
+     [ngStyle]="{ background: mobileSidenavHandler.isOpen ? 'inherit' : '#0078D4' }">
+
     <ngx-fluent-design-icon [icon]="mobileSidenavHandler.isOpen ? closeIcon : customOpenIcon"></ngx-fluent-design-icon>
 </div>
 

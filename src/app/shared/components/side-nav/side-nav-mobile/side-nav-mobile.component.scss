@@ -19,6 +19,10 @@
     padding-left: 8px;
     z-index: 9000;
 
+    &.open {
+        margin: 20px 19px 10px 5px;
+    }
+
     #nav-icon1 span {
         display: block;
         margin: 4px;
