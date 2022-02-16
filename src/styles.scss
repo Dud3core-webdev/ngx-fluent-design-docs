@@ -7,6 +7,10 @@
 @import "~ngx-fluent-design/src/lib/styles";
 @import "app/styles/typography";
 
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: #f3f2f1 !important;
+}
+
 body { margin: 0; background: #faf9f8}
 
 .c-pointer {

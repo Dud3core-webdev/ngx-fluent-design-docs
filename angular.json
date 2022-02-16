@@ -33,12 +33,12 @@
                         ],
                         "styles": [
                             "src/styles.scss",
-                            "node_modules/prismjs/themes/prism-okaidia.css"
+                            "node_modules/prismjs/themes/prism.css"
                         ],
                         "scripts": [
                             "node_modules/marked/lib/marked.js",
                             "node_modules/prismjs/prism.js",
-                            "node_modules/prismjs/components/prism-csharp.min.js",
+                            "node_modules/prismjs/components/prism-scss.js",
                             "node_modules/prismjs/components/prism-typescript.min.js"
                         ],
                         "serviceWorker": true,
