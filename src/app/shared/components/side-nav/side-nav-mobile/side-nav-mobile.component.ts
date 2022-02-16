@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { ApplicationNavigationLinks } from '../app-nav-links.interface';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { INgxFluentDesignIcon, NgxFluentDesignIconClearClose } from 'ngx-fluent-design';
@@ -29,7 +29,7 @@ import { map, tap } from 'rxjs/operators';
         ])
     ]
 })
-export class SideNavMobileComponent implements OnInit {
+export class SideNavMobileComponent implements OnInit, OnDestroy {
     @Input() public sideNavLinks: ApplicationNavigationLinks = [];
     @Input() public isProdEnvironment: boolean = false;
     @Input() public currentPackageVersion: string = '';
@@ -65,6 +65,10 @@ export class SideNavMobileComponent implements OnInit {
                 )
                 .subscribe()
         );
+    }
+
+    public ngOnDestroy(): void {
+        this._subscriptions.unsubscribe();
     }
 
     public handleCloseClickEvent(): void {
