@@ -1,0 +1,21 @@
+.component-api-table {
+    background: #f3f2f1;
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+        border: 1px solid transparent;
+        border-radius: 2px;
+    }
+
+    td, th {
+        border: 1px solid transparent;
+        text-align: left;
+        padding: 8px;
+        border-radius: 2px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #FFFFFF;
+    }
+}

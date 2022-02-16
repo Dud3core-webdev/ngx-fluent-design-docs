@@ -1,0 +1,19 @@
+<ngx-fluent-design-card>
+    <h3 class="pane-header">API</h3>
+    <section class="component-api-table">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Is Required</th>
+                <th>Description</th>
+            </tr>
+            <tr *ngFor="let apiData of data">
+                <td *ngIf="apiData.isInput"><code>@Input() {{apiData.name}}</code></td>
+                <td *ngIf="apiData.isOutput"><code>@Output() {{apiData.name}}</code></td>
+                <td *ngIf="!apiData.isInput && !apiData.isOutput"><code>{{apiData.name}}</code></td>
+                <td>{{apiData.isRequired | json}}</td>
+                <td>{{apiData.description}}</td>
+            </tr>
+        </table>
+    </section>
+</ngx-fluent-design-card>

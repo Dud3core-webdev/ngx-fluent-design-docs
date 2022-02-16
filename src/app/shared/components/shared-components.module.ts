@@ -4,9 +4,11 @@ import { CodeExampleComponent } from './code-example/code-example.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { NgxFluentDesignSurfaceModule, NgxFluentDesignCtaModule } from 'ngx-fluent-design';
 import { AppNavigationModule } from './side-nav/app-navigation.module';
+import { ComponentApiTableComponent } from './component-api-table/component-api-table.component';
 
 const DECLARATIONS: Array<any> = [
-    CodeExampleComponent
+    CodeExampleComponent,
+    ComponentApiTableComponent
 ];
 
 @NgModule({
