@@ -9,8 +9,6 @@
 .mobile-nav-menu-button {
     position: fixed;
     margin: 20px 19px 10px 15px;
-    z-index: 1;
-    background: #0078D4;
     opacity: 0.7;
     border-radius: 50%;
     height: 25px;
@@ -19,6 +17,7 @@
     align-items: center;
     justify-content: center;
     padding-left: 8px;
+    z-index: 9000;
 
     #nav-icon1 span {
         display: block;

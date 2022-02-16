@@ -1,5 +1,5 @@
-<div [hidden]="mobileSidenavHandler.isOpen" (click)="mobileSidenavHandler.open()" class="mobile-nav-menu-button">
-    <ngx-fluent-design-icon [icon]="customOpenIcon"></ngx-fluent-design-icon>
+<div (click)="handleCloseClickEvent()" class="mobile-nav-menu-button"  [ngStyle]="{ background: mobileSidenavHandler.isOpen ? 'inherit' : '#0078D4' }">
+    <ngx-fluent-design-icon [icon]="mobileSidenavHandler.isOpen ? closeIcon : customOpenIcon"></ngx-fluent-design-icon>
 </div>
 
 <div class="overlay" (click)="mobileSidenavHandler.close()" [@slideInRight]="mobileSidenavHandler.isOpen ? 'show' : 'hide'">
@@ -17,8 +17,6 @@
                 <div class="components my-3">
                     <div class="d-flex w-100 justify-content-between align-items-center">
                         <h4 class="pane-header">Components</h4>
-                        <ngx-fluent-design-icon (click)="mobileSidenavHandler.close()"
-                                                [icon]="closeIcon"></ngx-fluent-design-icon>
                     </div>
                     <hr>
                     <div class="components-links d-flex flex-column">
