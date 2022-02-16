@@ -4,6 +4,7 @@ import { applicationNavigationLinks } from './shared/components/side-nav/app-nav
 import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
 import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
+import { MobileSideNavHandler } from './shared/components/side-nav/side-nav-mobile/mobile-side-nav-handler.class';
 
 @Component({
     selector: 'app-root',
@@ -11,7 +12,6 @@ import { Event, NavigationEnd, Router } from '@angular/router';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-
     private _appIsOnline: boolean = true;
     private _appHasUpdates: boolean = false;
     private _userClosedUpdateAlert: boolean = false;

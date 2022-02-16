@@ -1,4 +1,4 @@
-<div *ngIf="!isNavMenuOpen" (click)="setIsNavMenuOpen(true)" class="mobile-nav-menu-button">
+<div [hidden]="mobileSidenavHandler.isOpen" (click)="mobileSidenavHandler.open()" class="mobile-nav-menu-button">
     <label id="nav-icon1">
         <span></span>
         <span></span>
@@ -6,35 +6,39 @@
     </label>
 </div>
 
-<ngx-fluent-design-sheet [hidden]="!isNavMenuOpen">
-    <div class="sticky-navigation">
-        <div class="w-100 justify-content-center d-flex">
-            <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg" />
-        </div>
-        <div class="px-4 pt-5 h-100">
-            <section class="mt-2">
-                <a ngxFluentDesignLinkButton class="mt-3" routerLinkActive="active" [routerLink]="['', 'home']">Home</a>
-            </section>
-            <div class="components my-3">
-                <div class="d-flex w-100 justify-content-between align-items-center">
-                    <h4 class="pane-header">Components</h4>
-                    <ngx-fluent-design-icon (click)="setIsNavMenuOpen(false)" [icon]="closeIcon"></ngx-fluent-design-icon>
-                </div>
-                <hr>
-                <div class="components-links d-flex flex-column">
-                    <section *ngFor="let item of sideNavLinks">
-                        <section class="component-section" *ngIf="item.shouldDisplayOnLive || !isProdEnvironment">
-                            <h5 class="subject-title">{{item.title}}</h5>
-                            <ng-container *ngFor="let link of item.subNavItems">
-                                <a ngxFluentDesignLinkButton *ngIf="link.shouldDisplayOnLive || !isProdEnvironment"
-                                   routerLinkActive="active"
-                                   [routerLink]="link.routerLink">{{link.title}}
-                                </a>
-                            </ng-container>
+<div class="overlay" (click)="mobileSidenavHandler.close()" [@slideInRight]="mobileSidenavHandler.isOpen ? 'show' : 'hide'">
+    <div class="overlay-content" (click)="$event.stopPropagation()">
+        <div class="sticky-navigation">
+            <div class="w-100 justify-content-center d-flex">
+                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg"/>
+            </div>
+            <div class="px-4 pt-5 h-100">
+                <section class="mt-2">
+                    <a ngxFluentDesignLinkButton class="mt-3" routerLinkActive="active"
+                       [routerLink]="['', 'home']">Home</a>
+                </section>
+                <div class="components my-3">
+                    <div class="d-flex w-100 justify-content-between align-items-center">
+                        <h4 class="pane-header">Components</h4>
+                        <ngx-fluent-design-icon (click)="mobileSidenavHandler.close()"
+                                                [icon]="closeIcon"></ngx-fluent-design-icon>
+                    </div>
+                    <hr>
+                    <div class="components-links d-flex flex-column">
+                        <section *ngFor="let item of sideNavLinks">
+                            <section class="component-section" *ngIf="item.shouldDisplayOnLive || !isProdEnvironment">
+                                <h5 class="subject-title">{{item.title}}</h5>
+                                <ng-container *ngFor="let link of item.subNavItems">
+                                    <a ngxFluentDesignLinkButton *ngIf="link.shouldDisplayOnLive || !isProdEnvironment"
+                                       routerLinkActive="active"
+                                       [routerLink]="link.routerLink">{{link.title}}
+                                    </a>
+                                </ng-container>
+                            </section>
                         </section>
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</ngx-fluent-design-sheet>
+</div>
