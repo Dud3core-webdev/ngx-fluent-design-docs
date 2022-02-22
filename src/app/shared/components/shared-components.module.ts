@@ -5,10 +5,12 @@ import { MarkdownModule } from 'ngx-markdown';
 import { NgxFluentDesignSurfaceModule, NgxFluentDesignCtaModule } from 'ngx-fluent-design';
 import { AppNavigationModule } from './side-nav/app-navigation.module';
 import { ComponentApiTableComponent } from './component-api-table/component-api-table.component';
+import { ScssPaletteGenerationComponent } from './scss-pallete-generation-component/scss-palette-generation.component';
 
 const DECLARATIONS: Array<any> = [
     CodeExampleComponent,
-    ComponentApiTableComponent
+    ComponentApiTableComponent,
+    ScssPaletteGenerationComponent
 ];
 
 @NgModule({
