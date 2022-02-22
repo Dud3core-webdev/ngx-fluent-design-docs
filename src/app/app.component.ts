@@ -1,9 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { applicationNavigationLinks } from './shared/components/side-nav/app-nav-links.class';
 import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
 import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
     selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _appStatusService: AppStatusService;
     private readonly _router: Router;
+    private readonly _document: Document;
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
         '/errors/down-for-maintenance'
     ];
@@ -41,9 +43,10 @@ export class AppComponent implements OnInit, OnDestroy {
         return this._shouldShowNavMenu;
     }
 
-    constructor(appStatusService: AppStatusService, router: Router) {
+    constructor(appStatusService: AppStatusService, router: Router, @Inject(DOCUMENT) document: Document) {
         this._appStatusService = appStatusService;
         this._router = router;
+        this._document = document;
     }
 
     public ngOnInit(): void {
@@ -70,6 +73,7 @@ export class AppComponent implements OnInit, OnDestroy {
                 .subscribe((event: Event) => {
                     if (event instanceof NavigationEnd) {
                         this._shouldShowNavMenu = !this._errorRoutesWhereNavShouldNotBeDisplayed.includes(event.urlAfterRedirects);
+                        this._document.documentElement.scrollTo(0, 0);
                     }
                 })
         );

@@ -11,7 +11,7 @@
     background: #f3f2f1 !important;
 }
 
-body { margin: 0; background: #faf9f8}
+body { margin: 0; background: #faf9f8;     scroll-behavior: smooth;}
 
 .c-pointer {
     cursor: pointer;
@@ -19,6 +19,7 @@ body { margin: 0; background: #faf9f8}
 
 *::-webkit-scrollbar {
     width: 8px;
+    scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar-track {
