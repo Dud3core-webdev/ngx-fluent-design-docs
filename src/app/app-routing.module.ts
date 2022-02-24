@@ -11,17 +11,17 @@ import { AlertsPageComponent } from './pages/alerts/alerts-page.component';
 import { IconsPageComponent } from './pages/icons/icons-page.component';
 import { CanActivateDocsPagesGuard } from './shared/guards/can-activate-docs-pages.guard';
 import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
-import { PageNotFoundPageComponent } from './pages/errors-page/page-not-found-page/page-not-found-page.component';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'home/welcome',
         pathMatch: 'full'
     },
     {
         path: 'home',
         component: HomePageComponent,
+        loadChildren: () => import('./pages/home-page/home-page.module').then((module) => module.HomePageModule),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {

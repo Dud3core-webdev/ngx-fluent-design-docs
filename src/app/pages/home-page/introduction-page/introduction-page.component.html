@@ -1,0 +1,79 @@
+<div class="w-100 container-fluid py-4">
+    <div class="welcome mb-4">
+        <div class="introduction-container d-flex w-100 flex-column">
+            <div class="w-100 justify-content-center d-flex d-md-none">
+                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg"/>
+            </div>
+            <p class="text-center page-title">An open-source, Angular implementation of Microsoft's Fluent Design
+                Library</p>
+        </div>
+    </div>
+
+    <ngx-fluent-design-card>
+        <div class="welcome">
+            <div class="note mb-3">
+                <ngx-fluent-design-message-bar
+                    messageBarType="warning">
+                    This library has only so far been tested with Angular 11. It may work with newer and some older
+                    versions of Angular however.
+                </ngx-fluent-design-message-bar>
+                <p>View More:</p>
+                <ul>
+                    <li><a class="fluent-design-link" rel="noreferrer" target="_blank"
+                           href="https://www.npmjs.com/package/ngx-fluent-design">NPM</a></li>
+                    <li><a class="fluent-design-link" rel="noreferrer" target="_blank"
+                           href="https://github.com/Dud3core-webdev/ngx-fluent-design-ui">Github</a></li>
+                </ul>
+            </div>
+        </div>
+    </ngx-fluent-design-card>
+
+    <ngx-fluent-design-card>
+        <div class="welcome">
+            <h2 class="pane-header bold">Getting started</h2>
+            <p>To get started with this library, run either:</p> <br>
+            <code>yarn add ngx-fluent-design</code><br>
+            <p>or</p>
+            <code>npm i ngx-fluent-design --save</code>
+            <p>to install the package locally.</p>
+        </div>
+    </ngx-fluent-design-card>
+
+    <ngx-fluent-design-card>
+        <div class="welcome">
+            <h2 class="pane-header bold">Setup</h2>
+
+            <ngx-fluent-design-message-bar messageBarType="info">
+                You can build your own theme by heading to
+                <a target="_blank"
+                   rel="noreferrer"
+                   href="https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/index.html"
+                   class="fluent-design-link metadata">Microsoft's Fluent Design Theme Builder</a>
+            </ngx-fluent-design-message-bar>
+
+            <section>
+                <h3 class="subject-title bold">Import BrowserAnimationsModule</h3>
+                <p>Make sure you have imported the <code>BrowserAnimationsModule</code> in your app module</p>
+                <markdown lineNumbers
+                          src="./assets/docs/code-examples/setup/browser-animations-module-import.example.ts"></markdown>
+            </section>
+
+            <section>
+                <h3 class="subject-title bold">Import default Styles</h3>
+                <p>You can either import the default stylesheet into your project: Simply add this to your main stylesheet</p>
+                <markdown lineNumbers src="./assets/docs/code-examples/setup/import-styles.example.scss"></markdown>
+            </section>
+            <p>and this will set all components to the default color pallet and import all the SCSS utilities used to build this library. You can also create your own
+                pallet by setting the following css variables:</p>
+            <section class="my-3">
+                <ngx-fluent-design-message-bar messageBarType="info">
+                    You can set these variables with or without importing the default stylesheet. It is recommended that
+                    you import the default stylesheet if you are not planning to set your own default variables though.
+                </ngx-fluent-design-message-bar>
+            </section>
+            <markdown lineNumbers src="./assets/docs/code-examples/setup/root-styles.example.scss"></markdown>
+        </div>
+    </ngx-fluent-design-card>
+</div>
+
+

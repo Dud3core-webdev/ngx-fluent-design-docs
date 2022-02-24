@@ -1,0 +1,106 @@
+<div class="w-100 container-fluid py-4">
+    <div class="welcome mb-4">
+        <div class="introduction-container d-flex w-100 flex-column">
+            <div class="w-100 justify-content-center d-flex d-md-none">
+                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg"/>
+            </div>
+            <p class="text-center page-title">An open-source, Angular implementation of Microsoft's Fluent Design
+                Library</p>
+        </div>
+
+        <ngx-fluent-design-card>
+            <h3>Palette generator.</h3>
+            <p>Use this form to generate your ngx fluent design scss variables</p>
+
+            <small>
+                We automatically default to rgb values as we require them for some parts of this library,
+                you are more than welcome to use hex. However, you may notice that some styles, like opaque backgrounds are "broken"
+            </small>
+
+            <form [formGroup]="paletteForm" class="my-3">
+                <ngx-fluent-design-form-field label="themeDarker">
+                    <input formControlName="themeDarker" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themeDark">
+                    <input formControlName="themeDark" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themeDarkAlt">
+                    <input formControlName="themeDarkAlt" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themePrimary">
+                    <input formControlName="themePrimary" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themeSecondary">
+                    <input formControlName="themeSecondary" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themeTertiary">
+                    <input formControlName="themeLight" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themeLighter">
+                    <input formControlName="themeLighter" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="themeLighterAlt">
+                    <input formControlName="themeLighterAlt" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="black">
+                    <input formControlName="black" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralDark">
+                    <input formControlName="neutralDark" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralPrimary">
+                    <input formControlName="neutralPrimary" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralPrimaryAlt">
+                    <input formControlName="neutralPrimaryAlt" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralSecondary">
+                    <input formControlName="neutralSecondary" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralTertiary">
+                    <input formControlName="neutralTertiary" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralTertiaryAlt">
+                    <input formControlName="neutralTertiaryAlt" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralQuaternaryAlt">
+                    <input formControlName="neutralQuaternaryAlt" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralLight">
+                    <input formControlName="neutralLight" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralLighter">
+                    <input formControlName="neutralLighter" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+
+                <ngx-fluent-design-form-field label="neutralLighterAlt">
+                    <input formControlName="neutralLighterAlt" ngxFluentDesignInput />
+                </ngx-fluent-design-form-field>
+            </form>
+
+            <ngx-fluent-design-compound-button (clicked)="generateStyles()" [disabled]="paletteForm.invalid || generatingStyles">
+                <ngx-fluent-design-spinner *ngIf="generatingStyles" [label]="'Generating styles'"></ngx-fluent-design-spinner>
+                <span *ngIf="!generatingStyles">Download Styles</span>
+            </ngx-fluent-design-compound-button>
+            <a #download></a>
+        </ngx-fluent-design-card>
+    </div>
+</div>
+

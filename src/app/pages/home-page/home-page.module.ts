@@ -1,20 +1,49 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgxFluentDesignSurfaceModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import {
+    NgxFluentDesignSurfaceModule,
+    NgxFluentDesignNotificationModule,
+    NgxFluentDesignInputModule,
+    NgxFluentDesignCtaModule, NgxFluentDesignProgressModule
+} from 'ngx-fluent-design';
+import { PaletteGenerationPageComponent } from './palette-generation-page/palette-generation-page.component';
+import { RouterModule, Routes } from '@angular/router';
+import { IntroductionPageComponent } from './introduction-page/introduction-page.component';
+
+const DECLARATIONS: Array<any> = [
+    PaletteGenerationPageComponent,
+    IntroductionPageComponent,
+    HomePageComponent,
+];
+
+const ROUTES: Routes = [
+    {
+        path: 'welcome',
+        component: IntroductionPageComponent
+    },
+    {
+        path: 'generate-palette',
+        component: PaletteGenerationPageComponent
+    }
+];
 
 @NgModule({
     imports: [
         FormsModule,
+        ReactiveFormsModule,
         NgxFluentDesignSurfaceModule,
         NgxFluentDesignNotificationModule,
         CommonModule,
-        MarkdownModule.forChild()
+        RouterModule.forChild(ROUTES),
+        MarkdownModule.forChild(),
+        NgxFluentDesignInputModule,
+        NgxFluentDesignCtaModule,
+        NgxFluentDesignProgressModule
     ],
-    declarations: [
-        HomePageComponent
-    ]
+    declarations: [...DECLARATIONS],
+    exports: [...DECLARATIONS]
 })
 export class HomePageModule {}
