@@ -10,7 +10,8 @@ import { map, tap } from 'rxjs/operators';
 })
 export class PaletteGenerationPageComponent {
 
-    @ViewChild('download') private readonly _downloadAnchor: ElementRef;
+    @ViewChild('download')
+    private readonly _downloadAnchor: ElementRef;
 
     public readonly paletteForm: FormGroup;
     public generatingStyles: boolean = false;
@@ -32,7 +33,8 @@ export class PaletteGenerationPageComponent {
     }
 
     private static createFileFromString(cssVars: string): File {
-        return new File([cssVars], 'styles.scss', {
+        const fullBlob: string = `:root {\n${cssVars}\n}`;
+        return new File([fullBlob], 'styles.scss', {
             type: 'SCSS Style Sheet'
         });
     }
