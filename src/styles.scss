@@ -11,7 +11,15 @@
     background: #f3f2f1 !important;
 }
 
-body { margin: 0; background: var(--application-background) !important; scroll-behavior: smooth;}
+body {
+    margin: 0;
+    background: var(--application-background) !important;
+    scroll-behavior: smooth;
+
+    code {
+        color: $ngx-fluent-design-foreground-neutral-primary
+    }
+}
 
 .c-pointer {
     cursor: pointer;
