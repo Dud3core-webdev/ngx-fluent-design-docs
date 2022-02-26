@@ -11,7 +11,7 @@
     background: #f3f2f1 !important;
 }
 
-body { margin: 0; background: #faf9f8;     scroll-behavior: smooth;}
+body { margin: 0; background: var(--application-background) !important; scroll-behavior: smooth;}
 
 .c-pointer {
     cursor: pointer;

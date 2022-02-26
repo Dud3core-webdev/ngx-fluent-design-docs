@@ -20,10 +20,12 @@
     </ngx-fluent-design-message-bar>
 </section>
 
-
 <div class="w-100 h-100 d-flex">
     <app-navigation *ngIf="shouldDisplayNavMenu" [navigationLinks]="navItems"></app-navigation>
     <div class="application-outlet">
+        <section class="my-3 p-3">
+            <ngx-fluent-design-toggle (change)="toggleTheme()" [label]="'Toggle dark theme'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>
+        </section>
         <router-outlet></router-outlet>
     </div>
 </div>

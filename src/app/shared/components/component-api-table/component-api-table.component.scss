@@ -1,5 +1,7 @@
+@import "~ngx-fluent-design/src/lib/styles/variables";
+
 .component-api-table {
-    background: #f3f2f1;
+    background: var(--application-background);
     width: 100%;
     overflow-x: auto;
 
@@ -7,6 +9,7 @@
         border: 1px solid transparent;
         border-radius: 2px;
         width: 100%;
+        color: $ngx-fluent-design-foreground-neutral-primary;
     }
 
     td, th {
@@ -17,6 +20,6 @@
     }
 
     tr:nth-child(even) {
-        background-color: #FFFFFF;
+        background-color: $ngx-fluent-design-foreground-white;
     }
 }

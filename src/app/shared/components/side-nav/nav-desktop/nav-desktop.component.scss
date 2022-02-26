@@ -1,7 +1,9 @@
+@import "~ngx-fluent-design/src/lib/styles/variables";
+
 .sticky-navigation {
     width: 328px;
     padding: 0;
-    background-color: white;
+    background: $ngx-fluent-design-foreground-white;
     height: 100vh;
 
     .components {
@@ -11,7 +13,7 @@
         }
 
         top: 0;
-        background-color: white;
+        background-color: $ngx-fluent-design-foreground-white;
         width: 328px;
         position: fixed;
         height: 100%;

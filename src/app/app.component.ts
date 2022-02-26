@@ -1,4 +1,4 @@
-import { Component, ElementRef, Inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { applicationNavigationLinks } from './shared/components/side-nav/app-nav-links.class';
 import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
@@ -6,6 +6,7 @@ import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
+import { ThemeSwitcherService, ThemeType } from './shared/services/theme/theme-switcher.service';
 
 @Component({
     selector: 'app-root',
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _appStatusService: AppStatusService;
+    private readonly _themeService: ThemeSwitcherService;
     private readonly _router: Router;
     private readonly _document: Document;
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
@@ -40,10 +42,18 @@ export class AppComponent implements OnInit, OnDestroy {
         return this._shouldShowNavMenu;
     }
 
-    constructor(appStatusService: AppStatusService, router: Router, @Inject(DOCUMENT) document: Document) {
+    public get isNormalTheme(): boolean {
+        return this._themeService.isNormalTheme;
+    }
+
+    constructor(appStatusService: AppStatusService,
+                router: Router,
+                @Inject(DOCUMENT) document: Document,
+                themeService: ThemeSwitcherService) {
         this._appStatusService = appStatusService;
         this._router = router;
         this._document = document;
+        this._themeService = themeService;
     }
 
     public ngOnInit(): void {
@@ -88,6 +98,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
     public closeOfflineAlertMessage(): void {
         this._userClosedOfflineAlert = true;
+    }
+
+    public toggleTheme(): void {
+        if (this.isNormalTheme) {
+            this._themeService.theme = ThemeType.DARK;
+        } else {
+            this._themeService.theme = ThemeType.LIGHT;
+        }
     }
 
 }

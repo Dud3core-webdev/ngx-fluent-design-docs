@@ -10,7 +10,7 @@ import { SharedComponentsModule } from './shared/components/shared-components.mo
 import { CallsToActionPageModule } from './pages/calls-to-action-page/calls-to-action-page.module';
 import { WINDOW_PROVIDERS } from './shared/factories/window.factory';
 import { NotificationsPageModule } from './pages/notifications-page/notifications-page.module';
-import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import { NgxFluentDesignInputModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProgressPageModule } from './pages/progress-page/progress-page.module';
@@ -40,7 +40,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             // Register the ServiceWorker as soon as the app is stable
             // or after 30 seconds (whichever comes first).
             registrationStrategy: 'registerWhenStable:30000'
-        })
+        }),
+        NgxFluentDesignInputModule
     ],
     providers: [WINDOW_PROVIDERS],
     bootstrap: [AppComponent]

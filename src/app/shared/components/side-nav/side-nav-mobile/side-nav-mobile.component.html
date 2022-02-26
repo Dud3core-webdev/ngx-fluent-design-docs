@@ -3,7 +3,7 @@
      [ngClass]="{ 'open' : mobileSidenavHandler.isOpen }"
      [ngStyle]="{ background: mobileSidenavHandler.isOpen ? 'inherit' : '#0078D4' }">
 
-    <ngx-fluent-design-icon [icon]="mobileSidenavHandler.isOpen ? closeIcon : customOpenIcon"></ngx-fluent-design-icon>
+    <ngx-fluent-design-icon [ngxFluentDesignCssVariableName]="'--ngx-fluent-design-foreground-white'" [icon]="mobileSidenavHandler.isOpen ? closeIcon : customOpenIcon"></ngx-fluent-design-icon>
 </div>
 
 <div class="overlay" (click)="mobileSidenavHandler.close()" [@slideInRight]="mobileSidenavHandler.isOpen ? 'show' : 'hide'">
