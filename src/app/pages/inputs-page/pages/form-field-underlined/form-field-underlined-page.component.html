@@ -1,30 +1,10 @@
 <h2 class="page-title">Form Field Underlined</h2>
 
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/ngx-fluent-design-input.interface.example.ts"
-    title="API"
-    [isUsageDocumentation]="false">
-</code-example>
-
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/form-field-underlined/reactive-forms-usage.example.ts"
-    title="Basic Usage (Reactive Forms):">
-    <h3 class="mb-4">Output</h3>
-    <ngx-fluent-design-form-field-underlined [disabled]="disableStandardInput" [label]="'Underlined Input'">
-        <input ngxFluentDesignInput placeholder="this is an underlined input" [formControl]="standardInput">
-    </ngx-fluent-design-form-field-underlined>
-
-    <ngx-fluent-design-toggle
-        [label]="'Toggle disabled'"
-        [toggled]="disableStandardInput"
-        [inlineLabel]="true"
-        (changeEvent)="disableStandardInput = !disableStandardInput">
-    </ngx-fluent-design-toggle>
-</code-example>
+<component-api-table [data]="apiData"></component-api-table>
 
 <code-example
     codeExampleUrl="./assets/docs/code-examples/inputs/form-field-underlined/reactive-forms-usage-validators.example.ts"
-    title="Usage with Validators">
+    title="Usage">
     <h3 class="mb-4">Output</h3>
     <ngx-fluent-design-form-field-underlined [disabled]="disableStandardInputWithValidator" [label]="'standard Input'">
         <input ngxFluentDesignInput placeholder="this is a standard text area with a validator"

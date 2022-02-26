@@ -7,7 +7,6 @@ import { NotificationsPageComponent } from './pages/notifications-page/notificat
 import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
 import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilities-page.component';
 import { SurfacesPageComponent } from './pages/surfaces/surfaces-page.component';
-import { AlertsPageComponent } from './pages/alerts/alerts-page.component';
 import { IconsPageComponent } from './pages/icons/icons-page.component';
 import { CanActivateDocsPagesGuard } from './shared/guards/can-activate-docs-pages.guard';
 import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
@@ -40,12 +39,6 @@ const routes: Routes = [
         path: 'notifications',
         component: NotificationsPageComponent,
         loadChildren: () => import('./pages/notifications-page/notifications-page.module').then((module) => module.NotificationsPageModule),
-        canActivate: [CanActivateDocsPagesGuard]
-    },
-    {
-        path: 'alerts',
-        component: AlertsPageComponent,
-        loadChildren: () => import('./pages/alerts/alerts-page.module').then((module) => module.AlertsPageModule),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {

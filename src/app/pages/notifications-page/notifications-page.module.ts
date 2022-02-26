@@ -3,7 +3,13 @@ import { NotificationsPageComponent } from './notifications-page.component';
 import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MessageBarPageComponent } from './pages/message-bar/message-bar-page.component';
-import { NgxFluentDesignSurfaceModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import {
+    NgxFluentDesignSurfaceModule,
+    NgxFluentDesignNotificationModule,
+    NgxFluentDesignCtaModule,
+    NgxFluentDesignInputModule
+} from 'ngx-fluent-design';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const ROUTES: Routes = [
     {
@@ -22,7 +28,10 @@ const DECLARATIONS = [
         NgxFluentDesignNotificationModule,
         NgxFluentDesignSurfaceModule,
         SharedComponentsModule,
-        RouterModule.forChild(ROUTES)
+        RouterModule.forChild(ROUTES),
+        NgxFluentDesignCtaModule,
+        NgxFluentDesignInputModule,
+        ReactiveFormsModule
     ],
     declarations: [DECLARATIONS]
 })

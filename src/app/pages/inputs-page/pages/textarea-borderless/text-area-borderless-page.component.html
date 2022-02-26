@@ -4,15 +4,12 @@
         It is recommended that you add your own error messaging to this input type as there will be no indicator for errors
     </ngx-fluent-design-message-bar>
 </section>
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/ngx-fluent-design-input.interface.example.ts"
-    title="API"
-    [isUsageDocumentation]="false">
-</code-example>
+
+<component-api-table [data]="textareaApiData"></component-api-table>
 
 <code-example
     codeExampleUrl="./assets/docs/code-examples/inputs/text-area-borderless/text-area-borderless-usage.example.ts"
-    title="TextArea Basic Usage (Reactive Forms)">
+    title="Usage">
     <ngx-fluent-design-textarea-borderless [disabled]="disableTextAreaInput">
         <textarea placeholder="this is a standard text area" rows="5"
                   [formControl]="textAreaInput"></textarea>

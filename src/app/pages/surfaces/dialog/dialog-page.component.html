@@ -1,0 +1,23 @@
+<h2 class="page-title">Dialog</h2>
+
+<component-api-table [data]="apiData">
+    <section class="mt-5">
+        <ngx-fluent-design-button type="primary" (clicked)="handler.open()">
+            Click Here to launch a dialog
+        </ngx-fluent-design-button>
+    </section>
+</component-api-table>
+
+<code-example [isUsageDocumentation]="true"
+              codeExampleUrl="./assets/docs/code-examples/alerts/alert-usage.example.ts">
+</code-example>
+
+<ngx-fluent-design-dialog header="Tadaaaaaa"
+                          primaryActionName="Close"
+                          [canDismissWithOuterContent]="true"
+                          [handler]="handler"
+                          [displayCloseIcon]="true"
+                          (primaryActionClicked)="handler.close()">
+    <p>Nice! This is a dialog component</p>
+</ngx-fluent-design-dialog>
+

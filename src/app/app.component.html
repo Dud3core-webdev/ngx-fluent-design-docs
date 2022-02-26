@@ -1,12 +1,11 @@
 <section class="top-alert">
     <ngx-fluent-design-message-bar
-        *ngIf="shouldDisplayUpdateAlert"
         class="alert-component"
         [canDismiss]="true"
-        [displayActions]="true"
         [actionName]="'Reload'"
+        [handler]="appUpdatesMessageBarHandler"
         (actionClicked)="reloadWindow()"
-        (closeClicked)="closeUpdateMessage()"
+        (closeClicked)="appUpdatesMessageBarHandler.close()"
         messageBarType="success">
             It looks like there might be an update for this application, reload the page to get the latest updates
     </ngx-fluent-design-message-bar>

@@ -9,7 +9,7 @@ import { IApplicationStatus } from '../types/application-status.interface';
     providedIn: 'root'
 })
 export class AppStatusService {
-    public serviceWorkerUpdates$: BehaviorSubject<any> = new BehaviorSubject<any>('');
+    public serviceWorkerUpdates$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
     private readonly _updates: SwUpdate;
     private readonly _window: Window;

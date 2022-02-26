@@ -1,44 +1,97 @@
+<div class="no-container">
+    <ngx-fluent-design-message-bar [canDismiss]="true"
+                                   [actionName]="'Click me'"
+                                   [handler]="handler"
+                                   (actionClicked)="alert()"
+                                   [messageBarType]="messageBarName.value ? messageBarName.value : 'success'"
+                                   (closeClicked)="handler.close()"
+                                   [fixed]="true">
+        Here is a {{messageBarName.value}} fixed alert
+    </ngx-fluent-design-message-bar>
+</div>
+
 <h2 class="page-title">Message Bar</h2>
 
-
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/notifications/message-bar/message-bar-api.example.ts"
-    title="API"
-    [isUsageDocumentation]="false">
-</code-example>
+<component-api-table [data]="apiData"></component-api-table>
 
 <ngx-fluent-design-card>
     <h3>Examples</h3>
     <div class="d-flex flex-column w-100">
         <div class="d-flex flex-column justify-content-between my-4 align-middle">
             <h4 class="mb-4">No actions</h4>
-            <ngx-fluent-design-message-bar class="mb-3" [multiLine]="true" [displayActions]="false" messageBarType="info">Here is an info alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [multiLine]="true" [displayActions]="false" messageBarType="blocked">Here is a blocked alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [multiLine]="true" [displayActions]="false" messageBarType="severe-warning">Here is a severe warning</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [multiLine]="true" [displayActions]="false" messageBarType="error">Here is an error alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [multiLine]="true" [displayActions]="false" messageBarType="success">Here is a success alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [multiLine]="true" [displayActions]="false" messageBarType="warning">Here is a warning alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar class="mb-3" messageBarType="info">Here is an info alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar class="mb-3" messageBarType="blocked">Here is a blocked alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar class="mb-3" messageBarType="severe-warning">Here is a severe warning</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar class="mb-3" messageBarType="error">Here is an error alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar class="mb-3" messageBarType="success">Here is a success alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar class="mb-3" messageBarType="warning">Here is a warning alert</ngx-fluent-design-message-bar>
 
         </div>
         <div class="d-flex flex-column justify-content-between my-4 align-middle">
             <h4 class="mb-4">Actions</h4>
-            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="info">Here is an info alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="blocked">Here is a blocked alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="severe-warning">Here is a severe warning</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="error">Here is an error alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="success">Here is a success alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="warning">Here is a warning alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [actionName]="'some action'" messageBarType="info">Here is an info alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [actionName]="'some action'" messageBarType="blocked">Here is a blocked alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [actionName]="'some action'" messageBarType="severe-warning">Here is a severe warning</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [actionName]="'some action'" messageBarType="error">Here is an error alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [actionName]="'some action'" messageBarType="success">Here is a success alert</ngx-fluent-design-message-bar>
+            <ngx-fluent-design-message-bar [canDismiss]="false" class="mb-3" [actionName]="'some action'" messageBarType="warning">Here is a warning alert</ngx-fluent-design-message-bar>
         </div>
 
         <div class="d-flex flex-column justify-content-between my-4 align-middle">
             <h4 class="mb-4">Dismissable</h4>
+            <ngx-fluent-design-button (clicked)="handler.open()">
+                Click here to launch a fixed message bar
+            </ngx-fluent-design-button>
 
-            <ngx-fluent-design-message-bar class="mb-3" [canDismiss]="true" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="info">Here is an info alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [canDismiss]="true" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="blocked">Here is a blocked alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [canDismiss]="true" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="severe-warning">Here is a severe warning</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [canDismiss]="true" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="error">Here is an error alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [canDismiss]="true" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="success">Here is a success alert</ngx-fluent-design-message-bar>
-            <ngx-fluent-design-message-bar class="mb-3" [canDismiss]="true" [multiLine]="true" [displayActions]="true" [actionName]="'some action'" messageBarType="warning">Here is a warning alert</ngx-fluent-design-message-bar>
+            <div class="d-flex flex-md-row justify-content-between flex-column my-3">
+                <ngx-fluent-design-radio
+                    value="info"
+                    class="mb-3"
+                    [checked]="messageBarName.value === 'info'"
+                    [formControl]="messageBarName"
+                    [label]="'info'">
+                </ngx-fluent-design-radio>
+                <ngx-fluent-design-radio
+                    class="mb-3"
+                    value="error"
+                    [formControl]="messageBarName"
+                    [checked]="messageBarName.value === 'error'"
+                    [label]="'error'"
+                    [name]="'unchecked-disabled'">
+                </ngx-fluent-design-radio>
+                <ngx-fluent-design-radio
+                    value="blocked"
+                    class="mb-3"
+                    [checked]="messageBarName.value === 'blocked'"
+                    [formControl]="messageBarName"
+                    [label]="'blocked'"
+                    [name]="'unchecked-rest'">
+                </ngx-fluent-design-radio>
+                <ngx-fluent-design-radio
+                    value="severe-warning"
+                    class="mb-3"
+                    [checked]="messageBarName.value === 'severe-warning'"
+                    [formControl]="messageBarName"
+                    [label]="'severe-warning'"
+                    [name]="'unchecked-rest'">
+                </ngx-fluent-design-radio>
+                <ngx-fluent-design-radio
+                    value="success"
+                    class="mb-3"
+                    [checked]="messageBarName.value === 'success'"
+                    [formControl]="messageBarName"
+                    [label]="'success'"
+                    [name]="'unchecked-rest'">
+                </ngx-fluent-design-radio>
+                <ngx-fluent-design-radio
+                    value="warning"
+                    class="mb-3"
+                    [checked]="messageBarName.value === 'warning'"
+                    [formControl]="messageBarName"
+                    [label]="'warning'"
+                    [name]="'unchecked-rest'">
+                </ngx-fluent-design-radio>
+            </div>
         </div>
     </div>
 </ngx-fluent-design-card>

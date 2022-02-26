@@ -1,31 +1,9 @@
-
 <h2 class="page-title">Standard Form Field</h2>
+<component-api-table [data]="formFieldApiData"></component-api-table>
 
-
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/ngx-fluent-design-input.interface.example.ts"
-    title="API"
-    [isUsageDocumentation]="false">
-</code-example>
-
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/reactive-forms-usage.example.ts"
-    title="Basic Usage (Reactive Forms):">
-    <h3 class="mb-4">Output</h3>
-    <ngx-fluent-design-form-field [disabled]="disableStandardInput" [label]="'standard Input'">
-        <input ngxFluentDesignInput placeholder="this is a standard input" [formControl]="standardInput">
-    </ngx-fluent-design-form-field>
-
-    <ngx-fluent-design-toggle
-        [label]="'Toggle disabled'"
-        [toggled]="disableStandardInput"
-        [inlineLabel]="true"
-        (changeEvent)="disableStandardInput = !disableStandardInput">
-    </ngx-fluent-design-toggle>
-</code-example>
 <code-example
     codeExampleUrl="./assets/docs/code-examples/inputs/reactive/reactive-forms-usage-validators.example.ts"
-    title="Usage with Validators">
+    title="Usage">
     <h3 class="mb-4">Output</h3>
     <ngx-fluent-design-form-field [disabled]="disableStandardInputWithValidator" [label]="'standard Input'">
         <input ngxFluentDesignInput placeholder="this is a standard text area with a validator"

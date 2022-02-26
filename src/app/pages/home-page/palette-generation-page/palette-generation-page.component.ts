@@ -79,14 +79,14 @@ export class PaletteGenerationPageComponent {
                 for (const key in formValue) {
                     const scssVarValue = PaletteGenerationPageComponent.convertHexValueToRgb(formValue[key]);
                     const scssVarNameArray = PaletteGenerationPageComponent.convertFormKeyToScssVariables(key);
-                    convertedToLibScssVars = convertedToLibScssVars.concat(`${scssVarNameArray}: rgb(${scssVarValue})`);
+                    convertedToLibScssVars = convertedToLibScssVars.concat(`${scssVarNameArray}: rgb(${scssVarValue});`);
                 }
 
                 return convertedToLibScssVars;
             })
         ).subscribe({
             next: (scssVars: Array<string>): void => {
-                const file = PaletteGenerationPageComponent.createFileFromString(scssVars.join(';\n'));
+                const file = PaletteGenerationPageComponent.createFileFromString(scssVars.join('\n'));
                 this.downloadFile(file);
             },
             complete: () => this.generatingStyles = false

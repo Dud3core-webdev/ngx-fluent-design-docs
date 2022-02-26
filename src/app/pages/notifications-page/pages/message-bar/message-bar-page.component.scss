@@ -1,0 +1,14 @@
+.no-container {
+    ::ng-deep {
+        .ngx-fluent-design-message-bar.is-fixed {
+            @media screen and (max-width: 767px) {
+                width: 100%;
+            }
+
+            @media screen and (min-width: 768px) {
+                width: 75%;
+                padding-left: 16px;
+            }
+        }
+    }
+}

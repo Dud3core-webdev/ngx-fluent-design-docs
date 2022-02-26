@@ -5,6 +5,7 @@ import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav
 import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
+import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
 
 @Component({
     selector: 'app-root',
@@ -12,9 +13,9 @@ import { DOCUMENT } from '@angular/common';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
+    public appUpdatesMessageBarHandler: NgxFluentDesignMessageBarHandler = new NgxFluentDesignMessageBarHandler(false);
+
     private _appIsOnline: boolean = true;
-    private _appHasUpdates: boolean = false;
-    private _userClosedUpdateAlert: boolean = false;
     private _userClosedOfflineAlert: boolean = false;
     private _shouldShowNavMenu: boolean = true;
 
@@ -26,10 +27,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
         '/errors/down-for-maintenance'
     ];
-
-    public get shouldDisplayUpdateAlert(): boolean {
-        return this._appHasUpdates && !this._userClosedUpdateAlert;
-    }
 
     public get shouldDisplayOfflineAlert(): boolean {
         return !this._appIsOnline && !this._userClosedOfflineAlert;
@@ -63,7 +60,9 @@ export class AppComponent implements OnInit, OnDestroy {
             this._appStatusService.updateAvailable
                 .subscribe({
                     next: (value): void => {
-                        this._appHasUpdates = value;
+                        if (value) {
+                            this.appUpdatesMessageBarHandler.open();
+                        }
                     }
                 })
         );
@@ -85,10 +84,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
     public reloadWindow(): void {
         this._appStatusService.reloadApp();
-    }
-
-    public closeUpdateMessage(): void {
-        this._userClosedUpdateAlert = true;
     }
 
     public closeOfflineAlertMessage(): void {

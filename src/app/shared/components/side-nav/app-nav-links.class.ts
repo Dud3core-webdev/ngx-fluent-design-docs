@@ -79,17 +79,6 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
         ]
     },
     {
-        title: 'Alerts',
-        shouldDisplayOnLive: true,
-        subNavItems: [
-            {
-                title: 'Dialog',
-                routerLink: ['', 'alerts', 'dialog'],
-                shouldDisplayOnLive: true
-            }
-        ]
-    },
-    {
         title: 'Notifications',
         shouldDisplayOnLive: true,
         subNavItems: [
@@ -158,9 +147,9 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 routerLink: ['', 'surfaces', 'card']
             },
             {
-                title: 'Sheet',
-                shouldDisplayOnLive: true,
-                routerLink: ['', 'surfaces', 'sheet']
+                title: 'Dialog',
+                routerLink: ['', 'surfaces', 'dialog'],
+                shouldDisplayOnLive: true
             }
         ]
     }

@@ -6,31 +6,11 @@
     </ngx-fluent-design-message-bar>
 </section>
 
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/reactive/ngx-fluent-design-input.interface.example.ts"
-    title="API"
-    [isUsageDocumentation]="false">
-</code-example>
-
-<code-example
-    codeExampleUrl="./assets/docs/code-examples/inputs/form-field-borderless/reactive-forms-usage.example.ts"
-    title="Basic Usage (Reactive Forms):">
-    <h3 class="mb-4">Output</h3>
-    <ngx-fluent-design-form-field-borderless [disabled]="disableStandardInput">
-        <input ngxFluentDesignInput placeholder="this is a borderless input" [formControl]="standardInput">
-    </ngx-fluent-design-form-field-borderless>
-
-    <ngx-fluent-design-toggle
-        [label]="'Toggle disabled'"
-        [toggled]="disableStandardInput"
-        [inlineLabel]="true"
-        (changeEvent)="disableStandardInput = !disableStandardInput">
-    </ngx-fluent-design-toggle>
-</code-example>
+<component-api-table [data]="apiData"></component-api-table>
 
 <code-example
     codeExampleUrl="./assets/docs/code-examples/inputs/form-field-borderless/reactive-forms-usage-validators.example.ts"
-    title="Usage with Validators">
+    title="Usage">
     <h3 class="mb-4">Output</h3>
     <ngx-fluent-design-form-field-borderless [disabled]="disableStandardInputWithValidator">
         <input ngxFluentDesignInput placeholder="this is a borderless text area with a validator"
