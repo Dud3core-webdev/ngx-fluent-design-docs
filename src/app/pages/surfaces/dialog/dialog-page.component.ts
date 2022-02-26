@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgxFluentDesignDialogHandler } from 'ngx-fluent-design';
-import { ComponentApiDataList } from '../../../shared/components/component-api-table/trypes/component-api-data.class';
+import { ComponentApiDataList } from '../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
     templateUrl: './dialog-page.component.html',

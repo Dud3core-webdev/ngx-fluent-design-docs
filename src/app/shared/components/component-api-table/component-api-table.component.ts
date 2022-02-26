@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ComponentApiDataList } from './trypes/component-api-data.class';
+import { ComponentApiDataList } from './types/component-api-data.class';
 
 @Component({
     selector: 'component-api-table',

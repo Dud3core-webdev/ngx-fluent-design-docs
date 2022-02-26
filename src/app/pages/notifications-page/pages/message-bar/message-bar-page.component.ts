@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
 import { FormControl } from '@angular/forms';
-import { ComponentApiDataList } from '../../../../shared/components/component-api-table/trypes/component-api-data.class';
+import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
     templateUrl: './message-bar-page.component.html',

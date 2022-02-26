@@ -19,34 +19,9 @@
     <h3 class="pane-header">Icon List</h3>
 
     <div class="d-flex flex-column align-baseline">
-        <div class="d-flex flex-column align-baseline flex-md-row">
-            <p class="subject-title mr-3">Warning</p>
-            <ngx-fluent-design-icon [icon]="warningIcon"></ngx-fluent-design-icon>
-        </div>
-
-        <div class="d-flex flex-column align-baseline flex-md-row">
-            <p class="subject-title mr-3">Blocked</p>
-            <ngx-fluent-design-icon [icon]="blockedIcon"></ngx-fluent-design-icon>
-        </div>
-
-        <div class="d-flex flex-column align-baseline flex-md-row">
-            <p class="subject-title mr-3">Error</p>
-            <ngx-fluent-design-icon [icon]="errorIcon"></ngx-fluent-design-icon>
-        </div>
-
-        <div class="d-flex flex-column align-baseline flex-md-row">
-            <p class="subject-title mr-3">Severe Warning</p>
-            <ngx-fluent-design-icon [icon]="severeWarnIcon"></ngx-fluent-design-icon>
-        </div>
-
-        <div class="d-flex flex-column align-baseline flex-md-row">
-            <p class="subject-title mr-3">Success Icon</p>
-            <ngx-fluent-design-icon [icon]="successIcon"></ngx-fluent-design-icon>
-        </div>
-
-        <div class="d-flex flex-column align-baseline flex-md-row">
-            <p class="subject-title mr-3">Close Icon</p>
-            <ngx-fluent-design-icon [icon]="closeIcon"></ngx-fluent-design-icon>
+        <div class="d-flex flex-column align-baseline flex-md-row" *ngFor="let icon of iconList">
+            <p class="subject-title mr-3">{{icon.name}}</p>
+            <ngx-fluent-design-icon [icon]="icon.icon" [ngxFluentDesignCssVariableName]="icon.fillColor"></ngx-fluent-design-icon>
         </div>
     </div>
 </ngx-fluent-design-card>

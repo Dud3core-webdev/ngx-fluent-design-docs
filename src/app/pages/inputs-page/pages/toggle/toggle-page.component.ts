@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ComponentApiDataList } from '../../../../shared/components/component-api-table/trypes/component-api-data.class';
+import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
     templateUrl: './toggle-page.component.html',
