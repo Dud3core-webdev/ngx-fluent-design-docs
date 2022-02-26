@@ -10,7 +10,8 @@
     <div class="overlay-content" (click)="$event.stopPropagation()">
         <div class="sticky-navigation">
             <div class="w-100 justify-content-center d-flex">
-                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg"/>
+                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-light.svg"/>
+                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-dark.svg"/>
             </div>
             <div class="px-4 pt-5 h-100">
                 <section class="mt-2">

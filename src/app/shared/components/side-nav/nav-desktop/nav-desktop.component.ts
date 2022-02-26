@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { ApplicationNavigationLinks } from '../app-nav-links.interface';
+import { DOCUMENT } from '@angular/common';
+import { ThemeSwitcherService } from '../../../services/theme/theme-switcher.service';
 
 @Component({
     selector: 'nav-desktop',
@@ -10,4 +12,14 @@ export class NavDesktopComponent {
     @Input() public readonly sideNavLinks: ApplicationNavigationLinks = [];
     @Input() public readonly isProdEnvironment: boolean = false;
     @Input() public readonly currentPackageVersion: string = '';
+
+    private readonly _themeService: ThemeSwitcherService;
+
+    public get isNormalTheme(): boolean {
+        return this._themeService.isNormalTheme;
+    }
+
+    constructor(themeService: ThemeSwitcherService) {
+        this._themeService = themeService;
+    }
 }

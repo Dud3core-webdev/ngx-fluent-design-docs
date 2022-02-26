@@ -2,7 +2,8 @@
     <div class="welcome mb-4">
         <div class="introduction-container d-flex w-100 flex-column">
             <div class="w-100 justify-content-center d-flex">
-                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg"/>
+                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-light.svg"/>
+                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-dark.svg"/>
             </div>
             <p class="text-center page-title">An open-source, Angular implementation of Microsoft's Fluent Design
                 Library</p>

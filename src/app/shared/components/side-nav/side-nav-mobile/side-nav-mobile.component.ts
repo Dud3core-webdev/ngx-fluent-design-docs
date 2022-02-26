@@ -6,6 +6,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { ThemeSwitcherService } from '../../../services/theme/theme-switcher.service';
 
 @Component({
     selector: 'side-nav-mobile',
@@ -49,9 +50,15 @@ export class SideNavMobileComponent implements OnInit, OnDestroy {
 
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _document: Document;
+    private readonly _themeService: ThemeSwitcherService;
 
-    constructor(@Inject(DOCUMENT) document: Document) {
+    public get isNormalTheme(): boolean {
+        return this._themeService.isNormalTheme;
+    }
+
+    constructor(@Inject(DOCUMENT) document: Document, themeService: ThemeSwitcherService) {
         this._document = document;
+        this._themeService = themeService;
     }
 
     public ngOnInit(): void {

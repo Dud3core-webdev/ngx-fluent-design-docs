@@ -2,7 +2,8 @@
     <div class="h-100">
         <div class="components">
             <div class="w-100 justify-content-center d-flex">
-                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo.svg" />
+                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-light.svg"/>
+                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-dark.svg"/>
             </div>
             <section class="p-4">
                 <section class="mt-2">
