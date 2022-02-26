@@ -6,7 +6,6 @@ import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
-import { ThemeSwitcherService, ThemeType } from './shared/services/theme/theme-switcher.service';
 
 @Component({
     selector: 'app-root',

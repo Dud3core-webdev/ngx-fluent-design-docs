@@ -31,11 +31,11 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-    background-color: #f8f8f8;
+    background-color: $ngx-fluent-design-background-neutral-lighter;
 }
 
 *::-webkit-scrollbar-thumb {
-    background: #bdbdbd;
-    border-radius: 25px;
+    background: $ngx-fluent-design-background-neutral-tertiary-alt;
+    border-radius: 2px;
 }
 
