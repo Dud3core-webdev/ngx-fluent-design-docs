@@ -19,11 +19,7 @@
     align-items: center;
     justify-content: center;
     z-index: 9000;
-
-    &.open {
-        margin: 20px 19px 10px 5px;
-        background-color: $ngx-fluent-design-theme-primary;
-    }
+    background-color: $ngx-fluent-design-theme-primary;
 }
 
 .overlay {
