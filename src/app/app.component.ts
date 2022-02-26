@@ -23,7 +23,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _appStatusService: AppStatusService;
-    private readonly _themeService: ThemeSwitcherService;
     private readonly _router: Router;
     private readonly _document: Document;
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
@@ -42,18 +41,12 @@ export class AppComponent implements OnInit, OnDestroy {
         return this._shouldShowNavMenu;
     }
 
-    public get isNormalTheme(): boolean {
-        return this._themeService.isNormalTheme;
-    }
-
     constructor(appStatusService: AppStatusService,
                 router: Router,
-                @Inject(DOCUMENT) document: Document,
-                themeService: ThemeSwitcherService) {
+                @Inject(DOCUMENT) document: Document) {
         this._appStatusService = appStatusService;
         this._router = router;
         this._document = document;
-        this._themeService = themeService;
     }
 
     public ngOnInit(): void {
@@ -98,14 +91,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
     public closeOfflineAlertMessage(): void {
         this._userClosedOfflineAlert = true;
-    }
-
-    public toggleTheme(): void {
-        if (this.isNormalTheme) {
-            this._themeService.theme = ThemeType.DARK;
-        } else {
-            this._themeService.theme = ThemeType.LIGHT;
-        }
     }
 
 }

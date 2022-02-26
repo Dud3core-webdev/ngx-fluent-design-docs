@@ -6,7 +6,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ThemeSwitcherService } from '../../../services/theme/theme-switcher.service';
+import { ThemeSwitcherService, ThemeType } from '../../../services/theme/theme-switcher.service';
 
 @Component({
     selector: 'side-nav-mobile',
@@ -90,6 +90,14 @@ export class SideNavMobileComponent implements OnInit, OnDestroy {
             this._document.body.classList.add('no-scroll');
         } else {
             this._document.body.classList.remove('no-scroll');
+        }
+    }
+
+    public toggleTheme(): void {
+        if (this.isNormalTheme) {
+            this._themeService.theme = ThemeType.DARK;
+        } else {
+            this._themeService.theme = ThemeType.LIGHT;
         }
     }
 

@@ -4,7 +4,12 @@ import { NavDesktopComponent } from './nav-desktop/nav-desktop.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SideNavMobileComponent } from './side-nav-mobile/side-nav-mobile.component';
-import { NgxFluentDesignSurfaceModule, NgxFluentDesignCtaModule, NgxFluentDesignIconModule } from 'ngx-fluent-design';
+import {
+    NgxFluentDesignSurfaceModule,
+    NgxFluentDesignCtaModule,
+    NgxFluentDesignIconModule,
+    NgxFluentDesignInputModule
+} from 'ngx-fluent-design';
 
 const DECLARATIONS: Array<any> = [
     AppNavigationComponent,
@@ -18,7 +23,8 @@ const DECLARATIONS: Array<any> = [
         RouterModule,
         NgxFluentDesignCtaModule,
         NgxFluentDesignSurfaceModule,
-        NgxFluentDesignIconModule
+        NgxFluentDesignIconModule,
+        NgxFluentDesignInputModule
     ],
     declarations: [...DECLARATIONS],
     exports: [...DECLARATIONS]
