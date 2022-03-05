@@ -1,11 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, of } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
-import { ApplicationThemeName } from '../types/application-theme-name.enum';
-import { ThemeConfigFactory } from '../factories/theme-config.factory';
-import Cookies from 'js-cookie';
 import { switchMap } from 'rxjs/operators';
 import { IThemeConfiguration } from '../types/configuration.class';
+import Cookies from 'js-cookie';
 
 @Injectable()
 export class ThemeSwitcherService {
