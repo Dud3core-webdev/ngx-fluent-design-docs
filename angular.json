@@ -35,7 +35,6 @@
                             "node_modules/prismjs/themes/prism.css"
                         ],
                         "scripts": [
-                            "node_modules/marked/lib/marked.js",
                             "node_modules/prismjs/prism.js",
                             "node_modules/prismjs/components/prism-scss.js",
                             "node_modules/prismjs/components/prism-typescript.min.js"
@@ -113,19 +112,6 @@
                             "src/styles.scss"
                         ],
                         "scripts": []
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "tsconfig.app.json",
-                            "tsconfig.spec.json",
-                            "e2e/tsconfig.json"
-                        ],
-                        "exclude": [
-                            "**/node_modules/**"
-                        ]
                     }
                 },
                 "e2e": {
