@@ -6,8 +6,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { ThemeSwitcherService } from '../../../theme-module/services/theme-switcher.service';
-import { ApplicationThemeName } from '../../../theme-module/types/application-theme-name.enum';
+import { ThemeSwitcherService } from '../../theme-module/services/theme-switcher.service';
+import { ApplicationThemeName } from '../../theme-module/types/application-theme-name.enum';
 
 @Component({
     selector: 'side-nav-mobile',

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ApplicationNavigationLinks } from './app-nav-links.interface';
-import PackageJson from 'package.json';
+import PackageJson from '../../../../package.json';
 
 @Component({
     selector: 'app-navigation',

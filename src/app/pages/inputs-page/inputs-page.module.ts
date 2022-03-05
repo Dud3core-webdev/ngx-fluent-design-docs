@@ -19,6 +19,7 @@ import { FormFieldBorderlessPageComponent } from './pages/form-field-borderless/
 import { TextAreaPageComponent } from './pages/textarea/text-area-page.component';
 import { TextAreaUnderlinedPageComponent } from './pages/textarea-underlined/text-area-underlined-page.component';
 import { TextAreaBorderlessPageComponent } from './pages/textarea-borderless/text-area-borderless-page.component';
+import { SelectPageComponent } from './pages/select/select.page.component';
 
 const ROUTES: Routes = [
     {
@@ -56,6 +57,10 @@ const ROUTES: Routes = [
     {
         path: 'toggle',
         component: TogglePageComponent
+    },
+    {
+        path: 'select',
+        component: SelectPageComponent
     }
 ];
 
@@ -69,7 +74,8 @@ const DECLARATIONS: Array<any> = [
     FormFieldBorderlessPageComponent,
     TextAreaPageComponent,
     TextAreaUnderlinedPageComponent,
-    TextAreaBorderlessPageComponent
+    TextAreaBorderlessPageComponent,
+    SelectPageComponent
 ];
 
 @NgModule({

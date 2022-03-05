@@ -1,7 +1,7 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { applicationNavigationLinks } from './shared/components/side-nav/app-nav-links.class';
-import { ApplicationNavigationLinks } from './shared/components/side-nav/app-nav-links.interface';
+import { applicationNavigationLinks } from './shared/side-nav/app-nav-links.class';
+import { ApplicationNavigationLinks } from './shared/side-nav/app-nav-links.interface';
 import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';

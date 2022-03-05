@@ -10,7 +10,7 @@ import {
     NgxFluentDesignIconModule,
     NgxFluentDesignInputModule
 } from 'ngx-fluent-design';
-import { ThemeModule } from '../../theme-module/theme.module';
+import { ThemeModule } from '../theme-module/theme.module';
 
 const DECLARATIONS: Array<any> = [
     AppNavigationComponent,
