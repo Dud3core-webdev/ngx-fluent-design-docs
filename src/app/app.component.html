@@ -4,18 +4,18 @@
         [canDismiss]="true"
         [actionName]="'Reload'"
         [handler]="appUpdatesMessageBarHandler"
-        (actionClicked)="reloadWindow()"
+        (actionClicked)="reloadApplication()"
         (closeClicked)="appUpdatesMessageBarHandler.close()"
         messageBarType="success">
             It looks like there might be an update for this application, reload the page to get the latest updates
     </ngx-fluent-design-message-bar>
 
     <ngx-fluent-design-message-bar
-        *ngIf="shouldDisplayOfflineAlert"
+        [handler]="onlineStatusMessageBarHandler"
         class="alert-component"
         [canDismiss]="true"
-        (closeClicked)="closeOfflineAlertMessage()"
-        messageBarType="blocked">
+        (closeClicked)="onlineStatusMessageBarHandler.close()"
+        messageBarType="error">
             Application is currently offline. This might affect Asset fetching
     </ngx-fluent-design-message-bar>
 </section>

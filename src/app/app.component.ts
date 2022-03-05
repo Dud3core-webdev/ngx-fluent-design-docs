@@ -2,10 +2,11 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { applicationNavigationLinks } from './shared/side-nav/app-nav-links.class';
 import { ApplicationNavigationLinks } from './shared/side-nav/app-nav-links.interface';
-import { AppStatusService } from './shared/services/app-status.service';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
+import { AppOnlineService } from './shared/app-status/services/app-online.service';
+import { AppUpdateService } from './shared/app-status/services/app-update.service';
 
 @Component({
     selector: 'app-root',
@@ -13,24 +14,20 @@ import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-    public appUpdatesMessageBarHandler: NgxFluentDesignMessageBarHandler = new NgxFluentDesignMessageBarHandler(false);
+    public readonly appUpdatesMessageBarHandler: NgxFluentDesignMessageBarHandler = new NgxFluentDesignMessageBarHandler(false);
+    public readonly onlineStatusMessageBarHandler: NgxFluentDesignMessageBarHandler = new NgxFluentDesignMessageBarHandler(false);
 
-    private _appIsOnline: boolean = true;
-    private _userClosedOfflineAlert: boolean = false;
     private _shouldShowNavMenu: boolean = true;
 
+    private readonly _appUpdateService: AppUpdateService;
+    private readonly _appOnlineService: AppOnlineService;
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
-    private readonly _appStatusService: AppStatusService;
     private readonly _router: Router;
     private readonly _document: Document;
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
         '/errors/down-for-maintenance'
     ];
-
-    public get shouldDisplayOfflineAlert(): boolean {
-        return !this._appIsOnline && !this._userClosedOfflineAlert;
-    }
 
     public get navItems(): ApplicationNavigationLinks {
         return this._navItems;
@@ -40,29 +37,33 @@ export class AppComponent implements OnInit, OnDestroy {
         return this._shouldShowNavMenu;
     }
 
-    constructor(appStatusService: AppStatusService,
-                router: Router,
+    constructor(router: Router,
+                appOnlineService: AppOnlineService,
+                appUpdateService: AppUpdateService,
                 @Inject(DOCUMENT) document: Document) {
-        this._appStatusService = appStatusService;
+        this._appUpdateService = appUpdateService;
+        this._appOnlineService = appOnlineService;
         this._router = router;
         this._document = document;
     }
 
     public ngOnInit(): void {
         this._subscriptions.add(
-            this._appStatusService.onlineStatus
+            this._appOnlineService.onlineStatus
                 .subscribe({
-                    next: (value): void => {
-                        this._appIsOnline = value.windowOnline;
+                    next: (isOnline: boolean) => {
+                        if (!isOnline) {
+                            this.onlineStatusMessageBarHandler.open();
+                        }
                     }
                 })
         );
 
         this._subscriptions.add(
-            this._appStatusService.updateAvailable
+            this._appUpdateService.applicationHasUpdates
                 .subscribe({
-                    next: (value): void => {
-                        if (value) {
+                    next: (hasUpdates: boolean) => {
+                        if (hasUpdates) {
                             this.appUpdatesMessageBarHandler.open();
                         }
                     }
@@ -84,12 +85,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this._subscriptions.unsubscribe();
     }
 
-    public reloadWindow(): void {
-        this._appStatusService.reloadApp();
+    public reloadApplication(): void {
+        this._appUpdateService.reloadApplication();
     }
-
-    public closeOfflineAlertMessage(): void {
-        this._userClosedOfflineAlert = true;
-    }
-
 }

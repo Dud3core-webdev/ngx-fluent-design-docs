@@ -3,6 +3,10 @@ import { NgxFluentDesignDialogHandler } from 'ngx-fluent-design';
 
 @Component({
     template: `
+        <ngx-fluent-design-button type="primary" (clicked)="handler.open()">
+            Click Here to launch a dialog
+        </ngx-fluent-design-button>
+
         <ngx-fluent-design-dialog header="Tadaaaaaa"
                                   primaryActionName="Close"
                                   [canDismissWithOuterContent]="true"

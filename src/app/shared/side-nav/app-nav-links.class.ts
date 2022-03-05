@@ -49,6 +49,11 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 title: 'Toggle',
                 routerLink: ['', 'inputs', 'toggle'],
                 shouldDisplayOnLive: true
+            },
+            {
+                title: 'Select',
+                routerLink: ['', 'inputs', 'select'],
+                shouldDisplayOnLive: true
             }
         ]
     },

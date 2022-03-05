@@ -17,6 +17,7 @@ import { ProgressPageModule } from './pages/progress-page/progress-page.module';
 import { ScssUtilitiesPageModule } from './pages/scss-utilities/scss-utilities.page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppNavigationModule } from './shared/side-nav/app-navigation.module';
+import { AppStatusModule } from './shared/app-status/app-status.module';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { AppNavigationModule } from './shared/side-nav/app-navigation.module';
         ProgressPageModule,
         ScssUtilitiesPageModule,
         NgxFluentDesignNotificationModule,
+        AppStatusModule,
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,
             // Register the ServiceWorker as soon as the app is stable
