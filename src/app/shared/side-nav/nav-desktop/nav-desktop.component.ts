@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ApplicationNavigationLinks } from '../app-nav-links.interface';
 import { ThemeSwitcherService } from '../../theme-module/services/theme-switcher.service';
-import { ApplicationThemeName } from '../../theme-module/types/application-theme-name.enum';
+import { ApplicationThemeName } from '../../application-themes-constants/types/application-theme-name.enum';
 
 @Component({
     selector: 'nav-desktop',

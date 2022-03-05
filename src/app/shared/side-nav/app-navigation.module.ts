@@ -11,7 +11,7 @@ import {
     NgxFluentDesignInputModule
 } from 'ngx-fluent-design';
 import { ThemeModule } from '../theme-module/theme.module';
-import { ThemeConfigFactory } from '../theme-module/factories/theme-config.factory';
+import { ThemeConfigFactory } from '../application-themes-constants/factories/theme-config.factory';
 
 const DECLARATIONS: Array<any> = [
     AppNavigationComponent,

@@ -49,10 +49,10 @@ export class AppComponent implements OnInit, OnDestroy {
                 appUpdateService: AppUpdateService,
                 exampleMessageBarDisplayService: ExampleMessageBarDisplayService,
                 @Inject(DOCUMENT) document: Document) {
+        this._router = router;
         this._appUpdateService = appUpdateService;
         this._appOnlineService = appOnlineService;
         this._exampleMessageBarDisplayService = exampleMessageBarDisplayService;
-        this._router = router;
         this._document = document;
     }
 
@@ -63,6 +63,8 @@ export class AppComponent implements OnInit, OnDestroy {
                     next: (isOnline: boolean) => {
                         if (!isOnline) {
                             this.onlineStatusMessageBarHandler.open();
+                        } else {
+                            this.onlineStatusMessageBarHandler.close();
                         }
                     }
                 })

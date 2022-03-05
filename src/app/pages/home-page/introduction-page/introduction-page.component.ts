@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeSwitcherService } from '../../../shared/theme-module/services/theme-switcher.service';
-import { ApplicationThemeName } from '../../../shared/theme-module/types/application-theme-name.enum';
+import { ApplicationThemeName } from '../../../shared/application-themes-constants/types/application-theme-name.enum';
 
 @Component({
     templateUrl: './introduction-page.component.html',

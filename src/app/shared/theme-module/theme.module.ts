@@ -9,6 +9,10 @@ import { IThemeConfiguration } from './types/configuration.class';
 })
 export class ThemeModule {
     public static forRoot(themes: Map<string, Map<string, string>>): ModuleWithProviders<ThemeModule> {
+        if (!themes) {
+            throw new Error('No themes have been provided! Please provide at least one theme to ThemeModule.forRoot');
+        }
+
         return ({
             ngModule: ThemeModule,
             providers: [

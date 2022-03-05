@@ -155,6 +155,11 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
                 title: 'Dialog',
                 routerLink: ['', 'surfaces', 'dialog'],
                 shouldDisplayOnLive: true
+            },
+            {
+                title: 'Panel',
+                routerLink: ['', 'surfaces', 'panel'],
+                shouldDisplayOnLive: true
             }
         ]
     }

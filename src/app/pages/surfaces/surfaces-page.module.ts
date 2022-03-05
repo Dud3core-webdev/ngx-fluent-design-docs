@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SurfacesPageComponent } from './surfaces-page.component';
 import { CardPageComponent } from './card/card-page.component';
 import { DialogPageComponent } from './dialog/dialog-page.component';
+import { PanelPageComponent } from './panel/panel-page.component';
 
 const ROUTES: Routes = [
     {
@@ -16,13 +17,18 @@ const ROUTES: Routes = [
     {
         path: 'dialog',
         component: DialogPageComponent
+    },
+    {
+        path: 'panel',
+        component: PanelPageComponent
     }
 ];
 
 const DECLARATIONS: Array<any> = [
     SurfacesPageComponent,
     CardPageComponent,
-    DialogPageComponent
+    DialogPageComponent,
+    PanelPageComponent
 ];
 
 @NgModule({

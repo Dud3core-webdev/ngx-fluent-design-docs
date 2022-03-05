@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ThemeSwitcherService } from '../../theme-module/services/theme-switcher.service';
-import { ApplicationThemeName } from '../../theme-module/types/application-theme-name.enum';
+import { ApplicationThemeName } from '../../application-themes-constants/types/application-theme-name.enum';
 
 @Component({
     selector: 'side-nav-mobile',
