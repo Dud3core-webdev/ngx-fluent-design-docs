@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { ProgressPageModule } from './pages/progress-page/progress-page.module';
 import { ScssUtilitiesPageModule } from './pages/scss-utilities/scss-utilities.page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppNavigationModule } from './shared/side-nav/app-navigation.module';
 
 @NgModule({
     declarations: [
@@ -32,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CallsToActionPageModule,
         NotificationsPageModule,
         SharedComponentsModule,
+        AppNavigationModule,
         ProgressPageModule,
         ScssUtilitiesPageModule,
         NgxFluentDesignNotificationModule,
