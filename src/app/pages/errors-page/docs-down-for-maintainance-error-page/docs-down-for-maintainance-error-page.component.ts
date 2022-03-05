@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeSwitcherService } from '../../../shared/theme-module/services/theme-switcher.service';
+import { ApplicationThemeName } from '../../../shared/theme-module/types/application-theme-name.enum';
 
 @Component({
     templateUrl: './docs-down-for-maintainance-error-page.component.html',
@@ -8,8 +9,8 @@ import { ThemeSwitcherService } from '../../../shared/theme-module/services/them
 export class DocsDownForMaintainanceErrorPageComponent {
     private readonly _themeService: ThemeSwitcherService;
 
-    public get isNormalTheme(): boolean {
-        return this._themeService.isNormalTheme;
+    public get isLightTheme(): boolean {
+        return this._themeService.currentThemeName === ApplicationThemeName.LIGHT;
     }
 
     constructor(themeService: ThemeSwitcherService) {

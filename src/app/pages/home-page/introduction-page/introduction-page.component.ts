@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeSwitcherService } from '../../../shared/theme-module/services/theme-switcher.service';
+import { ApplicationThemeName } from '../../../shared/theme-module/types/application-theme-name.enum';
 
 @Component({
     templateUrl: './introduction-page.component.html',
@@ -10,7 +11,7 @@ export class IntroductionPageComponent {
     private readonly _themeService: ThemeSwitcherService;
 
     public get isNormalTheme(): boolean {
-        return this._themeService.isNormalTheme;
+        return this._themeService.currentThemeName === ApplicationThemeName.LIGHT;
     }
 
     constructor(themeService: ThemeSwitcherService) {

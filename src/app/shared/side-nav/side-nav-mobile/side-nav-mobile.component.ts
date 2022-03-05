@@ -54,7 +54,7 @@ export class SideNavMobileComponent implements OnInit, OnDestroy {
     private readonly _themeService: ThemeSwitcherService;
 
     public get isNormalTheme(): boolean {
-        return this._themeService.isNormalTheme;
+        return this._themeService.currentThemeName === ApplicationThemeName.LIGHT;
     }
 
     constructor(@Inject(DOCUMENT) document: Document, themeService: ThemeSwitcherService) {
