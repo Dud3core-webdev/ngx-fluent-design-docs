@@ -23,7 +23,7 @@
     "@angular/service-worker": "~13.2.5",
     "bootstrap-scss": "^4.6.1",
     "http-server": "^14.1.0",
-    "ngx-fluent-design": "^12.0.4",
+    "ngx-fluent-design": "^13.0.6",
     "ngx-markdown": "^13.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
