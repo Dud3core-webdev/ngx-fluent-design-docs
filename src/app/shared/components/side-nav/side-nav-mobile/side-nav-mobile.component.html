@@ -14,7 +14,7 @@
                 <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-dark.svg"/>
             </div>
             <div class="px-4 pt-5 h-100">
-                <ngx-fluent-design-toggle (change)="toggleTheme()" [label]="'Toggle dark theme'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>
+                <ngx-fluent-design-toggle (change)="toggleTheme()" [label]="'Toggle dark services'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>
                 <section class="mt-2">
                     <p>Current Version: {{currentPackageVersion}}</p>
                     <a ngxFluentDesignLinkButton (click)="mobileSidenavHandler.close()" class="mt-3" routerLinkActive="active"

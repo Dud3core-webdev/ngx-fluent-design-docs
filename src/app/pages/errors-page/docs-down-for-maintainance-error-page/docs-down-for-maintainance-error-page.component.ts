@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThemeSwitcherService } from '../../../shared/services/theme/theme-switcher.service';
+import { ThemeSwitcherService } from '../../../shared/theme-module/services/theme-switcher.service';
 
 @Component({
     templateUrl: './docs-down-for-maintainance-error-page.component.html',

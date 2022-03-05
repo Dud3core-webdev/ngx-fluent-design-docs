@@ -10,6 +10,7 @@ import {
     NgxFluentDesignIconModule,
     NgxFluentDesignInputModule
 } from 'ngx-fluent-design';
+import { ThemeModule } from '../../theme-module/theme.module';
 
 const DECLARATIONS: Array<any> = [
     AppNavigationComponent,
@@ -24,7 +25,8 @@ const DECLARATIONS: Array<any> = [
         NgxFluentDesignCtaModule,
         NgxFluentDesignSurfaceModule,
         NgxFluentDesignIconModule,
-        NgxFluentDesignInputModule
+        NgxFluentDesignInputModule,
+        ThemeModule
     ],
     declarations: [...DECLARATIONS],
     exports: [...DECLARATIONS]

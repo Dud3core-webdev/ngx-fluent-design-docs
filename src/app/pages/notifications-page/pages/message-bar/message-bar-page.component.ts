@@ -15,7 +15,7 @@ export class MessageBarPageComponent {
         {
             name: 'messageBarType: MessageBarType',
             isRequired: false,
-            description: 'Sets the theme for the message bar type. This can be either: \n ' +
+            description: 'Sets the services for the message bar type. This can be either: \n ' +
                 'info, error, blocked, severe-warning, success or warning',
             isInput: true
         },

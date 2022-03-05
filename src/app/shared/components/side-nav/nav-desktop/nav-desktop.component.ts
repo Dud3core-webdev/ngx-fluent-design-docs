@@ -1,7 +1,7 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApplicationNavigationLinks } from '../app-nav-links.interface';
-import { DOCUMENT } from '@angular/common';
-import { ThemeSwitcherService, ThemeType } from '../../../services/theme/theme-switcher.service';
+import { ThemeSwitcherService } from '../../../theme-module/services/theme-switcher.service';
+import { ApplicationThemeName } from '../../../theme-module/types/application-theme-name.enum';
 
 @Component({
     selector: 'nav-desktop',
@@ -25,9 +25,9 @@ export class NavDesktopComponent {
 
     public toggleTheme(): void {
         if (this.isNormalTheme) {
-            this._themeService.theme = ThemeType.DARK;
+            this._themeService.theme = ApplicationThemeName.DARK;
         } else {
-            this._themeService.theme = ThemeType.LIGHT;
+            this._themeService.theme = ApplicationThemeName.LIGHT;
         }
     }
 }
