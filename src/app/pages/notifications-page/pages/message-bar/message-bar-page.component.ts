@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
-import { FormControl } from '@angular/forms';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { ExampleMessageBarDisplayService } from '../../services/example-message-bar-display.service';
+import { MessageBarType } from 'ngx-fluent-design/lib/notifications/types/message-bar.type';
+import { FormControl } from '@angular/forms';
 
 @Component({
     templateUrl: './message-bar-page.component.html',
     styleUrls: ['./message-bar-page.component.scss']
 })
 export class MessageBarPageComponent {
-
-    public readonly handler: NgxFluentDesignMessageBarHandler = new NgxFluentDesignMessageBarHandler(false);
     public readonly messageBarName: FormControl = new FormControl('success');
+    public readonly handler: NgxFluentDesignMessageBarHandler = new NgxFluentDesignMessageBarHandler(false);
     public readonly apiData: ComponentApiDataList = [
         {
             name: 'messageBarType: MessageBarType',
@@ -39,7 +40,20 @@ export class MessageBarPageComponent {
         }
     ];
 
-    public alert(): void {
-        window.alert('This is an alert');
+    private readonly _exampleMessageBarDisplayService: ExampleMessageBarDisplayService;
+
+    constructor(exampleMessageBarDisplayService: ExampleMessageBarDisplayService) {
+        this._exampleMessageBarDisplayService = exampleMessageBarDisplayService;
+
+        this.setMessageBarType('success');
+    }
+
+    public displayMessageBar(): void {
+        this._exampleMessageBarDisplayService.showExampleMessageBar();
+    }
+
+    public setMessageBarType(messageBarType: MessageBarType): void {
+        this.messageBarName.setValue(messageBarType);
+        this._exampleMessageBarDisplayService.setExampleMessageBarType(messageBarType);
     }
 }

@@ -18,6 +18,15 @@
         messageBarType="error">
             Application is currently offline. This might affect Asset fetching
     </ngx-fluent-design-message-bar>
+
+    <ngx-fluent-design-message-bar [canDismiss]="true"
+                                   [actionName]="'Click me'"
+                                   [handler]="exampleMessageBarHandler"
+                                   [messageBarType]="messageBarType"
+                                   (closeClicked)="exampleMessageBarHandler.close()"
+                                   [fixed]="true">
+        Here is a {{messageBarType}} fixed alert
+    </ngx-fluent-design-message-bar>
 </section>
 
 <div class="w-100 h-100 d-flex">
