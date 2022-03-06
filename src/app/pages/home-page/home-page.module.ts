@@ -3,12 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { MarkdownModule } from 'ngx-markdown';
-import {
-    NgxFluentDesignSurfaceModule,
-    NgxFluentDesignNotificationModule,
-    NgxFluentDesignInputModule,
-    NgxFluentDesignCtaModule, NgxFluentDesignProgressModule
-} from 'ngx-fluent-design';
+import { NgxFluentDesignCtaModule, NgxFluentDesignInputModule, NgxFluentDesignNotificationModule, NgxFluentDesignProgressModule, NgxFluentDesignSurfaceModule } from 'ngx-fluent-design';
 import { PaletteGenerationPageComponent } from './palette-generation-page/palette-generation-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { IntroductionPageComponent } from './introduction-page/introduction-page.component';
@@ -17,10 +12,15 @@ import { SharedComponentsModule } from '../../shared/components/shared-component
 const DECLARATIONS: Array<any> = [
     PaletteGenerationPageComponent,
     IntroductionPageComponent,
-    HomePageComponent,
+    HomePageComponent
 ];
 
 const ROUTES: Routes = [
+    {
+        path: '',
+        redirectTo: 'welcome',
+        pathMatch: 'full'
+    },
     {
         path: 'welcome',
         component: IntroductionPageComponent
@@ -48,4 +48,5 @@ const ROUTES: Routes = [
     declarations: [...DECLARATIONS],
     exports: [...DECLARATIONS]
 })
-export class HomePageModule {}
+export class HomePageModule {
+}

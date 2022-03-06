@@ -16,7 +16,7 @@ export class RadioPageComponent {
         {
             name: 'name: string',
             isRequired: false,
-            description: 'Sets the name for the label',
+            description: 'Sets the name for the Input',
             isInput: true
         },
         {

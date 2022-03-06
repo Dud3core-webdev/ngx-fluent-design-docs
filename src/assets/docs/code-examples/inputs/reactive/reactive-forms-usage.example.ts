@@ -8,8 +8,8 @@ import { FormControl } from '@angular/forms';
                 <input ngxFluentDesignInput [formControl]="standardInput">
             </ngx-fluent-design-form-field>
         </form>
-    `,
+    `
 })
-export class ReactveFormsUsageExample {
+export class ReactiveFormsUsageExample {
     public standardInput: FormControl = new FormControl(null);
 }
