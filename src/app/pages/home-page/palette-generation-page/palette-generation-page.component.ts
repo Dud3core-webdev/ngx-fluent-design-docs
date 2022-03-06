@@ -3,58 +3,37 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { hexCodeValidator } from './validators/hex-code.validator';
 import { of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { HexToRgbService } from '../../../theme/services/hex-to-rgb.service';
+
+interface IThemeFileDownloadConfig {
+    readonly cssVariables: string;
+    readonly styleSheetName: string;
+    readonly fileTypeDescription: string;
+}
 
 @Component({
     templateUrl: './palette-generation-page.component.html',
     styleUrls: ['./palette-generation-page.component.scss']
 })
 export class PaletteGenerationPageComponent {
-
     @ViewChild('download')
-    private readonly _downloadAnchor: ElementRef;
+    private readonly _elementReference: ElementRef;
+    private readonly _hexToRgbService: HexToRgbService;
 
     public readonly paletteForm: FormGroup;
     public generatingStyles: boolean = false;
+
+    private static createFileFromString(config: IThemeFileDownloadConfig): File {
+        const mappedBlob: string = `:root {\n${config.cssVariables}\n}`;
+        return new File([mappedBlob], config.styleSheetName, {
+            type: config.fileTypeDescription
+        });
+    }
 
     private static convertFormKeyToScssVariables(formKey: string): string {
         return ['--ngx-fluent-design'].concat(formKey.split(/(?=[A-Z])/))
             .join('-')
             .toLowerCase();
-    }
-
-    private static removeHashFromHexValue(hexValue: string): string {
-        if (hexValue[0] === '#') {
-            return hexValue.substring(1);
-        }
-
-        return hexValue;
-    }
-
-    private static convertHexValueToRgb(value: string): string {
-        const parsedHexValue = PaletteGenerationPageComponent.removeHashFromHexValue(value);
-
-        if (parsedHexValue.length !== 6) {
-            throw new Error('Invalid hex code');
-        }
-
-        const aRgbHex = parsedHexValue.match(/.{1,2}/g);
-
-        if (!aRgbHex) {
-            throw new Error('Whoops');
-        }
-
-        return [
-            parseInt(aRgbHex[0], 16),
-            parseInt(aRgbHex[1], 16),
-            parseInt(aRgbHex[2], 16)
-        ].join();
-    }
-
-    private static createFileFromString(cssVars: string): File {
-        const fullBlob: string = `:root {\n${cssVars}\n}`;
-        return new File([fullBlob], 'styles.scss', {
-            type: 'SCSS Style Sheet'
-        });
     }
 
     private static createFormGroup(): FormGroup {
@@ -82,8 +61,11 @@ export class PaletteGenerationPageComponent {
         });
     }
 
-    constructor(elementRef: ElementRef) {
-        this._downloadAnchor = elementRef;
+    constructor(hexToRgbService: HexToRgbService,
+                elementReference: ElementRef) {
+        this._hexToRgbService = hexToRgbService;
+        this._elementReference = elementReference;
+
         this.paletteForm = PaletteGenerationPageComponent.createFormGroup();
     }
 
@@ -95,32 +77,41 @@ export class PaletteGenerationPageComponent {
             map((): Array<string> => {
                 let convertedToLibScssVars: Array<string> = [];
                 for (const key in formValue) {
-                    const scssVarValue = PaletteGenerationPageComponent.convertHexValueToRgb(formValue[key]);
+                    const scssVarValue = this._hexToRgbService.convertValueToRgbCssVar(formValue[key]);
                     const scssVarNameArray = PaletteGenerationPageComponent.convertFormKeyToScssVariables(key);
                     convertedToLibScssVars = convertedToLibScssVars.concat(`${scssVarNameArray}: rgb(${scssVarValue});`);
                 }
 
                 return convertedToLibScssVars;
+            }),
+            tap((scssVars: Array<string>) => {
+                this.downloadFile({
+                    cssVariables: scssVars.join('\n'),
+                    styleSheetName: 'styles.scss',
+                    fileTypeDescription: 'SCSS Style Sheet'
+                });
             })
         ).subscribe({
-            next: (scssVars: Array<string>): void => {
-                const file = PaletteGenerationPageComponent.createFileFromString(scssVars.join('\n'));
-                this.downloadFile(file);
-            },
             complete: () => this.generatingStyles = false
         });
     }
 
-    private downloadFile(file: File): void {
-        const fileUrl = URL.createObjectURL(file);
-        this.setDownloadAnchorProperties(fileUrl);
-        this._downloadAnchor.nativeElement.click();
-        this._downloadAnchor.nativeElement.remove();
+    public downloadFile(config: IThemeFileDownloadConfig): void {
+        const stylesSheet: File = PaletteGenerationPageComponent.createFileFromString(config);
+        const fileUrl: string = URL.createObjectURL(stylesSheet);
+
+        this.setPropertiesToAnchorElement(fileUrl);
+        this.triggerElementActions();
     }
 
-    private setDownloadAnchorProperties(fileUrl: string): void {
-        this._downloadAnchor.nativeElement.target = '_blank';
-        this._downloadAnchor.nativeElement.href = fileUrl;
-        this._downloadAnchor.nativeElement.download = 'styles.scss';
+    private setPropertiesToAnchorElement(fileUrl: string): void {
+        this._elementReference.nativeElement.target = '_blank';
+        this._elementReference.nativeElement.href = fileUrl;
+        this._elementReference.nativeElement.download = 'styles.scss';
+    }
+
+    private triggerElementActions(): void {
+        this._elementReference.nativeElement.click();
+        this._elementReference.nativeElement.remove();
     }
 }

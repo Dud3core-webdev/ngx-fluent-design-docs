@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ThemeSwitcherService } from '../../theme/services/theme-switcher.service';
-import { ApplicationThemeName } from '../../shared/application-themes-constants/types/application-theme-name.enum';
+import { ApplicationThemeName } from '../../shared/theme/types/application-theme-name.enum';
 import { ApplicationNavigationLinks } from '../types/application-navigation-links.type';
 
 @Component({

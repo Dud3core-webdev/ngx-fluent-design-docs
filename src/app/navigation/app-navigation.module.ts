@@ -11,7 +11,7 @@ import {
     NgxFluentDesignInputModule
 } from 'ngx-fluent-design';
 import { ThemeModule } from '../theme/theme.module';
-import { ThemeConfigFactory } from '../shared/application-themes-constants/factories/theme-config.factory';
+import { ThemeConfigFactory } from '../shared/theme/factories/theme-config.factory';
 import { NavigationConfigClass } from './config/navigation-config.class';
 
 const DECLARATIONS: Array<any> = [
@@ -36,7 +36,7 @@ const DECLARATIONS: Array<any> = [
 export class AppNavigationModule {
     public static forRoot(config: NavigationConfigClass): ModuleWithProviders<AppNavigationModule> {
         if (!config) {
-            throw new Error('Woahhhh nelly');
+            throw new Error('No navigation config provided.');
         }
 
         return ({

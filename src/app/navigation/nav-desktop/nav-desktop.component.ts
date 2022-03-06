@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ThemeSwitcherService } from '../../theme/services/theme-switcher.service';
-import { ApplicationThemeName } from '../../shared/application-themes-constants/types/application-theme-name.enum';
+import { ApplicationThemeName } from '../../shared/theme/types/application-theme-name.enum';
 import { ApplicationNavigationLinks } from '../types/application-navigation-links.type';
 
 @Component({
