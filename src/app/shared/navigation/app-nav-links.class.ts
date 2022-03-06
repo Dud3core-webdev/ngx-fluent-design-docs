@@ -2,6 +2,17 @@ import { ApplicationNavigationLinks } from '../../navigation/types/application-n
 
 export const applicationNavigationLinks: ApplicationNavigationLinks = [
     {
+        title: 'Getting Started',
+        shouldDisplayOnLive: true,
+        subNavItems: [
+            {
+                title: 'SCSS Palette Generation',
+                routerLink: ['', 'home', 'generate-palette'],
+                shouldDisplayOnLive: true
+            }
+        ]
+    },
+    {
         title: 'Inputs',
         shouldDisplayOnLive: true,
         subNavItems: [

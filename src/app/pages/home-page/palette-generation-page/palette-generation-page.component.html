@@ -4,8 +4,13 @@
             <div class="w-100 justify-content-center d-flex d-md-none">
                 <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../../assets/main-logo-light.svg"/>
             </div>
-            <p class="text-center page-title">An open-source, Angular implementation of Microsoft's Fluent Design
-                Library</p>
+            <p class="text-center page-title">An open-source, Angular implementation of Microsoft's Fluent Design Library</p>
+            <div class="my-3">
+                <ngx-fluent-design-message-bar messageBarType="success">
+                    Don't forget to generate your own palette <a ngxFluentDesignLinkButton href="https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/index.html">here</a>
+                    And copy the hex codes. We've made an example to get you started.
+                </ngx-fluent-design-message-bar>
+            </div>
         </div>
 
         <ngx-fluent-design-card>
@@ -18,81 +23,120 @@
             </small>
 
             <form [formGroup]="paletteForm" class="my-3">
-                <ngx-fluent-design-form-field label="themeDarker">
-                    <input formControlName="themeDarker" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeDarker">
+                        <input formControlName="themeDarker" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themeDark">
-                    <input formControlName="themeDark" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeDark">
+                        <input formControlName="themeDark" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themeDarkAlt">
-                    <input formControlName="themeDarkAlt" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeDarkAlt">
+                        <input formControlName="themeDarkAlt" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themePrimary">
-                    <input formControlName="themePrimary" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themePrimary">
+                        <input formControlName="themePrimary" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themeSecondary">
-                    <input formControlName="themeSecondary" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeSecondary">
+                        <input formControlName="themeSecondary" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themeTertiary">
-                    <input formControlName="themeLight" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeTertiary">
+                        <input formControlName="themeLight" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themeLighter">
-                    <input formControlName="themeLighter" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeLighter">
+                        <input formControlName="themeLighter" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="themeLighterAlt">
-                    <input formControlName="themeLighterAlt" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="themeLighterAlt">
+                        <input formControlName="themeLighterAlt" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="black">
-                    <input formControlName="black" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="black">
+                        <input formControlName="black" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralDark">
-                    <input formControlName="neutralDark" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralDark">
+                        <input formControlName="neutralDark" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralPrimary">
-                    <input formControlName="neutralPrimary" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralPrimary">
+                        <input formControlName="neutralPrimary" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralPrimaryAlt">
-                    <input formControlName="neutralPrimaryAlt" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralPrimaryAlt">
+                        <input formControlName="neutralPrimaryAlt" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralSecondary">
-                    <input formControlName="neutralSecondary" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralSecondary">
+                        <input formControlName="neutralSecondary" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralTertiary">
-                    <input formControlName="neutralTertiary" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralTertiary">
+                        <input formControlName="neutralTertiary" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralTertiaryAlt">
-                    <input formControlName="neutralTertiaryAlt" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
 
-                <ngx-fluent-design-form-field label="neutralQuaternaryAlt">
-                    <input formControlName="neutralQuaternaryAlt" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                    <ngx-fluent-design-form-field label="neutralTertiaryAlt">
+                        <input formControlName="neutralTertiaryAlt" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralLight">
-                    <input formControlName="neutralLight" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralQuaternaryAlt">
+                        <input formControlName="neutralQuaternaryAlt" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralLighter">
-                    <input formControlName="neutralLighter" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralLight">
+                        <input formControlName="neutralLight" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
 
-                <ngx-fluent-design-form-field label="neutralLighterAlt">
-                    <input formControlName="neutralLighterAlt" ngxFluentDesignInput />
-                </ngx-fluent-design-form-field>
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralLighter">
+                        <input formControlName="neutralLighter" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
+
+                <section class="my-3">
+                    <ngx-fluent-design-form-field label="neutralLighterAlt">
+                        <input formControlName="neutralLighterAlt" ngxFluentDesignInput />
+                    </ngx-fluent-design-form-field>
+                </section>
             </form>
 
             <ngx-fluent-design-compound-button (clicked)="generateStyles()" [disabled]="paletteForm.invalid || generatingStyles">

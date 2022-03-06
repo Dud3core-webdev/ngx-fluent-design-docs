@@ -22,14 +22,32 @@ export class PaletteGenerationPageComponent {
             .toLowerCase();
     }
 
-    private static convertHexValueToRgb(value: string): string {
-        const rgbValue = value.match(/.{1,2}/g);
+    private static removeHashFromHexValue(hexValue: string): string {
+        if (hexValue[0] === '#') {
+            return hexValue.substring(1);
+        }
 
-        return rgbValue ? [
-            parseInt(rgbValue[1], 16),
-            parseInt(rgbValue[2], 16),
-            parseInt(rgbValue[3], 16)
-        ].join(',') : '';
+        return hexValue;
+    }
+
+    private static convertHexValueToRgb(value: string): string {
+        const parsedHexValue = PaletteGenerationPageComponent.removeHashFromHexValue(value);
+
+        if (parsedHexValue.length !== 6) {
+            throw new Error('Invalid hex code');
+        }
+
+        const aRgbHex = parsedHexValue.match(/.{1,2}/g);
+
+        if (!aRgbHex) {
+            throw new Error('Whoops');
+        }
+
+        return [
+            parseInt(aRgbHex[0], 16),
+            parseInt(aRgbHex[1], 16),
+            parseInt(aRgbHex[2], 16)
+        ].join();
     }
 
     private static createFileFromString(cssVars: string): File {
@@ -97,6 +115,7 @@ export class PaletteGenerationPageComponent {
         const fileUrl = URL.createObjectURL(file);
         this.setDownloadAnchorProperties(fileUrl);
         this._downloadAnchor.nativeElement.click();
+        this._downloadAnchor.nativeElement.remove();
     }
 
     private setDownloadAnchorProperties(fileUrl: string): void {
