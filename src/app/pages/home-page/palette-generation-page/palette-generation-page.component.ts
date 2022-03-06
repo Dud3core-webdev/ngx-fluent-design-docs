@@ -100,14 +100,14 @@ export class PaletteGenerationPageComponent {
         const stylesSheet: File = PaletteGenerationPageComponent.createFileFromString(config);
         const fileUrl: string = URL.createObjectURL(stylesSheet);
 
-        this.setPropertiesToAnchorElement(fileUrl);
+        this.setPropertiesToAnchorElement(fileUrl, config.styleSheetName);
         this.triggerElementActions();
     }
 
-    private setPropertiesToAnchorElement(fileUrl: string): void {
+    private setPropertiesToAnchorElement(fileUrl: string, fileName: string): void {
         this._elementReference.nativeElement.target = '_blank';
         this._elementReference.nativeElement.href = fileUrl;
-        this._elementReference.nativeElement.download = 'styles.scss';
+        this._elementReference.nativeElement.download = fileName;
     }
 
     private triggerElementActions(): void {
