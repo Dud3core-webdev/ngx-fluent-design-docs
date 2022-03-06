@@ -8,7 +8,7 @@ export const applicationNavigationLinks: ApplicationNavigationLinks = [
             {
                 title: 'SCSS Palette Generation',
                 routerLink: ['', 'home', 'generate-palette'],
-                shouldDisplayOnLive: true
+                shouldDisplayOnLive: false
             }
         ]
     },
