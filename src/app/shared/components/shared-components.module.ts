@@ -5,10 +5,12 @@ import { MarkdownModule } from 'ngx-markdown';
 import { NgxFluentDesignSurfaceModule, NgxFluentDesignCtaModule, NgxFluentDesignInputModule } from 'ngx-fluent-design';
 import { ComponentApiTableComponent } from './component-api-table/component-api-table.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DocsLogoComponent } from './docs-logo/docs-logo.component';
 
 const DECLARATIONS: Array<any> = [
     CodeExampleComponent,
     ComponentApiTableComponent,
+    DocsLogoComponent
 ];
 
 @NgModule({

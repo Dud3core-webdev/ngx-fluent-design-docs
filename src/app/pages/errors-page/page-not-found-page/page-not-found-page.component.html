@@ -1,8 +1,5 @@
 <div class="container error-page-content">
-    <div class="w-100 justify-content-center d-flex mt-5">
-        <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-light.svg"/>
-        <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="./assets/main-logo-dark.svg"/>
-    </div>
+    <app-logo-component></app-logo-component>
     <h1 class="text-center">Page Not Found</h1>
     <p>You can use the nav menu to go to any other page though</p>
 </div>

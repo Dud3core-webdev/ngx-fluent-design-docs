@@ -1,10 +1,8 @@
 <div class="w-100 container-fluid py-4">
     <div class="welcome mb-4">
         <div class="introduction-container d-flex w-100 flex-column">
-            <div class="w-100 justify-content-center d-flex d-md-none">
-                <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../../assets/main-logo-light.svg"/>
-            </div>
-            <p class="text-center page-title">An open-source, Angular implementation of Microsoft's Fluent Design Library</p>
+            <app-logo-component></app-logo-component>
+            <h1 class="text-center page-title">Palette Generation</h1>
             <div class="my-3">
                 <ngx-fluent-design-message-bar messageBarType="success">
                     Don't forget to generate your own palette <a class="fluent-design-link metadata" target="_blank" href="https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/index.html">here</a>
@@ -14,7 +12,6 @@
         </div>
 
         <ngx-fluent-design-card>
-            <h3>Palette generator.</h3>
             <p>Use this form to generate your ngx fluent design scss variables</p>
 
             <small>

@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, of, throwError } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 import { IThemeConfiguration } from '../types/configuration.class';
 import Cookies from 'js-cookie';
 
@@ -29,10 +29,11 @@ export class ThemeSwitcherService {
                     }
 
                     return this._themeBehaviourSubject;
-                })
+                }),
+                tap((themeName: string) => this.setTheme(themeName))
             )
             .subscribe({
-                next: (themeName: string): void => this.setTheme(themeName)
+                error: (e) => console.error(e.message)
             });
     }
 
@@ -49,7 +50,9 @@ export class ThemeSwitcherService {
         const themeMap: Map<string, string> | undefined = this._themesMap.get(themeName);
 
         if (typeof themeMap === 'undefined') {
-            return;
+            throw throwError({
+                message: `Could not find ${themeName}, please add ${themeName} to your forRoot configuration`
+            });
         }
 
         themeMap.forEach((value, key) => {

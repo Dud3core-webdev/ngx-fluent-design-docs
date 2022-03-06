@@ -5,6 +5,7 @@ import { ErrorsPageComponent } from './errors-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DocsDownForMaintainanceErrorPageComponent } from './docs-down-for-maintainance-error-page/docs-down-for-maintainance-error-page.component';
 import { PageNotFoundPageComponent } from './page-not-found-page/page-not-found-page.component';
+import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 
 const DECLARATIONS = [
     ErrorsPageComponent,
@@ -27,7 +28,8 @@ const ROUTES: Routes = [
     imports: [
         CommonModule,
         NgxFluentDesignSurfaceModule,
-        RouterModule.forChild(ROUTES)
+        RouterModule.forChild(ROUTES),
+        SharedComponentsModule
     ],
     declarations: [...DECLARATIONS]
 })

@@ -12,6 +12,7 @@ import {
 import { PaletteGenerationPageComponent } from './palette-generation-page/palette-generation-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { IntroductionPageComponent } from './introduction-page/introduction-page.component';
+import { SharedComponentsModule } from '../../shared/components/shared-components.module';
 
 const DECLARATIONS: Array<any> = [
     PaletteGenerationPageComponent,
@@ -41,7 +42,8 @@ const ROUTES: Routes = [
         MarkdownModule.forChild(),
         NgxFluentDesignInputModule,
         NgxFluentDesignCtaModule,
-        NgxFluentDesignProgressModule
+        NgxFluentDesignProgressModule,
+        SharedComponentsModule
     ],
     declarations: [...DECLARATIONS],
     exports: [...DECLARATIONS]
