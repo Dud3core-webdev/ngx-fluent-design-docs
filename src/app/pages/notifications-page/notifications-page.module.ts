@@ -10,6 +10,7 @@ import {
     NgxFluentDesignInputModule
 } from 'ngx-fluent-design';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 
 const ROUTES: Routes = [
     {
@@ -31,7 +32,8 @@ const DECLARATIONS = [
         RouterModule.forChild(ROUTES),
         NgxFluentDesignCtaModule,
         NgxFluentDesignInputModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MarkdownModule
     ],
     declarations: [DECLARATIONS]
 })
