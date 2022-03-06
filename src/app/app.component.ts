@@ -7,6 +7,7 @@ import { AppOnlineService } from './status/services/app-online.service';
 import { AppUpdateService } from './status/services/app-update.service';
 import { ExampleMessageBarDisplayService } from './pages/notifications-page/services/example-message-bar-display.service';
 import { MessageBarType } from 'ngx-fluent-design/lib/notifications/types/message-bar.type';
+import { WINDOW } from './shared/types/window-ref.clss';
 
 @Component({
     selector: 'app-root',
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _router: Router;
     private readonly _document: Document;
+    private readonly _window: Window;
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
         '/errors/down-for-maintenance'
     ];
@@ -41,12 +43,14 @@ export class AppComponent implements OnInit, OnDestroy {
                 appOnlineService: AppOnlineService,
                 appUpdateService: AppUpdateService,
                 exampleMessageBarDisplayService: ExampleMessageBarDisplayService,
-                @Inject(DOCUMENT) document: Document) {
+                @Inject(DOCUMENT) document: Document,
+                @Inject(WINDOW) window: Window) {
         this._router = router;
         this._appUpdateService = appUpdateService;
         this._appOnlineService = appOnlineService;
         this._exampleMessageBarDisplayService = exampleMessageBarDisplayService;
         this._document = document;
+        this._window = window;
     }
 
     public ngOnInit(): void {
@@ -79,7 +83,10 @@ export class AppComponent implements OnInit, OnDestroy {
                 .subscribe((event: Event) => {
                     if (event instanceof NavigationEnd) {
                         this._shouldShowNavMenu = !this._errorRoutesWhereNavShouldNotBeDisplayed.includes(event.urlAfterRedirects);
-                        this._document.documentElement.scrollTo(0, 0);
+                        this._document.documentElement.scroll({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     }
                 })
         );
