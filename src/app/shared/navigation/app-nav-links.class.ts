@@ -1,6 +1,6 @@
-import { ApplicationNavigationLinks } from './app-nav-links.interface';
+import { ApplicationNavigationLinks } from '../../navigation/types/application-navigation-links.type';
 
-export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
+export const applicationNavigationLinks: ApplicationNavigationLinks = [
     {
         title: 'Inputs',
         shouldDisplayOnLive: true,
@@ -159,6 +159,11 @@ export const applicationNavigationLinks = (): ApplicationNavigationLinks => [
             {
                 title: 'Panel',
                 routerLink: ['', 'surfaces', 'panel'],
+                shouldDisplayOnLive: true
+            },
+            {
+                title: 'Modal',
+                routerLink: ['', 'surfaces', 'modal'],
                 shouldDisplayOnLive: true
             }
         ]

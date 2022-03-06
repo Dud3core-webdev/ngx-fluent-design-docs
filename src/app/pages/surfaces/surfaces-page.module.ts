@@ -8,6 +8,7 @@ import { SurfacesPageComponent } from './surfaces-page.component';
 import { CardPageComponent } from './card/card-page.component';
 import { DialogPageComponent } from './dialog/dialog-page.component';
 import { PanelPageComponent } from './panel/panel-page.component';
+import { ModalPageComponent } from './modal/modal-page.component';
 
 const ROUTES: Routes = [
     {
@@ -21,6 +22,10 @@ const ROUTES: Routes = [
     {
         path: 'panel',
         component: PanelPageComponent
+    },
+    {
+        path: 'modal',
+        component: ModalPageComponent
     }
 ];
 
@@ -28,7 +33,8 @@ const DECLARATIONS: Array<any> = [
     SurfacesPageComponent,
     CardPageComponent,
     DialogPageComponent,
-    PanelPageComponent
+    PanelPageComponent,
+    ModalPageComponent
 ];
 
 @NgModule({

@@ -16,8 +16,9 @@ import { environment } from '../environments/environment';
 import { ProgressPageModule } from './pages/progress-page/progress-page.module';
 import { ScssUtilitiesPageModule } from './pages/scss-utilities/scss-utilities.page.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppNavigationModule } from './shared/side-nav/app-navigation.module';
-import { AppStatusModule } from './shared/app-status/app-status.module';
+import { AppNavigationModule } from './navigation/app-navigation.module';
+import { AppStatusModule } from './status/app-status.module';
+import { applicationNavigationLinks } from './shared/navigation/app-nav-links.class';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,7 @@ import { AppStatusModule } from './shared/app-status/app-status.module';
         CallsToActionPageModule,
         NotificationsPageModule,
         SharedComponentsModule,
-        AppNavigationModule,
+        AppNavigationModule.forRoot({ moduleNavigationLinks: applicationNavigationLinks }),
         ProgressPageModule,
         ScssUtilitiesPageModule,
         NgxFluentDesignNotificationModule,

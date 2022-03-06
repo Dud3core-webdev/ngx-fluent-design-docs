@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ThemeSwitcherService } from '../../../shared/theme-module/services/theme-switcher.service';
+import { ThemeSwitcherService } from '../../../theme/services/theme-switcher.service';
 import { ApplicationThemeName } from '../../../shared/application-themes-constants/types/application-theme-name.enum';
 
 @Component({

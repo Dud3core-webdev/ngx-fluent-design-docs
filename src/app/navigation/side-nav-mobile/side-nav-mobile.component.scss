@@ -1,4 +1,4 @@
-@import "../../../../../node_modules/ngx-fluent-design/src/lib/styles/variables";
+@import "../../../../node_modules/ngx-fluent-design/src/lib/styles/variables";
 
 ::ng-deep {
     body, html {
@@ -41,6 +41,7 @@
         top: 0;
         right: 0;
         bottom: 0;
+        padding-bottom: 28px;
         position: relative;
         height: 100vh;
         background-color: $ngx-fluent-design-foreground-white;

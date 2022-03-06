@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ApplicationNavigationLinks } from './app-nav-links.interface';
-import PackageJson from '../../../../package.json';
+import PackageJson from '../../../package.json';
+import { NavigationConfigClass } from './config/navigation-config.class';
+import { ApplicationNavigationLinks } from './types/application-navigation-links.type';
 
 @Component({
     selector: 'app-navigation',
@@ -11,9 +12,10 @@ import PackageJson from '../../../../package.json';
 export class AppNavigationComponent {
     public readonly environment = environment;
     public readonly currentPackageVersion: string = '';
-    @Input() public navigationLinks: ApplicationNavigationLinks = [];
+    public readonly navigationLinks: ApplicationNavigationLinks;
 
-    constructor() {
+    constructor(appNavigationConfig: NavigationConfigClass) {
+        this.navigationLinks = appNavigationConfig.moduleNavigationLinks;
         this.currentPackageVersion = PackageJson.dependencies['ngx-fluent-design'];
     }
 }

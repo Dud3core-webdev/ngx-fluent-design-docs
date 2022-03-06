@@ -1,12 +1,10 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { applicationNavigationLinks } from './shared/side-nav/app-nav-links.class';
-import { ApplicationNavigationLinks } from './shared/side-nav/app-nav-links.interface';
 import { Event, NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
-import { AppOnlineService } from './shared/app-status/services/app-online.service';
-import { AppUpdateService } from './shared/app-status/services/app-update.service';
+import { AppOnlineService } from './status/services/app-online.service';
+import { AppUpdateService } from './status/services/app-update.service';
 import { ExampleMessageBarDisplayService } from './pages/notifications-page/services/example-message-bar-display.service';
 import { MessageBarType } from 'ngx-fluent-design/lib/notifications/types/message-bar.type';
 
@@ -29,16 +27,11 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _appOnlineService: AppOnlineService;
     private readonly _exampleMessageBarDisplayService: ExampleMessageBarDisplayService;
     private readonly _subscriptions: Subscription = new Subscription();
-    private readonly _navItems: ApplicationNavigationLinks = applicationNavigationLinks();
     private readonly _router: Router;
     private readonly _document: Document;
     private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
         '/errors/down-for-maintenance'
     ];
-
-    public get navItems(): ApplicationNavigationLinks {
-        return this._navItems;
-    }
 
     public get shouldDisplayNavMenu(): boolean {
         return this._shouldShowNavMenu;

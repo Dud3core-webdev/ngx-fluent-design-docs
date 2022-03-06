@@ -7,11 +7,11 @@
 </div>
 
 <div class="overlay" (click)="mobileSidenavHandler.close()" [@slideInRight]="mobileSidenavHandler.isOpen ? 'show' : 'hide'">
-    <div class="overlay-content" (click)="$event.stopPropagation()">
+    <div class="overlay-content pb-3" (click)="$event.stopPropagation()">
         <div class="sticky-navigation">
             <div class="w-100 justify-content-center d-flex">
-                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../../assets/main-logo-light.svg"/>
-                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../../assets/main-logo-dark.svg"/>
+                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-light.svg"/>
+                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-dark.svg"/>
             </div>
             <div class="px-4 pt-5 h-100">
                 <ngx-fluent-design-toggle (change)="toggleTheme()" [label]="'Toggle dark mode'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>

@@ -4,5 +4,3 @@ export interface IApplicationNavigationLinks {
     readonly routerLink?: Array<string>;
     readonly subNavItems?: Array<IApplicationNavigationLinks>;
 }
-
-export declare type ApplicationNavigationLinks = Array<IApplicationNavigationLinks>;

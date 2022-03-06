@@ -1,0 +1,26 @@
+<h2 class="page-title">Modal</h2>
+
+<component-api-table [data]="apiData"></component-api-table>
+
+<code-example [isUsageDocumentation]="true"
+              codeExampleUrl="./assets/docs/code-examples/common/modal/modal-usage-example.component.ts">
+    <h3 class="pane-header">Demo</h3>
+    <section class="mt-5">
+        <ngx-fluent-design-button type="primary" (clicked)="modalHandler.open()">
+            Click Here to launch a panel
+        </ngx-fluent-design-button>
+    </section>
+</code-example>
+
+<ngx-fluent-design-modal [canDismissWithOuterContent]="true"
+                         [handler]="modalHandler">
+    <h3>Nice! This is a Modal component</h3>
+
+    <p>You can add whatever the hell you like in here and it will adhere to any styling</p>
+
+    <div class="text-center w-100">
+        <p>Like this</p>
+    </div>
+
+    <ngx-fluent-design-button (clicked)="modalHandler.close()">Close Modal</ngx-fluent-design-button>
+</ngx-fluent-design-modal>

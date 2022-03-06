@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, interval, Observable } from 'rxjs';
 import { SwUpdate } from '@angular/service-worker';
-import { WINDOW } from '../../types/window-ref.clss';
+import { WINDOW } from '../../shared/types/window-ref.clss';
 import { switchMap } from 'rxjs/operators';
 import { fromPromise } from 'rxjs/internal-compatibility';
 

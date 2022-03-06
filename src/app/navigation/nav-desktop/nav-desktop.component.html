@@ -2,8 +2,8 @@
     <div class="h-100">
         <div class="components">
             <div class="w-100 justify-content-center d-flex">
-                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../../assets/main-logo-light.svg"/>
-                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../../assets/main-logo-dark.svg"/>
+                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-light.svg"/>
+                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-dark.svg"/>
             </div>
             <section class="my-3 px-4">
                 <ngx-fluent-design-toggle (change)="toggleTheme()" [label]="'Toggle dark mode'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>
