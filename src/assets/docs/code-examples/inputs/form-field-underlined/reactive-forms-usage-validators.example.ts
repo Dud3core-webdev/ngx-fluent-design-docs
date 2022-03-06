@@ -8,8 +8,8 @@ import { FormControl, Validators } from '@angular/forms';
                 <input ngxFluentDesignInput [formControl]="standardInputValidator">
             </ngx-fluent-design-form-field-underlined>
         </form>
-    `,
+    `
 })
-export class ReactveFormsUsageExample {
+export class ReactiveFormsUsageExample {
     public standardInputValidator: FormControl = new FormControl(null, [Validators.required, Validators.minLength(8)]);
 }
