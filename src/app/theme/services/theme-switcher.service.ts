@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, of, throwError } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
 import { switchMap, tap } from 'rxjs/operators';
-import { IThemeConfiguration } from '../types/configuration.class';
+import { ThemeConfiguration } from '../types/configuration.class';
 import Cookies from 'js-cookie';
 
 @Injectable()
@@ -13,7 +13,7 @@ export class ThemeSwitcherService {
     private readonly _document: Document;
     private readonly _themesMap: Map<string, Map<string, string>>;
 
-    constructor(@Inject(DOCUMENT) document: Document, themeConfig: IThemeConfiguration) {
+    constructor(@Inject(DOCUMENT) document: Document, themeConfig: ThemeConfiguration) {
         this._themeBehaviourSubject = new BehaviorSubject<string>('');
         this._document = document;
         this._themesMap = themeConfig.moduleThemes;

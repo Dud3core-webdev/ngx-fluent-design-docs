@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeSwitcherService } from './services/theme-switcher.service';
-import { IThemeConfiguration } from './types/configuration.class';
+import { ThemeConfiguration } from './types/configuration.class';
 import { HexToRgbService } from './services/hex-to-rgb.service';
 
 @NgModule({
@@ -21,7 +21,7 @@ export class ThemeModule {
             ngModule: ThemeModule,
             providers: [
                 {
-                    provide: IThemeConfiguration,
+                    provide: ThemeConfiguration,
                     useFactory: () => {
                         return { moduleThemes: themes };
                     }
