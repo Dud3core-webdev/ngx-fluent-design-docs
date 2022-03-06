@@ -33,9 +33,9 @@ export class AppUpdateService {
     }
 
     private initialise(): void {
-        const checkForUpdatesInterval: Observable<number> = interval(120000);
+        const twoMinuteInterval: Observable<number> = interval(120000);
         if (this._updates.isEnabled) {
-            checkForUpdatesInterval
+            twoMinuteInterval
                 .pipe(
                     switchMap(() => fromPromise(this._updates.checkForUpdate())),
                 )
