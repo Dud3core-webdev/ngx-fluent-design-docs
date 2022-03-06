@@ -18,7 +18,6 @@ export enum ApplicationCssVarNames {
     THEME_FOREGROUND_NEUTRAL_SECONDARY = '--ngx-fluent-design-foreground-neutral-secondary',
     THEME_FOREGROUND_NEUTRAL_TERTIARY = '--ngx-fluent-design-foreground-neutral-tertiary',
     THEME_FOREGROUND_WHITE = '--ngx-fluent-design-foreground-white',
-    THEME_FOREGROUND_WHITE_RGBA = '--ngx-fluent-design-foreground-white-rgba',
 
     THEME_BACKGROUND_NEUTRAL_TERTIARY_ALT = '--ngx-fluent-design-background-neutral-tertiary-alt',
     THEME_BACKGROUND_NEUTRAL_DARK = '--ngx-fluent-design-background-neutral-dark',

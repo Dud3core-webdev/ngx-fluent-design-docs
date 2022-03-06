@@ -4,6 +4,7 @@ import { hexCodeValidator } from './validators/hex-code.validator';
 import { of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { HexToRgbService } from '../../../theme/services/hex-to-rgb.service';
+import { defaultPalette } from './constants/generated-default-theme.class';
 
 interface IThemeFileDownloadConfig {
     readonly cssVariables: string;
@@ -38,26 +39,33 @@ export class PaletteGenerationPageComponent {
 
     private static createFormGroup(): FormGroup {
         return new FormGroup({
-            themeDarker: new FormControl('#004578', [Validators.required, hexCodeValidator()]),
-            themeDark: new FormControl('#005a9e', [Validators.required, hexCodeValidator()]),
-            themeDarkAlt: new FormControl('#106ebe', [Validators.required, hexCodeValidator()]),
-            themePrimary: new FormControl('#0078d4', [Validators.required, hexCodeValidator()]),
-            themeSecondary: new FormControl('#2b88d8', [Validators.required, hexCodeValidator()]),
-            themeTertiary: new FormControl('#71afe5', [Validators.required, hexCodeValidator()]),
-            themeLight: new FormControl('#c7e0f4', [Validators.required, hexCodeValidator()]),
-            themeLighter: new FormControl('#deecf9', [Validators.required, hexCodeValidator()]),
-            themeLighterAlt: new FormControl('#eff6fc', [Validators.required, hexCodeValidator()]),
-            black: new FormControl('#000000', [Validators.required, hexCodeValidator()]),
-            neutralDark: new FormControl('#201f1e', [Validators.required, hexCodeValidator()]),
-            neutralPrimary: new FormControl('#323130', [Validators.required, hexCodeValidator()]),
-            neutralPrimaryAlt: new FormControl('#3b3a39', [Validators.required, hexCodeValidator()]),
-            neutralSecondary: new FormControl('#605e5c', [Validators.required, hexCodeValidator()]),
-            neutralTertiary: new FormControl('#a19f9d', [Validators.required, hexCodeValidator()]),
-            neutralTertiaryAlt: new FormControl('#c8c6c4', [Validators.required, hexCodeValidator()]),
-            neutralQuaternaryAlt: new FormControl('#e1dfdd', [Validators.required, hexCodeValidator()]),
-            neutralLight: new FormControl('#edebe9', [Validators.required, hexCodeValidator()]),
-            neutralLighter: new FormControl('#f3f2f1', [Validators.required, hexCodeValidator()]),
-            neutralLighterAlt: new FormControl('#faf9f8', [Validators.required, hexCodeValidator()]),
+            /** Theme Primary */
+            themePrimary: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeSecondary: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeTertiary: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeLight: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeLighter: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeLighterAlt: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeDark: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeDarker: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            themeDarkAlt: new FormControl(null, [Validators.required, hexCodeValidator()]),
+
+            /** Foreground */
+            foregroundBlack: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            foregroundNeutralDark: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            foregroundNeutralPrimary: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            foregroundNeutralPrimaryAlt: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            foregroundNeutralSecondary: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            foregroundNeutralTertiary: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            foregroundWhite: new FormControl(null, [Validators.required, hexCodeValidator()]),
+
+            /** Background */
+            backgroundNeutralTertiaryAlt: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            backgroundNeutralDark: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            backgroundNeutralQuaternaryAlt: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            backgroundNeutralLight: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            backgroundNeutralLighter: new FormControl(null, [Validators.required, hexCodeValidator()]),
+            backgroundNeutralLightAlt: new FormControl(null, [Validators.required, hexCodeValidator()])
         });
     }
 
@@ -79,7 +87,7 @@ export class PaletteGenerationPageComponent {
                 for (const key in formValue) {
                     const scssVarValue = this._hexToRgbService.convertValueToRgbCssVar(formValue[key]);
                     const scssVarNameArray = PaletteGenerationPageComponent.convertFormKeyToScssVariables(key);
-                    convertedToLibScssVars = convertedToLibScssVars.concat(`${scssVarNameArray}: rgb(${scssVarValue});`);
+                    convertedToLibScssVars = convertedToLibScssVars.concat(`${scssVarNameArray}: ${scssVarValue};`);
                 }
 
                 return convertedToLibScssVars;
@@ -94,6 +102,10 @@ export class PaletteGenerationPageComponent {
         ).subscribe({
             complete: () => this.generatingStyles = false
         });
+    }
+
+    public generateExampleStyleSheet(): void {
+        this.paletteForm.setValue(defaultPalette);
     }
 
     public downloadFile(config: IThemeFileDownloadConfig): void {

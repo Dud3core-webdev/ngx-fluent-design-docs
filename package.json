@@ -25,7 +25,7 @@
         "http-server": "^14.1.0",
         "js-cookie": "^3.0.1",
         "ng-connection-service": "^1.0.4",
-        "ngx-fluent-design": "^13.0.6",
+        "ngx-fluent-design": "^13.1.0",
         "ngx-markdown": "^13.0.0",
         "rxjs": "~6.6.0",
         "tslib": "^2.0.0",
