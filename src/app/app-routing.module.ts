@@ -10,6 +10,7 @@ import { SurfacesPageComponent } from './pages/surfaces/surfaces-page.component'
 import { IconsPageComponent } from './pages/icons/icons-page.component';
 import { CanActivateDocsPagesGuard } from './shared/guards/can-activate-docs-pages.guard';
 import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
+import { CommandPageComponent } from './pages/command/command-page.component';
 
 const routes: Routes = [
     {
@@ -33,6 +34,12 @@ const routes: Routes = [
         path: 'calls-to-action',
         component: CallsToActionPageComponent,
         loadChildren: () => import('./pages/calls-to-action-page/calls-to-action-page.module').then((module) => module.CallsToActionPageModule),
+        canActivate: [CanActivateDocsPagesGuard]
+    },
+    {
+        path: 'commands',
+        component: CommandPageComponent,
+        loadChildren: () => import('./pages/command/command-page.module').then((module) => module.CommandPageModule),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {

@@ -29,9 +29,6 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly _subscriptions: Subscription = new Subscription();
     private readonly _router: Router;
     private readonly _document: Document;
-    private readonly _errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
-        '/errors/down-for-maintenance'
-    ];
 
     public get shouldDisplayNavMenu(): boolean {
         return this._shouldShowNavMenu;
@@ -78,11 +75,8 @@ export class AppComponent implements OnInit, OnDestroy {
             this._router.events
                 .subscribe((event: Event) => {
                     if (event instanceof NavigationEnd) {
-                        this._shouldShowNavMenu = !this._errorRoutesWhereNavShouldNotBeDisplayed.includes(event.urlAfterRedirects);
-                        this._document.documentElement.scroll({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
+                        this.setCanDisplayNavBar(event);
+                        this.scrollDocumentToTopOfPage();
                     }
                 })
         );
@@ -114,5 +108,20 @@ export class AppComponent implements OnInit, OnDestroy {
 
     public reloadApplication(): void {
         this._appUpdateService.reloadApplication();
+    }
+
+    private scrollDocumentToTopOfPage(): void {
+        this._document.documentElement.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    private setCanDisplayNavBar(event: NavigationEnd): void {
+        const errorRoutesWhereNavShouldNotBeDisplayed: Array<string> = [
+            '/errors/down-for-maintenance'
+        ];
+
+        this._shouldShowNavMenu = !errorRoutesWhereNavShouldNotBeDisplayed.includes(event.urlAfterRedirects);
     }
 }

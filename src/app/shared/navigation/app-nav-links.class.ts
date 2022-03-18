@@ -13,6 +13,17 @@ export const applicationNavigationLinks: ApplicationNavigationLinks = [
         ]
     },
     {
+        title: 'Commands',
+        shouldDisplayOnLive: false,
+        subNavItems: [
+            {
+                title: 'Pivot',
+                routerLink: ['', 'commands', 'pivot'],
+                shouldDisplayOnLive: false
+            }
+        ]
+    },
+    {
         title: 'Inputs',
         shouldDisplayOnLive: true,
         subNavItems: [

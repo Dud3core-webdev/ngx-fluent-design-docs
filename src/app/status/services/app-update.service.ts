@@ -34,11 +34,9 @@ export class AppUpdateService {
 
     private initialise(): void {
         const twoMinuteInterval: Observable<number> = interval(120000);
+
         if (this._updates.isEnabled) {
-            twoMinuteInterval
-                .pipe(
-                    switchMap(() => fromPromise(this._updates.checkForUpdate())),
-                )
+            twoMinuteInterval.pipe(switchMap(() => fromPromise(this._updates.checkForUpdate())))
                 .subscribe({
                     next: (hasUpdates: boolean) => this.serviceWorkerUpdatesSubject$.next(hasUpdates)
                 });
