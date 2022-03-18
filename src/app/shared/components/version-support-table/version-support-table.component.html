@@ -1,0 +1,18 @@
+<ngx-fluent-design-card>
+    <h3 class="pane-header">Support Table</h3>
+    <section class="version-support-api-table">
+        <table>
+            <tr>
+                <version-support-table-row [isSupported]="supportsV11" [versionName]="'V11'"></version-support-table-row>
+            </tr>
+            <tr>
+                <version-support-table-row [isSupported]="supportsV12" [versionName]="'V12'"></version-support-table-row>
+            </tr>
+            <tr>
+                <version-support-table-row [isSupported]="supportsV13" [versionName]="'V13'"></version-support-table-row>
+            </tr>
+        </table>
+    </section>
+
+    <ng-content></ng-content>
+</ngx-fluent-design-card>

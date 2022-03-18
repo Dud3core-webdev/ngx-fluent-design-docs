@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import PackageJson from '../../../package.json';
 import { NavigationConfigClass } from './config/navigation-config.class';
 import { ApplicationNavigationLinks } from './types/application-navigation-links.type';
+import PackageJson from '../../../package.json';
 
 @Component({
     selector: 'app-navigation',
