@@ -7,8 +7,23 @@
 @import "./node_modules/ngx-fluent-design/src/lib/styles";
 @import "app/styles/typography";
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
     background: #f3f2f1 !important;
+}
+
+:root {
+    /* Error and status background colors */
+    --ngx-fluent-design-error-background-fill: #FDE7E9;
+    --ngx-fluent-design-success-background-fill: #DFF6DD;
+    --ngx-fluent-design-severe-background-fill: #FED9CC;
+    --ngx-fluent-design-warning-background-fill: #FFF4CE;
+
+    /* Error and status text colors */
+    --ngx-fluent-design-status-error: 168, 0, 0;
+    --ngx-fluent-design-status-success: 16, 124, 16;
+    --ngx-fluent-design-status-severe-warning: 216, 59, 1;
+    --ngx-fluent-design-status-warning: 121, 119, 117;
 }
 
 body {
@@ -38,4 +53,3 @@ body {
     background: $ngx-fluent-design-background-neutral-tertiary-alt;
     border-radius: 2px;
 }
-
