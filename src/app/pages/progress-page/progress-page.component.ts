@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+    standalone: false,
     selector: 'app-progress-page',
     templateUrl: './progress-page.component.html'
 })

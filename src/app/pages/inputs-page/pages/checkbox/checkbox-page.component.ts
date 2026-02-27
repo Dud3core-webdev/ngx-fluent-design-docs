@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './checkbox-page.component.html'
 })
 export class CheckboxPageComponent {

@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './text-area-underlined-page.component.html',
     styleUrls: ['./text-area-underlined-page.component.scss']
 })

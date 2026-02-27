@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     selector: 'app-progress-indicator-page',
     templateUrl: './progress-indicator-page.component.html'
 })

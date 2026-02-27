@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgxFluentDesignIconInfoError, NgxFluentDesignIconInfoSuccess } from 'ngx-fluent-design';
 
 @Component({
+    standalone: false,
     selector: 'version-support-table-row',
     templateUrl: './version-support-table-data.component.html',
     styleUrls: ['./version-support-table-data.component.scss']

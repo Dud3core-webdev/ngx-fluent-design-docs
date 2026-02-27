@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 import { ExampleMessageBarDisplayService } from '../../services/example-message-bar-display.service';
-import { MessageBarType } from 'ngx-fluent-design/lib/notifications/types/message-bar.type';
+import { MessageBarType } from 'ngx-fluent-design';
 import { FormControl } from '@angular/forms';
 
 @Component({
+    standalone: false,
     templateUrl: './message-bar-page.component.html',
     styleUrls: ['./message-bar-page.component.scss']
 })

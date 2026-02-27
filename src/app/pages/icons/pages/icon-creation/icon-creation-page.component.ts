@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './icon-creation-page.component.html',
     styleUrls: ['./icon-creation-page.component.scss']
 })

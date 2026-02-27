@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ConnectionServiceModule } from 'ng-connection-service';
+
 import { AppOnlineService } from './services/app-online.service';
 import { AppUpdateService } from './services/app-update.service';
 
@@ -8,6 +8,6 @@ import { AppUpdateService } from './services/app-update.service';
         AppOnlineService,
         AppUpdateService
     ],
-    imports: [ConnectionServiceModule]
+    imports: []
 })
-export class AppStatusModule {}
+export class AppStatusModule { }

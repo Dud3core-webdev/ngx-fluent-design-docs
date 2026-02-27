@@ -13,6 +13,7 @@ interface IThemeFileDownloadConfig {
 }
 
 @Component({
+    standalone: false,
     templateUrl: './palette-generation-page.component.html',
     styleUrls: ['./palette-generation-page.component.scss']
 })

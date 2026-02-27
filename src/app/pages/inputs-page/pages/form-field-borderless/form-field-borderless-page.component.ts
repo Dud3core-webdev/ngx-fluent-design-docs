@@ -3,6 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './form-field-borderless-page.component.html',
     styleUrls: ['./form-field-borderless-page.component.scss']
 })

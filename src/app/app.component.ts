@@ -6,9 +6,10 @@ import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
 import { AppOnlineService } from './status/services/app-online.service';
 import { AppUpdateService } from './status/services/app-update.service';
 import { ExampleMessageBarDisplayService } from './pages/notifications-page/services/example-message-bar-display.service';
-import { MessageBarType } from 'ngx-fluent-design/lib/notifications/types/message-bar.type';
+import { MessageBarType } from 'ngx-fluent-design';
 
 @Component({
+    standalone: false,
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
@@ -35,10 +36,10 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     constructor(router: Router,
-                appOnlineService: AppOnlineService,
-                appUpdateService: AppUpdateService,
-                exampleMessageBarDisplayService: ExampleMessageBarDisplayService,
-                @Inject(DOCUMENT) document: Document) {
+        appOnlineService: AppOnlineService,
+        appUpdateService: AppUpdateService,
+        exampleMessageBarDisplayService: ExampleMessageBarDisplayService,
+        @Inject(DOCUMENT) document: Document) {
         this._router = router;
         this._appUpdateService = appUpdateService;
         this._appOnlineService = appOnlineService;

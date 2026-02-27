@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     selector: 'app-progress-indicator-indeterminate-page',
     templateUrl: './progress-indicator-indeterminate-page.component.html'
 })

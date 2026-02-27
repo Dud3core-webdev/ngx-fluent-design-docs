@@ -3,6 +3,7 @@ import { NgxFluentDesignDialogHandler } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './dialog-page.component.html',
     styleUrls: ['./dialog-page.component.scss']
 })

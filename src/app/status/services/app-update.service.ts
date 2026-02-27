@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, interval, Observable } from 'rxjs';
+import { BehaviorSubject, interval, Observable, from } from 'rxjs';
 import { SwUpdate } from '@angular/service-worker';
 import { WINDOW } from '../../shared/types/window-ref.clss';
 import { switchMap } from 'rxjs/operators';
-import { fromPromise } from 'rxjs/internal-compatibility';
+
 
 @Injectable()
 export class AppUpdateService {
@@ -36,7 +36,7 @@ export class AppUpdateService {
         const twoMinuteInterval: Observable<number> = interval(120000);
 
         if (this._updates.isEnabled) {
-            twoMinuteInterval.pipe(switchMap(() => fromPromise(this._updates.checkForUpdate())))
+            twoMinuteInterval.pipe(switchMap(() => from(this._updates.checkForUpdate())))
                 .subscribe({
                     next: (hasUpdates: boolean) => this.serviceWorkerUpdatesSubject$.next(hasUpdates)
                 });

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+    standalone: false,
     templateUrl: './action-button-page.component.html',
     styleUrls: ['./action-button-page.component.scss']
 })

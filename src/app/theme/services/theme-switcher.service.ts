@@ -23,7 +23,9 @@ export class ThemeSwitcherService {
                 switchMap((response: string | undefined) => {
                     if (typeof response === 'undefined') {
                         const firstThemeAvailable = this._themesMap.entries().next().value;
-                        this.theme = firstThemeAvailable[0];
+                        if (firstThemeAvailable) {
+                            this.theme = firstThemeAvailable[0];
+                        }
                     } else {
                         this.theme = response;
                     }
@@ -50,9 +52,7 @@ export class ThemeSwitcherService {
         const themeMap: Map<string, string> | undefined = this._themesMap.get(themeName);
 
         if (typeof themeMap === 'undefined') {
-            throw throwError({
-                message: `Could not find ${themeName}, please add ${themeName} to your forRoot configuration`
-            });
+            throw new Error(`Could not find ${themeName}, please add ${themeName} to your forRoot configuration`);
         }
 
         themeMap.forEach((value, key) => {

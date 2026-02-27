@@ -3,6 +3,7 @@ import { ThemeSwitcherService } from '../../../theme/services/theme-switcher.ser
 import { ApplicationThemeName } from '../../../shared/theme/types/application-theme-name.enum';
 
 @Component({
+    standalone: false,
     templateUrl: './docs-down-for-maintainance-error-page.component.html',
     styleUrls: ['./docs-down-for-maintainance-error-page.component.scss']
 })

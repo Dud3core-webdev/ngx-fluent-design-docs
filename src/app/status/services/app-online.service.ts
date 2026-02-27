@@ -1,27 +1,27 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ConnectionService } from 'ng-connection-service';
+import { Injectable, Inject } from '@angular/core';
+import { BehaviorSubject, Observable, fromEvent, merge } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { WINDOW } from '../../shared/types/window-ref.clss';
 
 @Injectable()
 export class AppOnlineService {
-    private readonly _connectionService: ConnectionService;
     private readonly onlineStatusSubject$: BehaviorSubject<boolean>;
 
     public get onlineStatus(): Observable<boolean> {
         return this.onlineStatusSubject$.asObservable();
     }
 
-    constructor(connectionService: ConnectionService) {
-        this._connectionService = connectionService;
-        this.onlineStatusSubject$ = new BehaviorSubject<boolean>(true);
-
+    constructor(@Inject(WINDOW) private window: Window) {
+        this.onlineStatusSubject$ = new BehaviorSubject<boolean>(this.window.navigator.onLine);
         this.initialise();
     }
 
     private initialise(): void {
-        this._connectionService.monitor()
-            .subscribe({
-                next: (isConnected: boolean) => this.onlineStatusSubject$.next(isConnected)
-            });
+        merge(
+            fromEvent(this.window, 'online').pipe(map(() => true)),
+            fromEvent(this.window, 'offline').pipe(map(() => false))
+        ).subscribe(isOnline => {
+            this.onlineStatusSubject$.next(isOnline);
+        });
     }
 }

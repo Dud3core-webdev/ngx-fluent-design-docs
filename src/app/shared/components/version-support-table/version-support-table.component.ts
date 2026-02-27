@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgxFluentDesignIconInfoSevereWarn } from 'ngx-fluent-design';
 
 @Component({
+    standalone: false,
     selector: 'version-support-table',
     templateUrl: './version-support-table.component.html',
     styleUrls: ['./version-support-table.component.scss']

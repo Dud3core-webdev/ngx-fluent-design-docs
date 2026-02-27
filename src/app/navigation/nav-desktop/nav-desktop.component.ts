@@ -4,6 +4,7 @@ import { ApplicationThemeName } from '../../shared/theme/types/application-theme
 import { ApplicationNavigationLinks } from '../types/application-navigation-links.type';
 
 @Component({
+    standalone: false,
     selector: 'nav-desktop',
     templateUrl: './nav-desktop.component.html',
     styleUrls: ['./nav-desktop.component.scss']

@@ -5,6 +5,7 @@ import { ApplicationNavigationLinks } from './types/application-navigation-links
 import PackageJson from '../../../package.json';
 
 @Component({
+    standalone: false,
     selector: 'app-navigation',
     templateUrl: './app-navigation.component.html',
     styleUrls: ['./app-navigation.component.scss']

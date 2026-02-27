@@ -3,6 +3,7 @@ import { ThemeSwitcherService } from '../../../theme/services/theme-switcher.ser
 import { ApplicationThemeName } from '../../../shared/theme/types/application-theme-name.enum';
 
 @Component({
+    standalone: false,
     templateUrl: './page-not-found-page.component.html',
     styleUrls: ['./page-not-found-page.component.scss']
 })

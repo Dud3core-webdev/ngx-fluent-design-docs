@@ -10,6 +10,7 @@ import { ApplicationThemeName } from '../../shared/theme/types/application-theme
 import { ApplicationNavigationLinks } from '../types/application-navigation-links.type';
 
 @Component({
+    standalone: false,
     selector: 'side-nav-mobile',
     templateUrl: './side-nav-mobile.component.html',
     styleUrls: ['./side-nav-mobile.component.scss'],

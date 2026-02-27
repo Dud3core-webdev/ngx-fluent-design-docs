@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MessageBarType } from 'ngx-fluent-design/lib/notifications/types/message-bar.type';
+import { MessageBarType } from 'ngx-fluent-design';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({

@@ -3,6 +3,7 @@ import { NgxFluentDesignModalHandler } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './modal-page.component.html',
     styleUrls: ['./modal-page.component.scss']
 })

@@ -11,6 +11,7 @@ import {
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 
 @Component({
+    standalone: false,
     templateUrl: './icon-usage-page.component.html',
     styleUrls: ['./icon-usage-page.component.scss']
 })
