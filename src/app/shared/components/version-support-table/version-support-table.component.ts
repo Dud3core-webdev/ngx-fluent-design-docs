@@ -13,6 +13,7 @@ export class VersionSupportTableComponent {
     @Input() public supportsV11: boolean = false;
     @Input() public supportsV12: boolean = false;
     @Input() public supportsV13: boolean = false;
+    @Input() public supportsV21: boolean = true;
 
     public getIconConfiguration(isSupported: boolean): any {
         if (isSupported) {
