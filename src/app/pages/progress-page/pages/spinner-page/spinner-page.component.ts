@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MarkdownModule } from 'ngx-markdown';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
 import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
@@ -8,7 +9,7 @@ import { NgxFluentDesignCardComponent, NgxFluentDesignSpinnerComponent } from 'n
     standalone: true,
     selector: 'app-spinner-page',
     templateUrl: './spinner-page.component.html',
-    imports: [VersionSupportTableComponent, ComponentApiTableComponent, NgxFluentDesignCardComponent, NgxFluentDesignSpinnerComponent]
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, NgxFluentDesignCardComponent, NgxFluentDesignSpinnerComponent, MarkdownModule]
 })
 export class SpinnerPageComponent {
     public readonly apiData: ComponentApiDataList = [
