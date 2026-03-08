@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { NgxFluentDesignCardComponent, NgxFluentDesignToggleComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './toggle-page.component.html',
-    styleUrls: ['./toggle-page.component.scss']
+    styleUrls: ['./toggle-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, NgxFluentDesignCardComponent, NgxFluentDesignToggleComponent]
 })
 export class TogglePageComponent {
     public readonly toggleApiData: ComponentApiDataList = [

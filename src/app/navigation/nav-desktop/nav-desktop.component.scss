@@ -1,4 +1,4 @@
-@import "../../../../node_modules/ngx-fluent-design/src/lib/styles/variables";
+@use "../../../../node_modules/ngx-fluent-design/src/lib/styles/variables" as *;
 
 .sticky-navigation {
     width: 328px;
@@ -23,14 +23,18 @@
             .component-section {
                 display: flex;
                 flex-direction: column;
+
                 h5 {
                     margin: 12px 0;
                     font-weight: lighter;
                 }
+
                 a {
                     margin: 5px 0;
                 }
             }
-        };
+        }
+
+        ;
     }
 }

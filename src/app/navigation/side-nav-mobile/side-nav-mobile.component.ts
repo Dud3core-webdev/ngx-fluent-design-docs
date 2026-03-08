@@ -1,5 +1,5 @@
 import { Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
-import { INgxFluentDesignIcon, NgxFluentDesignIconClearClose } from 'ngx-fluent-design';
+import { INgxFluentDesignIcon, NgxFluentDesignIconClearClose, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, NgxFluentDesignIconComponent, NgxFluentDesignToggleComponent, NgxFluentDesignButtonLinkDirective } from 'ngx-fluent-design';
 import { MobileSideNavHandler } from '../handlers/mobile-side-nav-handler.class';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
@@ -8,9 +8,9 @@ import { tap } from 'rxjs/operators';
 import { ThemeSwitcherService } from '../../theme/services/theme-switcher.service';
 import { ApplicationThemeName } from '../../shared/theme/types/application-theme-name.enum';
 import { ApplicationNavigationLinks } from '../types/application-navigation-links.type';
+import { RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
-    standalone: false,
     selector: 'side-nav-mobile',
     templateUrl: './side-nav-mobile.component.html',
     styleUrls: ['./side-nav-mobile.component.scss'],
@@ -29,7 +29,8 @@ import { ApplicationNavigationLinks } from '../types/application-navigation-link
                 animate('150ms')
             ]),
         ])
-    ]
+    ],
+    imports: [NgxFluentDesignIconComponent, NgxFluentDesignToggleComponent, NgxFluentDesignButtonLinkDirective, RouterLinkActive, RouterLink]
 })
 export class SideNavMobileComponent implements OnInit, OnDestroy {
     @Input() public sideNavLinks: ApplicationNavigationLinks = [];

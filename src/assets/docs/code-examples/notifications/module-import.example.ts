@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
-import { NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
+import { Component } from '@angular/core';
+import { NgxFluentDesignMessageBarComponent } from 'ngx-fluent-design';
 
-@NgModule({
-    imports: [NgxFluentDesignNotificationModule]
+@Component({
+    standalone: true,
+    imports: [NgxFluentDesignMessageBarComponent]
+
 })
 export class ModuleImportExample {}

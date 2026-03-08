@@ -1,28 +1,30 @@
 <h2 class="page-title">Icon Component Usage</h2>
 
 <section class="my-3">
-    <ngx-fluent-design-message-bar messageBarType="warning">
-        We are currently only adding icons to this library as and when we need to. However, the ngx-fluent-design-icon component is
-        open to custom iconography. To create your own icons, see Custom Icons
-    </ngx-fluent-design-message-bar>
+  <ngx-fluent-design-message-bar messageBarType="warning">
+    We are currently only adding icons to this library as and when we need to. However, the ngx-fluent-design-icon component is
+    open to custom iconography. To create your own icons, see Custom Icons
+  </ngx-fluent-design-message-bar>
 </section>
 
 <component-api-table [data]="apiData"></component-api-table>
 
 <code-example
-    codeExampleUrl="./assets/docs/code-examples/icons/icon-component-usage.example.ts"
-    title="Usage"
-    [isUsageDocumentation]="false">
+  codeExampleUrl="./assets/docs/code-examples/icons/icon-component-usage.example.ts"
+  title="Usage"
+  [isUsageDocumentation]="false">
 </code-example>
 
 <ngx-fluent-design-card>
-    <h3 class="pane-header">Icon List</h3>
+  <h3 class="pane-header">Icon List</h3>
 
-    <div class="d-flex flex-column align-baseline">
-        <div class="d-flex flex-column align-baseline flex-md-row" *ngFor="let icon of iconList">
-            <p class="subject-title mr-3">{{icon.name}}</p>
-            <ngx-fluent-design-icon [icon]="icon.icon" [ngxFluentDesignCssVariableName]="icon.fillColor"></ngx-fluent-design-icon>
-        </div>
-    </div>
+  <div class="d-flex flex-column align-baseline">
+    @for (icon of iconList; track icon) {
+      <div class="d-flex flex-column align-baseline flex-md-row">
+        <p class="subject-title mr-3">{{icon.name}}</p>
+        <ngx-fluent-design-icon [icon]="icon.icon" [ngxFluentDesignCssVariableName]="icon.fillColor"></ngx-fluent-design-icon>
+      </div>
+    }
+  </div>
 </ngx-fluent-design-card>
 

@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
-import { NgxFluentDesignIconModule } from 'ngx-fluent-design';
+import { Component } from '@angular/core';
+import { NgxFluentDesignIconComponent } from 'ngx-fluent-design';
 
-@NgModule({
-    imports: [NgxFluentDesignIconModule]
+@Component({
+    standalone: true,
+    imports: [NgxFluentDesignIconComponent]
+
 })
 export class ModuleImportExample {}

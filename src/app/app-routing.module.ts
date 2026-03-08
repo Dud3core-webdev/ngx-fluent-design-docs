@@ -1,16 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { InputsPageComponent } from './pages/inputs-page/inputs-page.component';
-import { CallsToActionPageComponent } from './pages/calls-to-action-page/calls-to-action-page.component';
-import { NotificationsPageComponent } from './pages/notifications-page/notifications-page.component';
-import { ProgressPageComponent } from './pages/progress-page/progress-page.component';
-import { ScssUtilitiesPageComponent } from './pages/scss-utilities/scss-utilities-page.component';
-import { SurfacesPageComponent } from './pages/surfaces/surfaces-page.component';
-import { IconsPageComponent } from './pages/icons/icons-page.component';
 import { CanActivateDocsPagesGuard } from './shared/guards/can-activate-docs-pages.guard';
-import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
-import { CommandPageComponent } from './pages/command/command-page.component';
+
 
 const routes: Routes = [
     {
@@ -20,62 +11,67 @@ const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomePageComponent,
-        loadChildren: () => import('./pages/home-page/home-page.module').then((module) => module.HomePageModule),
+        loadComponent: () => import('./pages/home-page/home-page.component').then(c => c.HomePageComponent),
+        children: [
+            {
+                path: '',
+                redirectTo: 'welcome',
+                pathMatch: 'full'
+            },
+            {
+                path: 'welcome',
+                loadComponent: () => import('./pages/home-page/introduction-page/introduction-page.component').then(c => c.IntroductionPageComponent)
+            },
+            {
+                path: 'generate-palette',
+                loadComponent: () => import('./pages/home-page/palette-generation-page/palette-generation-page.component').then(c => c.PaletteGenerationPageComponent)
+            }
+        ],
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'inputs',
-        component: InputsPageComponent,
-        loadChildren: () => import('./pages/inputs-page/inputs-page.module').then((module) => module.InputsPageModule),
+        loadChildren: () => import('./pages/inputs-page/inputs-page.routes').then(r => r.INPUTS_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'calls-to-action',
-        component: CallsToActionPageComponent,
-        loadChildren: () => import('./pages/calls-to-action-page/calls-to-action-page.module').then((module) => module.CallsToActionPageModule),
+        loadChildren: () => import('./pages/calls-to-action-page/calls-to-action-page.routes').then(r => r.CALLS_TO_ACTION_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'commands',
-        component: CommandPageComponent,
-        loadChildren: () => import('./pages/command/command-page.module').then((module) => module.CommandPageModule),
+        loadChildren: () => import('./pages/command/command-page.routes').then(r => r.COMMAND_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'notifications',
-        component: NotificationsPageComponent,
-        loadChildren: () => import('./pages/notifications-page/notifications-page.module').then((module) => module.NotificationsPageModule),
+        loadChildren: () => import('./pages/notifications-page/notifications-page.routes').then(r => r.NOTIFICATIONS_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'progress',
-        component: ProgressPageComponent,
-        loadChildren: () => import('./pages/progress-page/progress-page.module').then((module) => module.ProgressPageModule),
+        loadChildren: () => import('./pages/progress-page/progress-page.routes').then(r => r.PROGRESS_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'scss-utilities',
-        component: ScssUtilitiesPageComponent,
-        loadChildren: () => import('./pages/scss-utilities/scss-utilities.page.module').then((module) => module.ScssUtilitiesPageModule),
+        loadChildren: () => import('./pages/scss-utilities/scss-utilities-page.routes').then(r => r.SCSS_UTILITIES_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'surfaces',
-        component: SurfacesPageComponent,
-        loadChildren: () => import('./pages/surfaces/surfaces-page.module').then((module) => module.SurfacesPageModule),
+        loadChildren: () => import('./pages/surfaces/surfaces-page.routes').then(r => r.SURFACES_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'icons',
-        component: IconsPageComponent,
-        loadChildren: () => import('./pages/icons/icons-page.module').then((module) => module.IconsPageModule),
+        loadChildren: () => import('./pages/icons/icons-page.routes').then(r => r.ICONS_PAGE_ROUTES),
         canActivate: [CanActivateDocsPagesGuard]
     },
     {
         path: 'errors',
-        component: ErrorsPageComponent,
-        loadChildren: () => import('./pages/errors-page/errors-page.module').then((module) => module.ErrorsPageModule)
+        loadChildren: () => import('./pages/errors-page/errors-page.routes').then(r => r.ERRORS_PAGE_ROUTES)
     },
     {
         path: '**',

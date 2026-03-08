@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { NgxFluentDesignDialogHandler } from 'ngx-fluent-design';
+import { NgxFluentDesignDialogHandler, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, NgxFluentDesignButtonComponent, NgxFluentDesignDialogComponent } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../shared/components/code-example/code-example.component';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './dialog-page.component.html',
-    styleUrls: ['./dialog-page.component.scss']
+    styleUrls: ['./dialog-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, NgxFluentDesignButtonComponent, CodeExampleComponent, NgxFluentDesignDialogComponent]
 })
 export class DialogPageComponent {
     public handler: NgxFluentDesignDialogHandler = new NgxFluentDesignDialogHandler(false);

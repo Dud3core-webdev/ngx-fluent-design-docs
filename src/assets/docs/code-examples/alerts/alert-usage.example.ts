@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { NgxFluentDesignDialogHandler } from 'ngx-fluent-design';
+import { NgxFluentDesignDialogHandler, NgxFluentDesignButtonComponent, NgxFluentDesignDialogComponent } from 'ngx-fluent-design';
 
 @Component({
+    standalone: true,
+    imports: [NgxFluentDesignButtonComponent, NgxFluentDesignDialogComponent],
     template: `
         <ngx-fluent-design-button type="primary" (clicked)="handler.open()">
             Click Here to launch a dialog

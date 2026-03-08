@@ -1,1 +1,6 @@
-@import "~ngx-fluent-design/src/lib/styles";
+/** Please note that this will be fixed to a single import in a coming release. */
+
+@use "./node_modules/ngx-fluent-design/src/lib/styles";
+@use "./node_modules/ngx-fluent-design/src/lib/styles/cta/ngx-fluent-design-action-button.component";
+@use "./node_modules/ngx-fluent-design/src/lib/styles/cta/ngx-fluent-design-link-button.component";
+@use "./node_modules/ngx-fluent-design/src/lib/styles/variables" as *;

@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../../shared/components/code-example/code-example.component';
+import { NgxFluentDesignTextareaUnderlinedComponent, NgxFluentDesignInputClassValidatorDirective, NgxFluentDesignToggleComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './text-area-underlined-page.component.html',
-    styleUrls: ['./text-area-underlined-page.component.scss']
+    styleUrls: ['./text-area-underlined-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, CodeExampleComponent, NgxFluentDesignTextareaUnderlinedComponent, ReactiveFormsModule, NgxFluentDesignInputClassValidatorDirective, NgxFluentDesignToggleComponent]
 })
 export class TextAreaUnderlinedPageComponent {
     public readonly apiData: ComponentApiDataList = [

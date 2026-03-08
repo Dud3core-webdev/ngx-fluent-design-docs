@@ -1,4 +1,4 @@
-@import "./node_modules/ngx-fluent-design/src/lib/styles/variables";
+@use "../../../../../node_modules/ngx-fluent-design/src/lib/styles/variables" as *;
 
 .version-support-api-table {
     background: var(--application-background);

@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
-import { NgxFluentDesignCtaModule } from 'ngx-fluent-design';
+import { Component } from '@angular/core';
+import { NgxFluentDesignButtonComponent, NgxFluentDesignCompoundButtonComponent, NgxFluentDesignButtonLinkDirective, NgxFluentDesignActionButtonDirective } from 'ngx-fluent-design';
 
-@NgModule({
-    imports: [NgxFluentDesignCtaModule]
+@Component({
+    standalone: true,
+    imports: [NgxFluentDesignButtonComponent, NgxFluentDesignCompoundButtonComponent, NgxFluentDesignButtonLinkDirective, NgxFluentDesignActionButtonDirective]
+
 })
 export class ModuleImportExample {}

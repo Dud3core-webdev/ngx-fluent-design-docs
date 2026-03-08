@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../../shared/components/code-example/code-example.component';
+import { NgxFluentDesignRadioComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
-    templateUrl: 'radio-page.component.html'
+    standalone: true,
+    templateUrl: 'radio-page.component.html',
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, CodeExampleComponent, NgxFluentDesignRadioComponent]
 })
 
 export class RadioPageComponent {

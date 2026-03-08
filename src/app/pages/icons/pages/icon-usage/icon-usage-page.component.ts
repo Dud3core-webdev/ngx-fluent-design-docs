@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
-import {
-    INgxFluentDesignIcon,
-    NgxFluentDesignIconClearClose,
-    NgxFluentDesignIconInfoBlocked,
-    NgxFluentDesignIconInfoError,
-    NgxFluentDesignIconInfoSevereWarn,
-    NgxFluentDesignIconInfoSuccess,
-    NgxFluentDesignIconInfoWarn
-} from 'ngx-fluent-design';
+import { INgxFluentDesignIcon, NgxFluentDesignIconClearClose, NgxFluentDesignIconInfoBlocked, NgxFluentDesignIconInfoError, NgxFluentDesignIconInfoSevereWarn, NgxFluentDesignIconInfoSuccess, NgxFluentDesignIconInfoWarn, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, NgxFluentDesignIconComponent } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../../shared/components/code-example/code-example.component';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './icon-usage-page.component.html',
-    styleUrls: ['./icon-usage-page.component.scss']
+    styleUrls: ['./icon-usage-page.component.scss'],
+    imports: [NgxFluentDesignMessageBarComponent, ComponentApiTableComponent, CodeExampleComponent, NgxFluentDesignCardComponent, NgxFluentDesignIconComponent]
 })
 export class IconUsagePageComponent {
     public apiData: ComponentApiDataList = [

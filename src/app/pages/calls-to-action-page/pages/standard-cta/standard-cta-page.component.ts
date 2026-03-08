@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../../shared/components/code-example/code-example.component';
+import { NgxFluentDesignButtonComponent, NgxFluentDesignToggleComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './standard-cta-page.component.html',
-    styleUrls: ['./standard-cta-page.component.scss']
+    styleUrls: ['./standard-cta-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, CodeExampleComponent, NgxFluentDesignButtonComponent, NgxFluentDesignToggleComponent]
 })
 export class StandardCtaPageComponent {
     public standardButtonsDisabled: boolean = false;

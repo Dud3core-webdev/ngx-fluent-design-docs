@@ -1,10 +1,13 @@
 import { Component, ElementRef, ViewChild, ViewRef } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { hexCodeValidator } from './validators/hex-code.validator';
 import { of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { HexToRgbService } from '../../../theme/services/hex-to-rgb.service';
 import { defaultPalette } from './constants/generated-default-theme.class';
+import { CommonModule } from '@angular/common';
+import { NgxFluentDesignButtonComponent, NgxFluentDesignCardComponent, NgxFluentDesignFormFieldComponent, NgxFluentDesignMessageBarComponent, NgxFluentDesignTextareaComponent, NgxFluentDesignSpinnerComponent, NgxFluentDesignInputClassValidatorDirective, NgxFluentDesignActionButtonDirective, NgxFluentDesignCompoundButtonComponent } from 'ngx-fluent-design';
+import { DocsLogoComponent } from '../../../shared/components/docs-logo/docs-logo.component';
 
 interface IThemeFileDownloadConfig {
     readonly cssVariables: string;
@@ -13,7 +16,21 @@ interface IThemeFileDownloadConfig {
 }
 
 @Component({
-    standalone: false,
+    standalone: true,
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        DocsLogoComponent,
+        NgxFluentDesignCardComponent,
+        NgxFluentDesignMessageBarComponent,
+        NgxFluentDesignFormFieldComponent,
+        NgxFluentDesignTextareaComponent,
+        NgxFluentDesignButtonComponent,
+        NgxFluentDesignCompoundButtonComponent,
+        NgxFluentDesignSpinnerComponent,
+        NgxFluentDesignInputClassValidatorDirective,
+        NgxFluentDesignActionButtonDirective
+    ],
     templateUrl: './palette-generation-page.component.html',
     styleUrls: ['./palette-generation-page.component.scss']
 })
@@ -71,7 +88,7 @@ export class PaletteGenerationPageComponent {
     }
 
     constructor(hexToRgbService: HexToRgbService,
-                elementReference: ElementRef) {
+        elementReference: ElementRef) {
         this._hexToRgbService = hexToRgbService;
         this._elementReference = elementReference;
 

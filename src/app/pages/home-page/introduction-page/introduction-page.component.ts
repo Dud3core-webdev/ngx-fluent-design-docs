@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
 import { ThemeSwitcherService } from '../../../theme/services/theme-switcher.service';
 import { ApplicationThemeName } from '../../../shared/theme/types/application-theme-name.enum';
+import { CommonModule } from '@angular/common';
+import { MarkdownModule } from 'ngx-markdown';
+import { NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
+    standalone: true,
+    imports: [
+        CommonModule,
+        MarkdownModule,
+        NgxFluentDesignCardComponent,
+        NgxFluentDesignMessageBarComponent
+    ],
     templateUrl: './introduction-page.component.html',
     styleUrls: ['./introduction-page.component.scss']
 })

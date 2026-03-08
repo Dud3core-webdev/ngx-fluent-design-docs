@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { NgxFluentDesignPanelHandler } from 'ngx-fluent-design';
+import { NgxFluentDesignPanelHandler, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, NgxFluentDesignButtonComponent, NgxFluentDesignPanelComponent } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../shared/components/code-example/code-example.component';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './panel-page.component.html',
-    styleUrls: ['./panel-page.component.scss']
+    styleUrls: ['./panel-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, CodeExampleComponent, NgxFluentDesignButtonComponent, NgxFluentDesignPanelComponent]
 })
 export class PanelPageComponent {
     public readonly panelHandler: NgxFluentDesignPanelHandler = new NgxFluentDesignPanelHandler(false);

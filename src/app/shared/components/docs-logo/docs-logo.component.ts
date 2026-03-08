@@ -3,8 +3,8 @@ import { ThemeSwitcherService } from '../../../theme/services/theme-switcher.ser
 import { ApplicationThemeName } from '../../theme/types/application-theme-name.enum';
 
 @Component({
-    standalone: false,
     selector: 'app-logo-component',
+    standalone: true,
     templateUrl: './docs-logo.component.html',
     styleUrls: ['./docs-logo.component.scss']
 })

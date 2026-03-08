@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../../shared/components/code-example/code-example.component';
+import { NgxFluentDesignFormFieldComponent, NgxFluentDesignInputClassValidatorDirective, NgxFluentDesignToggleComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './form-field-page.component.html',
-    styleUrls: ['./form-field-page.component.scss']
+    styleUrls: ['./form-field-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, CodeExampleComponent, NgxFluentDesignFormFieldComponent, ReactiveFormsModule, NgxFluentDesignInputClassValidatorDirective, NgxFluentDesignToggleComponent]
 })
 export class FormFieldPageComponent {
     public readonly formFieldApiData: ComponentApiDataList = [

@@ -1,7 +1,9 @@
-@import "../../../../node_modules/ngx-fluent-design/src/lib/styles/variables";
+@use "../../../../node_modules/ngx-fluent-design/src/lib/styles/variables" as *;
 
 ::ng-deep {
-    body, html {
+
+    body,
+    html {
         .no-scroll {
             overflow: hidden;
         }

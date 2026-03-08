@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { NgxFluentDesignMessageBarHandler } from 'ngx-fluent-design';
+import { NgxFluentDesignMessageBarHandler, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, MessageBarType, NgxFluentDesignButtonComponent, NgxFluentDesignRadioComponent } from 'ngx-fluent-design';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
 import { ExampleMessageBarDisplayService } from '../../services/example-message-bar-display.service';
-import { MessageBarType } from 'ngx-fluent-design';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './message-bar-page.component.html',
-    styleUrls: ['./message-bar-page.component.scss']
+    styleUrls: ['./message-bar-page.component.scss'],
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, MarkdownComponent, NgxFluentDesignButtonComponent, NgxFluentDesignRadioComponent, ReactiveFormsModule]
 })
 export class MessageBarPageComponent {
     public readonly messageBarName: FormControl = new FormControl('success');

@@ -1,10 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { NgxFluentDesignCardComponent } from 'ngx-fluent-design';
+import { MarkdownComponent } from 'ngx-markdown';
 
 @Component({
-    standalone: false,
     selector: 'code-example',
+    standalone: true,
     templateUrl: './code-example.component.html',
-    styleUrls: ['./code-example.component.scss']
+    styleUrls: ['./code-example.component.scss'],
+    imports: [NgxFluentDesignCardComponent, MarkdownComponent]
 })
 export class CodeExampleComponent {
     @Input() public codeExampleUrl: string = '';

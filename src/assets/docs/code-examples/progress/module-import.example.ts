@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
-import { NgxFluentDesignProgressModule } from 'ngx-fluent-design';
+import { Component } from '@angular/core';
+import { NgxFluentDesignSpinnerComponent, NgxFluentDesignProgressIndicatorComponent, NgxFluentDesignProgressIndicatorIndeterminateComponent } from 'ngx-fluent-design';
 
-@NgModule({
-    imports: [NgxFluentDesignProgressModule]
+@Component({
+    standalone: true,
+    imports: [NgxFluentDesignSpinnerComponent, NgxFluentDesignProgressIndicatorComponent, NgxFluentDesignProgressIndicatorIndeterminateComponent]
+
 })
 export class ModuleImportExample {
 }

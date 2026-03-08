@@ -1,4 +1,4 @@
-@import "./node_modules/ngx-fluent-design/src/lib/styles/variables";
+@use "../../../../../node_modules/ngx-fluent-design/src/lib/styles/variables" as *;
 
 .component-api-table {
     background: var(--application-background);
@@ -12,7 +12,8 @@
         color: $ngx-fluent-design-foreground-neutral-primary;
     }
 
-    td, th {
+    td,
+    th {
         border: 1px solid transparent;
         text-align: left;
         padding: 8px;

@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
-import { NgxFluentDesignCommandModule } from 'ngx-fluent-design';
+import { Component } from '@angular/core';
+import { NgxFluentDesignCommandStackComponent, NgxFluentDesignPivotComponent, NgxFluentDesignTabComponent } from 'ngx-fluent-design';
 
-@NgModule({
-    imports: [NgxFluentDesignCommandModule]
+@Component({
+    standalone: true,
+    imports: [NgxFluentDesignCommandStackComponent, NgxFluentDesignPivotComponent, NgxFluentDesignTabComponent]
+
 })
-export class CommandModuleImportExample {}
+export class CommandComponentImportExample {}

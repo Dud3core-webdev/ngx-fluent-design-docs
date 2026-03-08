@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { CodeExampleComponent } from '../../../../shared/components/code-example/code-example.component';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './icon-creation-page.component.html',
-    styleUrls: ['./icon-creation-page.component.scss']
+    styleUrls: ['./icon-creation-page.component.scss'],
+    imports: [ComponentApiTableComponent, CodeExampleComponent]
 })
 export class IconCreationPageComponent {
     public apiData: ComponentApiDataList = [

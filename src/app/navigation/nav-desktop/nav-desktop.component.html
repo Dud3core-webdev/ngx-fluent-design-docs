@@ -1,34 +1,46 @@
-<div class="sticky-navigation" *ngIf="sideNavLinks">
+@if (sideNavLinks) {
+  <div class="sticky-navigation">
     <div class="h-100">
-        <div class="components">
-            <div class="w-100 justify-content-center d-flex">
-                <img *ngIf="isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-light.svg"/>
-                <img *ngIf="!isNormalTheme" alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-dark.svg"/>
-            </div>
-            <section class="p-4">
-                <section class="mt-2 mb-3 px-4">
-                    <ngx-fluent-design-toggle [inlineLabel]="true" (change)="toggleTheme()" [label]="'Toggle dark mode'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>
-                </section>
-                <section class="mt-2">
-                    <p>Current Version: {{currentPackageVersion}}</p>
-                    <a ngxFluentDesignLinkButton class="mt-3" routerLinkActive="active" [routerLink]="['', 'home', 'welcome']">Home</a>
-                </section>
-                <h4 class="pane-header">Components</h4>
-                <hr>
-                <div class="components-links d-flex flex-column">
-                    <section *ngFor="let item of sideNavLinks">
-                        <section class="component-section" *ngIf="item.shouldDisplayOnLive || !isProdEnvironment">
-                            <h5 class="subject-title">{{item.title}}</h5>
-                            <ng-container *ngFor="let link of item.subNavItems">
-                                <a ngxFluentDesignLinkButton *ngIf="link.shouldDisplayOnLive || !isProdEnvironment"
-                                   routerLinkActive="active"
-                                   [routerLink]="link.routerLink">{{link.title}}
-                                </a>
-                            </ng-container>
-                        </section>
-                    </section>
-                </div>
-            </section>
+      <div class="components">
+        <div class="w-100 justify-content-center d-flex">
+          @if (isNormalTheme) {
+            <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-light.svg"/>
+          }
+          @if (!isNormalTheme) {
+            <img alt="ngx-fluent-design logo" class="fluent-design-logo img-fluid" src="../../../assets/main-logo-dark.svg"/>
+          }
         </div>
+        <section class="p-4">
+          <section class="mt-2 mb-3 px-4">
+            <ngx-fluent-design-toggle [inlineLabel]="true" (change)="toggleTheme()" [label]="'Toggle dark mode'" [toggled]="!isNormalTheme"></ngx-fluent-design-toggle>
+          </section>
+          <section class="mt-2">
+            <p>Current Version: {{currentPackageVersion}}</p>
+            <a ngxFluentDesignLinkButton class="mt-3" routerLinkActive="active" [routerLink]="['', 'home', 'welcome']">Home</a>
+          </section>
+          <h4 class="pane-header">Components</h4>
+          <hr>
+            <div class="components-links d-flex flex-column">
+              @for (item of sideNavLinks; track item) {
+                <section>
+                  @if (item.shouldDisplayOnLive || !isProdEnvironment) {
+                    <section class="component-section">
+                      <h5 class="subject-title">{{item.title}}</h5>
+                      @for (link of item.subNavItems; track link) {
+                        @if (link.shouldDisplayOnLive || !isProdEnvironment) {
+                          <a ngxFluentDesignLinkButton
+                            routerLinkActive="active"
+                            [routerLink]="link.routerLink">{{link.title}}
+                          </a>
+                        }
+                      }
+                    </section>
+                  }
+                </section>
+              }
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
-</div>
+  }

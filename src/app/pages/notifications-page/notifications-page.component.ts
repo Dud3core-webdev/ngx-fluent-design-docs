@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { CodeExampleComponent } from '../../shared/components/code-example/code-example.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './notifications-page.component.html',
-    styleUrls: ['./notifications-page.component.scss']
+    styleUrls: ['./notifications-page.component.scss'],
+    imports: [CodeExampleComponent, RouterOutlet]
 })
-export class NotificationsPageComponent {}
+export class NotificationsPageComponent { }

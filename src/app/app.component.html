@@ -1,37 +1,30 @@
 <section class="top-alert">
-    <ngx-fluent-design-message-bar
-        class="alert-component"
-        [canDismiss]="true"
-        [actionName]="'Reload'"
-        [handler]="appUpdatesMessageBarHandler"
-        (actionClicked)="reloadApplication()"
-        (closeClicked)="appUpdatesMessageBarHandler.close()"
-        messageBarType="success">
-            It looks like there might be an update for this application, reload the page to get the latest updates
-    </ngx-fluent-design-message-bar>
+  <ngx-fluent-design-message-bar class="alert-component" [canDismiss]="true" [actionName]="'Reload'"
+    [handler]="appUpdatesMessageBarHandler" (actionClicked)="reloadApplication()"
+    (closeClicked)="appUpdatesMessageBarHandler.close()" messageBarType="success">
+    It looks like there might be an update for this application, reload the page to get the latest updates
+  </ngx-fluent-design-message-bar>
 
-    <ngx-fluent-design-message-bar
-        [handler]="onlineStatusMessageBarHandler"
-        class="alert-component"
-        [canDismiss]="true"
-        (closeClicked)="onlineStatusMessageBarHandler.close()"
-        messageBarType="error">
-            Application is currently offline. This might affect Asset fetching
-    </ngx-fluent-design-message-bar>
+  <ngx-fluent-design-message-bar [handler]="onlineStatusMessageBarHandler" class="alert-component" [canDismiss]="true"
+    (closeClicked)="onlineStatusMessageBarHandler.close()" messageBarType="error">
+    Application is currently offline. This might affect Asset fetching
+  </ngx-fluent-design-message-bar>
 
-    <ngx-fluent-design-message-bar [canDismiss]="true"
-                                   [actionName]="'Click me'"
-                                   [handler]="exampleMessageBarHandler"
-                                   [messageBarType]="messageBarType"
-                                   (closeClicked)="exampleMessageBarHandler.close()"
-                                   [fixed]="true">
-        Here is a {{messageBarType}} fixed alert
-    </ngx-fluent-design-message-bar>
+  <ngx-fluent-design-message-bar [canDismiss]="true" [actionName]="'Click me'" [handler]="exampleMessageBarHandler"
+    [messageBarType]="messageBarType" (closeClicked)="exampleMessageBarHandler.close()" [fixed]="true">
+    Here is a {{messageBarType}} fixed alert
+  </ngx-fluent-design-message-bar>
 </section>
 
 <div class="w-100 h-100 d-flex">
-    <app-navigation *ngIf="shouldDisplayNavMenu"></app-navigation>
-    <div class="application-outlet">
-        <router-outlet></router-outlet>
-    </div>
+  @if (shouldDisplayNavMenu) {
+  <app-navigation></app-navigation>
+  }
+  <div class="application-outlet">
+    <ngx-fluent-design-message-bar class="p-0" [fixed]="true" [canDismiss]="false" messageBarType="warning">
+      Warning! As of version 21.1.3, we have completely removed modules from the library and use standalone components
+      in place. Any existing projects will need to be migratied carefully.
+    </ngx-fluent-design-message-bar>
+    <router-outlet></router-outlet>
+  </div>
 </div>

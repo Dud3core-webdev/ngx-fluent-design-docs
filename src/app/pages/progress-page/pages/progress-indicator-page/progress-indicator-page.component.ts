@@ -1,10 +1,14 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { ComponentApiDataList } from '../../../../shared/components/component-api-table/types/component-api-data.class';
+import { VersionSupportTableComponent } from '../../../../shared/components/version-support-table/version-support-table.component';
+import { ComponentApiTableComponent } from '../../../../shared/components/component-api-table/component-api-table.component';
+import { NgxFluentDesignCardComponent, NgxFluentDesignButtonComponent, NgxFluentDesignProgressIndicatorComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
+    standalone: true,
     selector: 'app-progress-indicator-page',
-    templateUrl: './progress-indicator-page.component.html'
+    templateUrl: './progress-indicator-page.component.html',
+    imports: [VersionSupportTableComponent, ComponentApiTableComponent, NgxFluentDesignCardComponent, NgxFluentDesignButtonComponent, NgxFluentDesignProgressIndicatorComponent]
 })
 export class ProgressIndicatorPageComponent implements AfterViewInit {
     public readonly apiData: ComponentApiDataList = [

@@ -1,11 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgxFluentDesignIconInfoError, NgxFluentDesignIconInfoSuccess } from 'ngx-fluent-design';
+import { NgxFluentDesignIconInfoError, NgxFluentDesignIconInfoSuccess, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent, NgxFluentDesignIconComponent } from 'ngx-fluent-design';
 
 @Component({
-    standalone: false,
     selector: 'version-support-table-row',
+    standalone: true,
     templateUrl: './version-support-table-data.component.html',
-    styleUrls: ['./version-support-table-data.component.scss']
+    styleUrls: ['./version-support-table-data.component.scss'],
+    imports: [NgxFluentDesignIconComponent]
 })
 export class VersionSupportTableDataComponent implements OnInit {
     @Input() public isSupported: boolean = false;

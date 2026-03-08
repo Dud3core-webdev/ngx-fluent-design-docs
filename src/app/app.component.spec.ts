@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
-import { SharedComponentsModule } from './shared/components/shared-components.module';
 import { AppNavigationModule } from './navigation/app-navigation.module';
-import { NgxFluentDesignInputModule, NgxFluentDesignNotificationModule } from 'ngx-fluent-design';
-import { AppStatusModule } from './status/app-status.module';
+import { NgxFluentDesignFormFieldComponent, NgxFluentDesignTextareaComponent, NgxFluentDesignFormFieldUnderlinedComponent, NgxFluentDesignTextareaUnderlinedComponent, NgxFluentDesignTextFieldBorderlessComponent, NgxFluentDesignTextareaBorderlessComponent, NgxFluentDesignToggleComponent, NgxFluentDesignCheckboxComponent, NgxFluentDesignSelectComponent, NgxFluentDesignRadioComponent, NgxFluentDesignInputClassValidatorDirective, NgxFluentDesignMessageBarComponent, NgxFluentDesignCardComponent } from 'ngx-fluent-design';
+import { AppOnlineService } from './status/services/app-online.service';
+import { AppUpdateService } from './status/services/app-update.service';
 import { WINDOW_PROVIDERS } from './shared/factories/window.factory';
+import { applicationNavigationLinks } from './shared/navigation/app-nav-links.class';
+
 
 describe('AppComponent', () => {
     beforeEach(async () => {
@@ -20,20 +22,19 @@ describe('AppComponent', () => {
                 AppRoutingModule,
                 HttpClientModule,
                 MarkdownModule.forRoot(),
-                SharedComponentsModule,
-                AppNavigationModule.forRoot({ moduleNavigationLinks: [] }),
-                NgxFluentDesignNotificationModule,
-                NgxFluentDesignInputModule,
-                AppStatusModule
-            ],
-            declarations: [
+                AppNavigationModule.forRoot({ moduleNavigationLinks: applicationNavigationLinks }),
+                NgxFluentDesignMessageBarComponent,
+                NgxFluentDesignFormFieldComponent, NgxFluentDesignTextareaComponent, NgxFluentDesignFormFieldUnderlinedComponent, NgxFluentDesignTextareaUnderlinedComponent, NgxFluentDesignTextFieldBorderlessComponent, NgxFluentDesignTextareaBorderlessComponent, NgxFluentDesignToggleComponent, NgxFluentDesignCheckboxComponent, NgxFluentDesignSelectComponent, NgxFluentDesignRadioComponent, NgxFluentDesignInputClassValidatorDirective,
                 AppComponent
             ],
             providers: [
                 WINDOW_PROVIDERS,
+                AppOnlineService,
+                AppUpdateService,
                 { provide: SwUpdate, useValue: { isEnabled: false, available: of({}), activated: of({}) } }
             ]
         }).compileComponents();
+
     });
 
     it('should create the app', () => {

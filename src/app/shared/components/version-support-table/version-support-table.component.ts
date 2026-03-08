@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { NgxFluentDesignIconInfoSevereWarn } from 'ngx-fluent-design';
+import { NgxFluentDesignIconInfoSevereWarn, NgxFluentDesignCardComponent, NgxFluentDesignMessageBarComponent } from 'ngx-fluent-design';
+import { VersionSupportTableDataComponent } from './version-support-table-data/version-support-table-data.component';
 
 @Component({
-    standalone: false,
     selector: 'version-support-table',
+    standalone: true,
     templateUrl: './version-support-table.component.html',
-    styleUrls: ['./version-support-table.component.scss']
+    styleUrls: ['./version-support-table.component.scss'],
+    imports: [NgxFluentDesignCardComponent, VersionSupportTableDataComponent]
 })
 export class VersionSupportTableComponent {
     @Input() public supportsV11: boolean = false;

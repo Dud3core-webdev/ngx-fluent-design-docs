@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { NgxFluentDesignCompoundButtonComponent } from 'ngx-fluent-design';
 
 @Component({
+    standalone: true,
+    imports: [NgxFluentDesignCompoundButtonComponent],
     template: `
         <ngx-fluent-design-compound-button
             [disabled]="false"
@@ -10,4 +13,4 @@ import { Component } from '@angular/core';
         </ngx-fluent-design-compound-button>
     `
 })
-export class CompoundCtaUsageExample {}
+export class CompoundCtaUsageExample { }

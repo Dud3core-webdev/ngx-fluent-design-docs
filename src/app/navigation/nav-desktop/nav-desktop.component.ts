@@ -2,12 +2,14 @@ import { Component, Input } from '@angular/core';
 import { ThemeSwitcherService } from '../../theme/services/theme-switcher.service';
 import { ApplicationThemeName } from '../../shared/theme/types/application-theme-name.enum';
 import { ApplicationNavigationLinks } from '../types/application-navigation-links.type';
+import { NgxFluentDesignToggleComponent, NgxFluentDesignButtonLinkDirective } from 'ngx-fluent-design';
+import { RouterLinkActive, RouterLink } from '@angular/router';
 
 @Component({
-    standalone: false,
     selector: 'nav-desktop',
     templateUrl: './nav-desktop.component.html',
-    styleUrls: ['./nav-desktop.component.scss']
+    styleUrls: ['./nav-desktop.component.scss'],
+    imports: [NgxFluentDesignToggleComponent, NgxFluentDesignButtonLinkDirective, RouterLinkActive, RouterLink]
 })
 export class NavDesktopComponent {
     @Input() public readonly sideNavLinks: ApplicationNavigationLinks = [];

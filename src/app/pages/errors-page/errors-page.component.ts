@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-    standalone: false,
+    standalone: true,
     templateUrl: './errors-page.component.html',
-    styleUrls: ['./errors-page.component.scss']
+    styleUrls: ['./errors-page.component.scss'],
+    imports: [RouterOutlet]
 })
 export class ErrorsPageComponent {
 }
